@@ -153,6 +153,13 @@ footer{color:var(--muted);font-size:13px}
 .bubble .who{font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:block;margin-bottom:4px}
 .wm{color:var(--ok);font-weight:600}.wx{color:var(--bad);font-weight:600;text-decoration:underline}
 #p-imagens10 .hw-example{background:var(--ochre-soft);border-radius:8px;padding:8px 12px;font-size:14px}
+
+.aplayer{display:grid;gap:8px;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.aplayer .arow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.aplayer .aplay{min-width:110px}
+.aplayer input[type=range]{width:100%;accent-color:var(--cobalt)}
+.aplayer .atime{font:500 13px var(--mono);font-variant-numeric:tabular-nums;color:var(--muted)}
+.aplayer .aspeed button[aria-pressed="true"]{background:var(--cobalt-soft);border-color:var(--cobalt);color:var(--cobalt)}
 /* homework */
 .flash{display:grid;gap:8px;place-items:center;text-align:center;min-height:150px;padding:24px 16px;border-radius:12px;border:1px solid var(--line);background:var(--cobalt-soft);font:700 22px/1.3 var(--display);color:var(--ink);cursor:pointer;width:100%}
 .flash #vcBack{font:700 22px/1.3 var(--display);color:var(--cobalt)}
@@ -454,6 +461,7 @@ footer{color:var(--muted);font-size:13px}
     <span class="label">Aula 7 · TPC para 03.11</span>
     <h3>Precisa-se Empregada de Limpeza</h3>
     <p class="ru" style="margin:0">Требуется уборщица. Выделенное жирным это слова, отмеченные в задании.</p>
+    <div class="aplayer" data-src="audio/precisa-se-empregada.mp3"></div>
     <div class="row"><button id="trBtn2" aria-pressed="true">Перевод включён</button></div>
     <div id="dialogue2"></div>
   </article>
@@ -625,6 +633,8 @@ footer{color:var(--muted);font-size:13px}
   <article class="card" id="hw-decor">
     <span class="label">Aprender o diálogo</span>
     <h3>Precisa-se Empregada de Limpeza</h3>
+    <p class="ru" style="margin:0">Сначала послушай запись несколько раз, потом медленнее повторяй за ней, потом переходи к упражнениям.</p>
+    <div class="aplayer" data-src="audio/precisa-se-empregada.mp3"></div>
     <div class="row">
       <button class="dmode" data-dm="cloze" aria-pressed="true">1. Пропуски</button>
       <button class="dmode" data-dm="letters" aria-pressed="false">2. Первые буквы</button>
@@ -1912,6 +1922,34 @@ document.getElementById("drPeek").addEventListener("click",()=>{peek++;const w=D
 document.getElementById("drSkip").addEventListener("click",()=>commit(esc(D[pos][1]),false));
 document.getElementById("drRestart").addEventListener("click",restart);document.getElementById("drRole").addEventListener("change",restart);
 restart();
+})();
+
+/* audio players */
+(function(){
+const fmt=t=>{t=Math.max(0,Math.floor(t||0));return Math.floor(t/60)+":"+String(t%60).padStart(2,"0")};
+let speed=1;try{speed=+localStorage.getItem("aspeed")||1}catch(e){}
+document.querySelectorAll(".aplayer").forEach((box,n)=>{
+  box.innerHTML=`<audio preload="metadata" src="${box.dataset.src}"></audio>
+  <div class="arow"><button class="primary aplay" type="button">▶ Слушать</button><button type="button" class="aback" aria-label="Назад 5 секунд">−5 с</button><button type="button" class="afwd" aria-label="Вперёд 5 секунд">+5 с</button><button type="button" class="astop">■ Стоп</button><button type="button" class="aloop" aria-pressed="false">Повтор</button><span class="atime">0:00 / 0:00</span></div>
+  <input type="range" class="aseek" min="0" max="1000" value="0" step="1" aria-label="Позиция в записи">
+  <div class="arow aspeed"><span class="label">Скорость</span>${[0.5,0.6,0.75,0.9,1].map(v=>`<button type="button" data-s="${v}">${v===1?"1×":String(v).replace(".",",")+"×"}</button>`).join("")}</div>`;
+  const a=box.querySelector("audio"),play=box.querySelector(".aplay"),seek=box.querySelector(".aseek"),time=box.querySelector(".atime"),loop=box.querySelector(".aloop");
+  const setSpeed=v=>{speed=v;a.playbackRate=v;a.preservesPitch=true;box.querySelectorAll("[data-s]").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.s===v));try{localStorage.setItem("aspeed",v)}catch(e){}};
+  setSpeed(speed);
+  const upd=()=>{time.textContent=fmt(a.currentTime)+" / "+fmt(a.duration);if(a.duration&&!seeking)seek.value=Math.round(a.currentTime/a.duration*1000)};
+  let seeking=false;
+  play.addEventListener("click",()=>{document.querySelectorAll(".aplayer audio").forEach(x=>{if(x!==a)x.pause()});a.paused?a.play().catch(()=>{}):a.pause()});
+  a.addEventListener("play",()=>{play.textContent="❚❚ Пауза";a.playbackRate=speed});a.addEventListener("pause",()=>play.textContent="▶ Слушать");
+  a.addEventListener("ended",()=>play.textContent="▶ Слушать");
+  a.addEventListener("timeupdate",upd);a.addEventListener("loadedmetadata",upd);
+  box.querySelector(".aback").addEventListener("click",()=>{a.currentTime=Math.max(0,a.currentTime-5);upd()});
+  box.querySelector(".afwd").addEventListener("click",()=>{a.currentTime=Math.min(a.duration||0,a.currentTime+5);upd()});
+  box.querySelector(".astop").addEventListener("click",()=>{a.pause();a.currentTime=0;upd()});
+  loop.addEventListener("click",()=>{a.loop=!a.loop;loop.setAttribute("aria-pressed",a.loop)});
+  seek.addEventListener("input",()=>{seeking=true;if(a.duration){a.currentTime=seek.value/1000*a.duration;time.textContent=fmt(a.currentTime)+" / "+fmt(a.duration)}});
+  seek.addEventListener("change",()=>{seeking=false});
+  box.querySelectorAll("[data-s]").forEach(b=>b.addEventListener("click",()=>{setSpeed(+b.dataset.s);document.querySelectorAll(".aplayer").forEach(o=>{if(o!==box){o.querySelector("audio").playbackRate=speed;o.querySelectorAll("[data-s]").forEach(x=>x.setAttribute("aria-pressed",+x.dataset.s===speed))}})}));
+});
 })();
 
 route();
