@@ -1,0 +1,1920 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Português B1.2, outono 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: notebook of the course. Sticky tab bar, one column of lesson cards and study blocks, azulejo stripe as the only ornament. */
+:root{
+  --bg:#f6f7fb; --surface:#ffffff; --ink:#1b2238; --muted:#5b6382; --line:#d9ddea;
+  --cobalt:#1f4fb8; --cobalt-soft:#e6ecfa; --ochre:#c8901a; --ochre-soft:#fbf1dc;
+  --ok:#1d7a46; --ok-soft:#e2f3e9; --bad:#b3362c; --bad-soft:#f9e4e2; --warn:#a8640a; --warn-soft:#fbf0dc;
+  --display:"Alegreya",Georgia,"Times New Roman",serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#10142a; --surface:#181d36; --ink:#e7eaf6; --muted:#9aa2c4; --line:#2b3254;
+  --cobalt:#8eabff; --cobalt-soft:#222b55; --ochre:#e7b552; --ochre-soft:#3a3020;
+  --ok:#6fd39a; --ok-soft:#163626; --bad:#ff8f84; --bad-soft:#3e1d1c; --warn:#e8a849; --warn-soft:#3a2a10; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10142a; --surface:#181d36; --ink:#e7eaf6; --muted:#9aa2c4; --line:#2b3254;
+  --cobalt:#8eabff; --cobalt-soft:#222b55; --ochre:#e7b552; --ochre-soft:#3a3020;
+  --ok:#6fd39a; --ok-soft:#163626; --bad:#ff8f84; --bad-soft:#3e1d1c; --warn:#e8a849; --warn-soft:#3a2a10; color-scheme:dark}
+
+body{background:var(--bg);color:var(--ink);font:400 15px/1.6 var(--body)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.stripe{height:10px;background:
+  repeating-linear-gradient(90deg,var(--cobalt) 0 10px,transparent 10px 20px),
+  repeating-linear-gradient(90deg,transparent 0 5px,var(--ochre) 5px 10px,transparent 10px 20px);
+  background-size:20px 5px,20px 5px;background-position:0 0,0 5px;background-repeat:repeat-x;opacity:.85}
+header.top{background:var(--surface);border-bottom:1px solid var(--line)}
+header.top .wrap{padding-block:28px 18px;display:grid;gap:6px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:700 clamp(30px,6vw,44px)/1.05 var(--display);margin:0;text-wrap:balance}
+h1 em{font-style:italic;font-weight:500;color:var(--cobalt)}
+.sub{color:var(--muted);margin:0;max-width:60ch}
+
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+nav.tabs .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav.tabs a{flex:0 0 auto;padding:12px 12px 10px;color:var(--muted);text-decoration:none;font-weight:500;border-bottom:2px solid transparent}
+nav.tabs a[aria-current="page"]{color:var(--cobalt);border-color:var(--cobalt)}
+nav.tabs a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--ochre);outline-offset:2px}
+
+main .wrap{padding-block:28px 64px;display:grid;gap:28px}
+section[data-view]{display:grid;gap:22px}
+h2{font:700 26px/1.15 var(--display);margin:0;text-wrap:balance}
+h3{font:700 19px/1.25 var(--display);margin:0}
+.lead{color:var(--muted);margin:0;max-width:62ch}
+.pt{font-weight:600}
+.ru{color:var(--muted)}
+
+/* lessons */
+.lesson{background:var(--surface);border:1px solid var(--line);border-radius:10px;display:grid;grid-template-columns:96px 1fr;overflow:hidden}
+.lesson .num{background:var(--cobalt-soft);display:grid;align-content:start;gap:2px;padding:18px 14px;text-align:center}
+.lesson .num b{font:700 34px/1 var(--display);color:var(--cobalt)}
+.lesson .num span{font:500 12px/1.3 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.lesson .body{padding:16px 18px;display:grid;gap:10px;min-width:0}
+.lesson ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:500 12px/1 var(--body);padding:6px 9px;border-radius:999px;background:var(--ochre-soft);color:var(--ink);border:1px solid transparent;text-decoration:none;cursor:pointer}
+.chip:hover{border-color:var(--ochre)}
+.lesson.missing{grid-template-columns:96px 1fr;opacity:.75}
+.lesson.missing .num{background:transparent;border-right:1px dashed var(--line)}
+.label{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* cards */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:grid;gap:12px;min-width:0}
+.rule{background:var(--cobalt-soft);border-radius:8px;padding:12px 14px;font-weight:500}
+.rule code,.formula{font-family:var(--mono);font-size:14px}
+.ex{display:grid;gap:2px;padding-left:12px;border-left:2px solid var(--line)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:14px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+th{font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+td.p{color:var(--muted)}
+.note{background:var(--ochre-soft);border-radius:8px;padding:10px 14px;font-size:14px}
+
+/* vocab */
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+input[type=search],input[type=text],select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+input[type=search]{flex:1 1 220px;min-width:0}
+button{font:500 14px/1 var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:9px 12px;cursor:pointer}
+button.primary{background:var(--cobalt);border-color:var(--cobalt);color:var(--surface)}
+button[aria-pressed="true"]{background:var(--cobalt-soft);border-color:var(--cobalt);color:var(--cobalt)}
+.vgroup{display:grid;gap:4px}
+.vgroup h3{margin-bottom:6px}
+.vrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;padding:7px 0;border-bottom:1px solid var(--line)}
+.vrow .ru{cursor:default}
+.hide-ru .vrow .ru{color:transparent;background:var(--line);border-radius:4px;cursor:pointer}
+.hide-ru .vrow .ru.shown{color:var(--muted);background:none}
+.count{font:500 12px var(--mono);color:var(--muted)}
+
+/* dialogue */
+.line{display:grid;grid-template-columns:62px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.line .who{font:500 12px/1.9 var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.line .who.j{color:var(--cobalt)} .line .who.c{color:var(--ochre)}
+.line .tx{display:grid;gap:2px;min-width:0}
+.no-tr .line .ru{display:none}
+.scene{font:500 italic 15px var(--display);color:var(--muted);padding-top:10px}
+
+/* practice */
+.q{display:grid;gap:8px;padding:12px 0;border-bottom:1px solid var(--line)}
+.q:last-of-type{border-bottom:0}
+.q .s{line-height:2}
+.q select{max-width:100%}
+.fb{font-size:14px;border-radius:6px;padding:6px 10px}
+.fb.ok{background:var(--ok-soft);color:var(--ok)}
+.fb.bad{background:var(--bad-soft);color:var(--bad)}
+.fb.near{background:var(--ochre-soft);color:var(--ink)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.row input[type=text]{flex:1 1 220px;min-width:0}
+.score{font:500 14px var(--mono)}
+.drill{display:grid;gap:12px}
+.prompt{font:700 24px/1.2 var(--display)}
+.prompt small{display:block;font:400 14px var(--body);color:var(--muted)}
+.reveal[hidden]{display:none}
+details summary{cursor:pointer;color:var(--cobalt);font-weight:500}
+footer{color:var(--muted);font-size:13px}
+
+
+#p-quizlet ol.hw-sent{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+#p-quizlet ol.hw-sent li{display:grid;grid-template-columns:2em 1fr;gap:6px;align-items:baseline}
+#p-quizlet ol.hw-sent .n{color:var(--muted);font:500 12px var(--mono);text-align:right}
+#p-quizlet .hw-line{min-width:0;line-height:2.2}
+#p-quizlet input.blank{font:inherit;color:var(--ink);background:transparent;border:none;border-bottom:2px solid var(--line);padding:1px 4px;max-width:100%;border-radius:0}
+#p-quizlet input.blank:focus{border-bottom-color:var(--cobalt);outline:none;background:var(--cobalt-soft)}
+#p-quizlet input.blank.ok{border-bottom-color:var(--ok);background:var(--ok-soft)}
+#p-quizlet input.blank.near{border-bottom-color:var(--warn);background:var(--warn-soft)}
+#p-quizlet input.blank.bad{border-bottom-color:var(--bad);background:var(--bad-soft)}
+#p-quizlet .hfb{display:block;font-size:14px;line-height:1.4;margin-top:2px}
+#p-quizlet .hfb:empty{display:none}
+#p-quizlet .hfb.ok{color:var(--ok)} #p-quizlet .hfb.near{color:var(--warn)} #p-quizlet .hfb.bad{color:var(--bad)}
+#p-quizlet .hfb .ans{font-weight:700}
+#p-quizlet .why{display:block;margin-top:4px;padding:6px 10px;border-left:3px solid var(--ochre);background:var(--ochre-soft);color:var(--ink);border-radius:0 6px 6px 0;max-width:62ch}
+
+.dz{cursor:pointer;border-radius:4px;padding:0 2px}
+.dz.hid{color:transparent;background:var(--line)}
+.dl{cursor:pointer}
+.dl .full[hidden]{display:none}
+.oline{text-align:left;font:inherit;line-height:1.45;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.oline.done{background:var(--ok-soft);border-color:var(--ok);cursor:default}
+.oline.wrong{background:var(--bad-soft);border-color:var(--bad)}
+.bubble{padding:8px 12px;border-radius:10px;background:var(--cobalt-soft);max-width:90%}
+.bubble.me{background:var(--ochre-soft);justify-self:end}
+.bubble .who{font:500 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:block;margin-bottom:4px}
+.wm{color:var(--ok);font-weight:600}.wx{color:var(--bad);font-weight:600;text-decoration:underline}
+#p-imagens10 .hw-example{background:var(--ochre-soft);border-radius:8px;padding:8px 12px;font-size:14px}
+/* homework */
+.flash{display:grid;gap:8px;place-items:center;text-align:center;min-height:150px;padding:24px 16px;border-radius:12px;border:1px solid var(--line);background:var(--cobalt-soft);font:700 22px/1.3 var(--display);color:var(--ink);cursor:pointer;width:100%}
+.flash #vcBack{font:700 22px/1.3 var(--display);color:var(--cobalt)}
+.flash .ru{font:400 17px/1.4 var(--body)}
+.flash #fcBack{font:700 22px/1.3 var(--display);color:var(--cobalt)}
+#tpc .hw-block{display:grid;gap:18px;padding-top:6px}
+#tpc .hw-block + .hw-block{border-top:2px solid var(--line);padding-top:26px}
+#tpc .hw-due h3{font-size:24px;margin-top:4px}
+#tpc .hw-due{display:grid;gap:2px}
+#tpc .hw-bar{position:sticky;top:calc(env(safe-area-inset-top,0px) + 47px);z-index:4;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
+#tpc .hw-scores{display:flex;gap:6px;flex-wrap:wrap;flex:1}
+#tpc .hw-chip{font:500 13px/1 var(--mono);font-variant-numeric:tabular-nums;padding:6px 10px;border-radius:999px;background:var(--ochre-soft);color:var(--ink);text-decoration:none;white-space:nowrap}
+#tpc .hw-chip b{color:var(--cobalt)}
+#tpc .hw-chip.done{background:var(--ok-soft)} #tpc .hw-chip.done b{color:var(--ok)}
+#tpc button.ghost{border-color:transparent;background:none;color:var(--cobalt);padding:2px 4px;font-size:13px;text-decoration:underline;text-underline-offset:2px}
+#tpc .hw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px 18px}
+#tpc .hw-cell{display:flex;align-items:center;gap:8px;min-width:0}
+#tpc .hw-cell .n{color:var(--muted);font:500 12px var(--mono);width:2em;text-align:right;flex:none}
+#tpc .hw-cell .lbl{flex:none;width:7.4em;font-size:14px}
+#tpc .hw-cell .lbl em{color:var(--muted);font-style:normal}
+#tpc ol.hw-sent{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+#tpc ol.hw-sent li{display:grid;grid-template-columns:2em 1fr;gap:6px;align-items:baseline}
+#tpc ol.hw-sent .n{color:var(--muted);font:500 12px var(--mono);text-align:right}
+#tpc .hw-line{min-width:0;line-height:2.2}
+#tpc .hw-inf{color:var(--muted);font-style:italic;white-space:nowrap}
+#tpc .hw-orig{color:var(--muted);font-size:14px;line-height:1.4;display:block}
+#tpc .hw-start{font-weight:600;color:var(--cobalt)}
+#tpc .hw-example{background:var(--ochre-soft);border-radius:8px;padding:8px 12px;font-size:14px}
+#tpc select.ok{border-color:var(--ok);background:var(--ok-soft)}
+#tpc select.bad{border-color:var(--bad);background:var(--bad-soft)}
+#tpc input.blank{font:inherit;color:var(--ink);background:transparent;border:none;border-bottom:2px solid var(--line);padding:1px 4px;width:9.5em;max-width:100%;border-radius:0}
+#tpc input.blank.long{width:100%}
+#tpc input.blank:focus{border-bottom-color:var(--cobalt);outline:none;background:var(--cobalt-soft)}
+#tpc input.blank.ok{border-bottom-color:var(--ok);background:var(--ok-soft)}
+#tpc input.blank.near{border-bottom-color:var(--warn);background:var(--warn-soft)}
+#tpc input.blank.bad{border-bottom-color:var(--bad);background:var(--bad-soft)}
+#tpc .hfb{display:block;font-size:14px;line-height:1.4;margin-top:2px}
+#tpc .hfb:empty{display:none}
+#tpc .hfb.ok{color:var(--ok)} #tpc .hfb.near{color:var(--warn)} #tpc .hfb.bad{color:var(--bad)}
+#tpc .hfb .ans{font-weight:700}
+#tpc .why{display:block;margin-top:4px;padding:6px 10px;border-left:3px solid var(--ochre);background:var(--ochre-soft);color:var(--ink);border-radius:0 6px 6px 0;max-width:62ch}
+#tpc .hw-grid .hfb{padding-left:9.6em}
+#tpc .longwrap{display:flex;gap:6px;align-items:baseline;flex-wrap:wrap}
+#tpc .longwrap input{flex:1 1 240px}
+@media (max-width:520px){#tpc .hw-grid .hfb{padding-left:0}}
+@media (max-width:520px){
+  .lesson{grid-template-columns:1fr}.lesson .num{grid-template-columns:auto auto;justify-content:start;align-items:baseline;gap:10px;text-align:left;padding:12px 16px}
+  .vrow{grid-template-columns:1fr;gap:0}
+  .line{grid-template-columns:1fr;gap:2px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="stripe" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="eyebrow">Português europeu · nível B1.2</span>
+    <h1>O meu <em>curso</em>, outono 2026</h1>
+    <p class="sub">Всё, что проходим на курсе: уроки, грамматика, лексика, тексты и практика. Обновляется после каждого урока.</p>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Разделы">
+  <div class="wrap">
+    <a href="#aulas" data-tab="aulas">Уроки</a>
+    <a href="#gramatica" data-tab="gramatica">Грамматика</a>
+    <a href="#lexico" data-tab="lexico">Лексика</a>
+    <a href="#textos" data-tab="textos">Тексты</a>
+    <a href="#pratica" data-tab="pratica">Практика</a>
+    <a href="#tpc" data-tab="tpc">Домашка</a>
+  </div>
+</nav>
+
+<main><div class="wrap">
+
+<!-- AULAS -->
+<section data-view="aulas">
+  <div><h2>Aulas</h2><p class="lead">Новые уроки сверху. Нажмите на тему, чтобы перейти к материалу.</p></div>
+  <div id="lessons" style="display:grid;gap:12px"></div>
+</section>
+
+<!-- GRAMÁTICA -->
+<section data-view="gramatica" hidden>
+  <div><h2>Gramática</h2><p class="lead">Правила из уроков с примерами из презентаций.</p></div>
+
+  <article class="card" id="g-vida">
+    <span class="label">Aula 10</span>
+    <h3>O conjuntivo na vida real</h3>
+    <p class="ru" style="margin:0">Фразы из презентации: цитаты, поздравления и мемы. Часть из них написана на бразильском варианте (você, pra, seu dia), это отмечено.</p>
+    <h3 style="font-size:16px">Frases</h3>
+    <div class="grid2">
+      <div class="ex"><span class="pt">Sempre há pessoas que <b>querem que</b> você <b>desista</b>!</span><span class="ru">Всегда есть люди, которые хотят, чтобы ты сдался!</span></div>
+      <div class="ex"><span class="pt"><b>Espero que goste.</b></span><span class="ru">Надеюсь, вам понравится.</span></div>
+      <div class="ex"><span class="pt">Eles <b>querem que</b> você se <b>sinta</b> mal, pois assim eles se sentem bem.</span><span class="ru">Они хотят, чтобы тебе было плохо, ведь так им хорошо.</span></div>
+      <div class="ex"><span class="pt">Às vezes, <b>esperamos que</b> as pessoas <b>tomem</b> a iniciativa apenas pra saber se elas realmente se importam.</span><span class="ru">Иногда мы ждём, что люди проявят инициативу, просто чтобы понять, действительно ли им не всё равно. (pra = para, бразильский разговорный)</span></div>
+      <div class="ex"><span class="pt"><b>Tenho receio que</b> o meu psicólogo me <b>julgue</b>, e agora?</span><span class="ru">Боюсь, что мой психолог меня осудит, и что теперь?</span></div>
+      <div class="ex"><span class="pt">Se <b>desejamos que</b> a vida <b>seja</b> leve, precisamos dar leveza à vida.</span><span class="ru">Если мы хотим, чтобы жизнь была лёгкой, нужно дарить жизни лёгкость.</span></div>
+    </div>
+    <h3 style="font-size:16px">Para felicitar · поздравления</h3>
+    <p class="ru" style="margin:0">В пожеланиях conjuntivo стоит после <b>que</b> даже без глагола перед ним: подразумевается «desejo que».</p>
+    <div class="grid2">
+      <div class="ex"><span class="pt"><b>Que</b> seu dia <b>seja</b> tão lindo quanto você merece!</span><span class="ru">Пусть твой день будет таким же прекрасным, как ты заслуживаешь!</span></div>
+      <div class="ex"><span class="pt"><b>Que</b> não <b>faltem</b> motivos para sorrir.</span><span class="ru">Пусть не будет недостатка в поводах улыбаться.</span></div>
+      <div class="ex"><span class="pt"><b>Que</b> a vida te <b>abrace</b> ainda mais bonito… afinal hoje é teu dia!</span><span class="ru">Пусть жизнь обнимет тебя ещё нежнее… ведь сегодня твой день!</span></div>
+      <div class="ex"><span class="pt"><b>Desejo que</b> o seu dia <b>seja</b> abençoado e que Deus te <b>fortaleça</b> e te <b>encha</b> de paz, esperança e alegria.</span><span class="ru">Желаю, чтобы твой день был благословенным и чтобы Бог укрепил тебя и наполнил миром, надеждой и радостью.</span></div>
+    </div>
+    <h3 style="font-size:16px">Com humor</h3>
+    <div class="grid2">
+      <div class="ex"><span class="pt">Às vezes, dá vontade de chegar em algumas pessoas e dizer assim: <b>Que</b> Deus te <b>guarde</b> e <b>esqueça</b> onde.</span><span class="ru">Иногда хочется подойти к некоторым людям и сказать: пусть Бог тебя спрячет и забудет куда.</span></div>
+      <div class="ex"><span class="pt">Qual é a sua última vontade? <b>Que demos</b> todos as mãos.</span><span class="ru">Какое ваше последнее желание? Чтобы мы все взялись за руки. (шутка про электрический стул)</span></div>
+    </div>
+  </article>
+
+  <article class="card" id="g-desejo">
+    <span class="label">Aula 10 · Aula 9 · Unidade 3</span>
+    <h3>Presente do Conjuntivo introduzido por verbos ou expressões de desejo, ordem, dúvida, sentimento</h3>
+    <p style="margin:0"><span class="pt" style="font-weight:400">Usamos o presente do conjuntivo para expressar ações eventuais no futuro em frases introduzidas pela conjunção <b>que</b> e antecedidas por verbos ou expressões que exprimam desejo, ordem, dúvida, sentimento, etc., conjugados no presente do indicativo.</span><br><span class="ru">Conjuntivo ставится после que, если в главной части (в presente do indicativo) стоит глагол или выражение желания, приказа, сомнения, чувства. Речь о действии, которое может случиться, а не о факте.</span></p>
+    <div class="rule formula">verbo / expressão (presente do indicativo) + que + presente do conjuntivo</div>
+    <div class="grid2">
+      <div class="ex"><span class="label">Желание, просьба, приказ</span><span class="pt">desejar</span><span class="ru">желать</span><span class="pt">esperar</span><span class="ru">надеяться</span><span class="pt">querer</span><span class="ru">хотеть</span><span class="pt">preferir</span><span class="ru">предпочитать</span><span class="pt">pedir</span><span class="ru">просить</span><span class="pt">exigir</span><span class="ru">требовать</span><span class="pt">proibir</span><span class="ru">запрещать</span><span class="pt">sugerir</span><span class="ru">советовать, предлагать</span></div>
+      <div class="ex"><span class="label">Сомнение, страх, чувство</span><span class="pt">duvidar · ter dúvidas</span><span class="ru">сомневаться</span><span class="pt">recear · ter medo</span><span class="ru">опасаться · бояться</span><span class="pt">lamentar · sentir · ter pena</span><span class="ru">сожалеть · очень жаль · жалеть</span><span class="pt">gostar</span><span class="ru">нравиться</span><span class="pt">agradecer</span><span class="ru">благодарить (вежливая просьба)</span></div>
+    </div>
+    <h3 style="font-size:16px">Exemplos</h3>
+    <div class="grid2" id="desejoEx"></div>
+    <h3 style="font-size:16px">Группы глаголов · Aula 10</h3>
+    <div class="grid2">
+      <div class="ex"><span class="label">Vontade e desejo · воля и желание</span><span class="pt">desejar que, querer que, ter vontade de que, preferir que</span></div>
+      <div class="ex"><span class="label">Dúvida e incerteza · сомнение</span><span class="pt">duvidar que, ter dúvidas de que</span></div>
+      <div class="ex"><span class="label">Ordem e obrigação · приказ</span><span class="pt">pedir que, mandar que, ordenar que, proibir que, exigir que</span><span class="ru">mandar, ordenar = приказывать</span></div>
+      <div class="ex"><span class="label">Sentimentos · чувства</span><span class="pt">ter receio de que, ter medo de que, ter pena de que, recear que, gostar que, ter gosto em que, lamentar que</span><span class="ru">ter gosto em que = быть радым, что</span></div>
+    </div>
+    <div class="note">В упражнениях встречаются и другие глаголы того же типа: <b>não admitir que</b> (не допускать), <b>não acreditar que</b> (не верить), <b>detestar que</b> (терпеть не могу). Сравни с Aula 7: <b>acho que</b> + indicativo, но <b>duvido que</b> + conjuntivo.</div>
+  </article>
+
+  <article class="card" id="g-futuro">
+    <span class="label">Повторение · Aula 8, TPC extra</span>
+    <h3>Futuro Imperfeito do Indicativo e o tempo</h3>
+    <p class="ru" style="margin:0">Простое будущее время. В разговоре его часто заменяют на <b>ir + infinitivo</b>, но в прогнозе погоды и в письменной речи оно встречается постоянно.</p>
+    <div class="rule formula">infinitivo + -ei, -ás, -á, -emos, -ão</div>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>окончание</th><th>chover</th><th>estar</th><th>fazer</th><th>haver</th></tr></thead>
+      <tbody>
+        <tr><td class="p">eu</td><td>-ei</td><td>·</td><td>estarei</td><td>farei</td><td>·</td></tr>
+        <tr><td class="p">tu</td><td>-ás</td><td>·</td><td>estarás</td><td>farás</td><td>·</td></tr>
+        <tr><td class="p">ele, ela, você</td><td>-á</td><td>choverá</td><td>estará</td><td>fará</td><td>haverá</td></tr>
+        <tr><td class="p">nós</td><td>-emos</td><td>·</td><td>estaremos</td><td>faremos</td><td>·</td></tr>
+        <tr><td class="p">eles, elas, vocês</td><td>-ão</td><td>·</td><td>estarão</td><td>farão</td><td>·</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">Неправильные основы: <b>fazer → far-</b>, <b>dizer → dir-</b>, <b>trazer → trar-</b>. Окончания у них обычные. Погодные глаголы (chover, nevar, trovejar) безличные, только форма ele: <b>choverá, nevará</b>.</div>
+    <div class="grid2">
+      <div class="ex"><span class="pt">Amanhã choverá no norte.</span><span class="ru">Завтра на севере будет дождь.</span></div>
+      <div class="ex"><span class="pt">No fim de semana estará sol e fará calor.</span><span class="ru">На выходных будет солнечно и жарко.</span></div>
+      <div class="ex"><span class="pt">Haverá trovoada à tarde.</span><span class="ru">Днём будет гроза.</span></div>
+      <div class="ex"><span class="pt">O céu estará nublado e o vento soprará forte.</span><span class="ru">Небо будет облачным, подует сильный ветер.</span></div>
+    </div>
+    <h3 style="font-size:16px">Лексика погоды</h3>
+    <div class="chips"><span class="chip">está sol · солнечно</span><span class="chip">está nublado · облачно</span><span class="chip">está a chover · идёт дождь</span><span class="chip">faz frio / calor · холодно / жарко</span><span class="chip">o aguaceiro · ливень</span><span class="chip">a trovoada · гроза</span><span class="chip">o nevoeiro · туман</span><span class="chip">a geada · заморозок</span><span class="chip">o vento · ветер</span><span class="chip">a temperatura máxima / mínima</span><span class="chip">a previsão do tempo · прогноз погоды</span></div>
+  </article>
+
+  <article class="card" id="g-conjuncoes">
+    <span class="label">Aula 6 · Aula 7 · Unidade 2</span>
+    <h3>Presente do Conjuntivo com conjunções</h3>
+    <p class="ru" style="margin:0">После этих союзов всегда идёт Presente do Conjuntivo.</p>
+    <div class="grid2">
+      <div class="ex"><span class="label">Уступка · хотя, даже если</span><span class="pt">embora, mesmo que, ainda que, se bem que, nem que</span><span class="pt" style="font-weight:400">Embora ele seja riquíssimo, leva uma vida modesta.</span><span class="ru">Хотя он очень богат, живёт скромно.</span></div>
+      <div class="ex"><span class="label">Условие · если, при условии</span><span class="pt">caso, sem que, desde que, a menos que, a não ser que</span><span class="pt" style="font-weight:400">Caso eu não possa ir, telefono-vos.</span><span class="ru">Если я не смогу пойти, я вам позвоню.</span></div>
+      <div class="ex"><span class="label">Цель · чтобы</span><span class="pt">para que, a fim de que</span><span class="pt" style="font-weight:400">Usa este amuleto, para que te dê sorte.</span><span class="ru">Носи этот амулет, чтобы он приносил тебе удачу.</span></div>
+      <div class="ex"><span class="label">Время · до того как, пока не, как только</span><span class="pt">antes que, até que, logo que</span><span class="pt" style="font-weight:400">Logo que eles cheguem, avisem-me.</span><span class="ru">Как только они приедут, сообщите мне.</span></div>
+    </div>
+    <div class="note">Предлог + инфинитив можно заменить союзом + conjuntivo: <b>apesar de saber</b> → <b>embora saiba</b>, <b>no caso de haver</b> → <b>caso haja</b>, <b>sem falar</b> → <b>sem que fale</b>, <b>até estares</b> → <b>até que estejas</b>. Местоимения после que встают перед глаголом: <b>para que não te esqueças</b>.</div>
+  </article>
+
+  <article class="card" id="g-fatuais">
+    <span class="label">Aula 6 · Aula 7</span>
+    <h3>Casos especiais nas construções impessoais</h3>
+    <p class="ru" style="margin:0">Если безличное выражение говорит об уверенности, ставим Indicativo. Если о неуверенности (отрицание), ставим Conjuntivo.</p>
+    <div class="grid2">
+      <div class="ex"><span class="label">Факт, уверенность · Indicativo</span><span class="pt">É claro que ele vem amanhã.</span><span class="pt">É evidente que tu gostas de nós.</span><span class="pt">É óbvio que elas vão ao Porto.</span></div>
+      <div class="ex"><span class="label">Отрицание, неуверенность · Conjuntivo</span><span class="pt">Não é claro que ele venha amanhã.</span><span class="pt">Não é evidente que tu gostes de nós.</span><span class="pt">Não é óbvio que elas vão ao Porto.</span></div>
+    </div>
+    <h3 style="font-size:16px">Achar que · Aula 7</h3>
+    <p class="ru" style="margin:0">То же правило работает с мнением: утверждение идёт с indicativo, отрицание с conjuntivo.</p>
+    <div class="grid2">
+      <div class="ex"><span class="label">Indicativo</span><span class="pt">Acho que ele tem razão.</span><span class="pt">Acho que vai chover.</span><span class="ru">Думаю, он прав. Думаю, пойдёт дождь.</span></div>
+      <div class="ex"><span class="label">Conjuntivo</span><span class="pt">Não acho que ele tenha razão.</span><span class="pt">Não acho que vá chover.</span><span class="ru">Не думаю, что он прав. Не думаю, что пойдёт дождь.</span></div>
+    </div>
+    <div class="ex"><span class="pt">É óbvio que ela está com ele por dinheiro.</span><span class="ru">Очевидно, что она с ним ради денег. (É óbvio que → indicativo: está)</span></div>
+    <div class="note">Сюда же: <b>é certo que</b> + indicativo. Но <b>é provável que</b> и <b>é agradável que</b> остаются с conjuntivo, это не утверждение факта. У ir для eles форма <b>vão</b> одинаковая в обоих наклонениях.</div>
+    <h3 style="font-size:16px">Exercício 9 из презентации</h3>
+    <div class="grid2">
+      <div class="ex"><span class="pt">É certo que elas <b>vêm</b> aqui na próxima semana.</span><span class="ru">Точно, что они приедут сюда на следующей неделе.</span></div>
+      <div class="ex"><span class="pt">Não é óbvio que a equipa <b>consiga</b> ganhar o jogo.</span><span class="ru">Не очевидно, что команда сможет выиграть.</span></div>
+      <div class="ex"><span class="pt">É provável que os meus pais <b>decidam</b> voltar para casa.</span><span class="ru">Вероятно, мои родители решат вернуться домой.</span></div>
+      <div class="ex"><span class="pt">É evidente que Portugal <b>é</b> um país simpático.</span><span class="ru">Очевидно, что Португалия приятная страна.</span></div>
+      <div class="ex"><span class="pt">É claro que você <b>vai</b> aprender o Modo Conjuntivo.</span><span class="ru">Конечно, вы выучите сослагательное наклонение.</span></div>
+      <div class="ex"><span class="pt">Não é evidente que <b>saibamos</b> tudo antes de estudarmos mais.</span><span class="ru">Не очевидно, что мы будем знать всё, пока не позанимаемся больше.</span></div>
+      <div class="ex"><span class="pt">É agradável que <b>apanhem</b> sol enquanto estão em Portugal.</span><span class="ru">Приятно, что они загорают, пока они в Португалии.</span></div>
+    </div>
+  </article>
+
+  <article class="card" id="g-infinitivo">
+    <span class="label">Aula 5</span>
+    <h3>Presente do Conjuntivo ou Infinitivo Pessoal?</h3>
+    <p class="ru" style="margin:0">Одну и ту же мысль можно сказать двумя способами. Если убрать <b>que</b>, вместо Conjuntivo ставим личный инфинитив.</p>
+    <div class="grid2">
+      <div class="rule formula">É possível que tu tenhas…</div>
+      <div class="rule formula">É possível tu teres…</div>
+    </div>
+    <p style="margin:0">Личный инфинитив: к инфинитиву добавляем окончание лица.</p>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>окончание</th><th>separar</th><th>ter</th><th>dar</th></tr></thead>
+      <tbody>
+        <tr><td class="p">eu</td><td>·</td><td>separar</td><td>ter</td><td>dar</td></tr>
+        <tr><td class="p">tu</td><td>-es</td><td>separares</td><td>teres</td><td>dares</td></tr>
+        <tr><td class="p">ele, ela, você</td><td>·</td><td>separar</td><td>ter</td><td>dar</td></tr>
+        <tr><td class="p">nós</td><td>-mos</td><td>separarmos</td><td>termos</td><td>darmos</td></tr>
+        <tr><td class="p">eles, elas, vocês</td><td>-em</td><td>separarem</td><td>terem</td><td>darem</td></tr>
+      </tbody>
+    </table></div>
+    <div class="grid2">
+      <div class="ex"><span class="pt">É essencial que os professores deem bons conselhos.</span><span class="pt">É essencial os professores darem bons conselhos.</span><span class="ru">Важно, чтобы преподаватели давали хорошие советы.</span></div>
+      <div class="ex"><span class="pt">Não é fácil que todos obtenham informações corretas.</span><span class="pt">Não é fácil todos obterem informações corretas.</span><span class="ru">Нелегко всем получить правильную информацию.</span></div>
+    </div>
+    <div class="note">Внутри одной фразы держим одну конструкцию. <b>É preciso visitares Gaia e participares na prova de vinhos</b> или <b>É preciso que visites Gaia e participes…</b>, но не смесь.</div>
+  </article>
+
+  <article class="card" id="g-irregulares">
+    <span class="label">Aula 5</span>
+    <h3>Verbos irregulares no Presente do Conjuntivo</h3>
+    <p class="ru" style="margin:0">Эти семь глаголов не строятся от формы eu, их нужно запомнить.</p>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>ser</th><th>estar</th><th>ir</th><th>dar</th><th>querer</th><th>saber</th><th>haver</th></tr></thead>
+      <tbody id="irrTable"></tbody>
+    </table></div>
+    <div class="note"><b>dêmos</b> пишется с ударением, чтобы отличать от прошедшего <b>demos</b>. <b>deem</b> по новой орфографии без ударения. У <b>haver</b> в значении «иметься» есть только форма <b>haja</b>.</div>
+  </article>
+
+  <article class="card" id="g-impessoal">
+    <span class="label">Aula 4 · Aula 5</span>
+    <h3>Presente do Conjuntivo em frases impessoais</h3>
+    <p class="ru" style="margin:0">Безличные выражения (важно, нужно, возможно…) + que + сослагательное наклонение настоящего времени.</p>
+    <div class="rule formula">É + adjetivo + que + Presente do Conjuntivo</div>
+    <div class="grid2">
+      <div class="ex"><span class="pt">É indispensável que ela fale várias línguas.</span><span class="ru">Обязательно, чтобы она говорила на нескольких языках.</span></div>
+      <div class="ex"><span class="pt">É importante que nós separemos o lixo.</span><span class="ru">Важно, чтобы мы сортировали мусор.</span></div>
+      <div class="ex"><span class="pt">Não é provável que nós consigamos convencer todas as pessoas.</span><span class="ru">Маловероятно, что нам удастся убедить всех.</span></div>
+      <div class="ex"><span class="pt">É bom que vejas o pôr do sol na praia de Matosinhos.</span><span class="ru">Хорошо бы тебе увидеть закат на пляже Матозиньюш.</span></div>
+    </div>
+    <h3 style="font-size:16px">Выражения из уроков</h3>
+    <div class="chips" id="expr"></div>
+    <h3 style="font-size:16px">Как образуется (правильные глаголы)</h3>
+    <p style="margin:0">Берём форму <b>eu</b> в Presente do Indicativo, убираем <b>-o</b> и меняем гласную: <b>-ar → -e</b>, <b>-er / -ir → -a</b>.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>инфинитив</th><th>eu (ind.)</th><th>conj.</th><th>инфинитив</th><th>eu (ind.)</th><th>conj.</th></tr></thead>
+      <tbody>
+        <tr><td>ter</td><td>tenho</td><td>tenha</td><td>ouvir</td><td>ouço</td><td>ouça</td></tr>
+        <tr><td>vir</td><td>venho</td><td>venha</td><td>perder</td><td>perco</td><td>perca</td></tr>
+        <tr><td>ver</td><td>vejo</td><td>veja</td><td>conseguir</td><td>consigo</td><td>consiga</td></tr>
+        <tr><td>fazer</td><td>faço</td><td>faça</td><td>ler</td><td>leio</td><td>leia</td></tr>
+        <tr><td>pedir</td><td>peço</td><td>peça</td><td>dormir</td><td>durmo</td><td>durma</td></tr>
+        <tr><td>seguir</td><td>sigo</td><td>siga</td><td>dizer</td><td>digo</td><td>diga</td></tr>
+        <tr><td>pôr</td><td>ponho</td><td>ponha</td><td>sair</td><td>saio</td><td>saia</td></tr>
+        <tr><td>trazer</td><td>trago</td><td>traga</td><td>poder</td><td>posso</td><td>possa</td></tr>
+        <tr><td>vestir</td><td>visto</td><td>vista</td><td>despir</td><td>dispo</td><td>dispa</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">Орфография: <b>-car → -que</b> (fique), <b>-gar → -gue</b> (pague), <b>-çar → -ce</b> (comece). Ещё выражения из Unidade 1: é provável, é natural, é melhor, é preferível, é conveniente, é aconselhável que, <b>convém que</b>, <b>basta que</b>. Местоимения после que встают перед глаголом: <i>que me venham visitar, que não te sintas</i>.</div>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>separar</th><th>ter (tenho)</th><th>obter (obtenho)</th><th>conseguir (consigo)</th></tr></thead>
+      <tbody>
+        <tr><td class="p">eu</td><td>separe</td><td>tenha</td><td>obtenha</td><td>consiga</td></tr>
+        <tr><td class="p">tu</td><td>separes</td><td>tenhas</td><td>obtenhas</td><td>consigas</td></tr>
+        <tr><td class="p">ele, ela, você</td><td>separe</td><td>tenha</td><td>obtenha</td><td>consiga</td></tr>
+        <tr><td class="p">nós</td><td>separemos</td><td>tenhamos</td><td>obtenhamos</td><td>consigamos</td></tr>
+        <tr><td class="p">eles, elas, vocês</td><td>separem</td><td>tenham</td><td>obtenham</td><td>consigam</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+
+</section>
+
+<!-- LÉXICO -->
+<section data-view="lexico" hidden>
+  <div><h2>Léxico</h2><p class="lead">Слова и выражения по урокам. Режим «Проверить себя» прячет перевод, нажмите на серую полоску, чтобы открыть.</p></div>
+  <div class="toolbar">
+    <input type="search" id="vq" placeholder="Поиск по-португальски или по-русски" aria-label="Поиск">
+    <button id="hideRu" aria-pressed="false">Проверить себя</button>
+    <span class="count" id="vcount"></span>
+  </div>
+  <div id="vocab" style="display:grid;gap:24px"></div>
+</section>
+
+<!-- TEXTOS -->
+<section data-view="textos" hidden>
+  <div><h2>Textos</h2><p class="lead">Тексты и диалоги курса с переводом.</p></div>
+  <article class="card" id="t-limpeza">
+    <span class="label">Aula 7 · TPC para 03.11</span>
+    <h3>Precisa-se Empregada de Limpeza</h3>
+    <p class="ru" style="margin:0">Требуется уборщица. Выделенное жирным это слова, отмеченные в задании.</p>
+    <div class="row"><button id="trBtn2" aria-pressed="true">Перевод включён</button></div>
+    <div id="dialogue2"></div>
+  </article>
+
+  <article class="card" id="t-entregas">
+    <span class="label">Aula 2 · Aula 4</span>
+    <h3>O Homem das Entregas</h3>
+    <div class="row"><button id="trBtn" aria-pressed="true">Перевод включён</button></div>
+    <div id="dialogue"></div>
+  </article>
+
+</section>
+
+<!-- PRÁTICA -->
+<section data-view="pratica" hidden>
+  <div><h2>Prática</h2><p class="lead">Упражнения из уроков в интерактивном виде.</p></div>
+
+  <article class="card" id="p-indconj10">
+    <span class="label">Aula 10</span>
+    <h3>Indicativo ou conjuntivo?</h3>
+    <p class="ru" style="margin:0">На слайде вторые части перепутаны. Подбери к каждому началу правильное продолжение: факт или уверенность → indicativo, желание, сомнение, чувство → conjuntivo.</p>
+    <div id="ic10List"></div>
+    <div class="row"><button class="primary" id="ic10Check">Проверить</button><button id="ic10Reset">Сбросить</button><span class="score" id="ic10Score"></span></div>
+  </article>
+
+  <article class="card" id="p-imagens10">
+    <span class="label">Aula 10</span>
+    <h3>Faça frases de acordo com as imagens e use as formas verbais que acha mais adequadas.</h3>
+    <p class="ru" style="margin:0">Составь фразу к каждой ситуации с одним из глаголов: esperar que, desejar que, recear que, querer que, gostar que, proibir que, pedir que, duvidar que… Потом сравни с вариантами с урока.</p>
+    <div class="hw-example">Ex.: Hoje o meu filho está cansado. <b>Quero que</b> ele descanse.</div>
+    <div id="im10List"></div>
+  </article>
+
+  <article class="card" id="p-verbos3">
+    <span class="label">Aula 9 · Unidade 3</span>
+    <h3>Verbos de desejo, ordem, dúvida, sentimento</h3>
+    <p class="ru" style="margin:0">Учим глаголы, после которых идёт conjuntivo. Три режима: от простого к сложному.</p>
+    <div class="row">
+      <button class="vmode" data-vm="cards" aria-pressed="true">1. Карточки</button>
+      <button class="vmode" data-vm="say" aria-pressed="false">2. Скажи по-португальски</button>
+      <button class="vmode" data-vm="mood" aria-pressed="false">3. Indicativo или conjuntivo?</button>
+    </div>
+
+    <div data-vpanel="cards">
+      <div class="row"><select id="vcDir" aria-label="Направление"><option value="pt">Португальский → русский</option><option value="ru">Русский → португальский</option></select><span class="score" id="vcLeft"></span></div>
+      <button id="vcCard" class="flash" type="button" aria-live="polite"><span id="vcFront"></span><span id="vcBack" hidden></span><span id="vcEx" class="ru" hidden></span><span id="vcHint" class="label">нажми, чтобы перевернуть</span></button>
+      <div class="row"><button id="vcAgain">Ещё повторить</button><button class="primary" id="vcKnow">Знаю</button><button id="vcRestart">Сначала</button></div>
+    </div>
+
+    <div data-vpanel="say" hidden>
+      <p class="ru" style="margin:0">Напиши начало фразы по-португальски: глагол в нужном лице + que. В скобках подсказка, какой глагол нужен.</p>
+      <div class="prompt" id="vsPrompt"></div>
+      <div class="row"><input type="text" id="vsIn" autocomplete="off" autocapitalize="off" spellcheck="false" lang="pt-PT" placeholder="… que" aria-label="Ответ"><button class="primary" id="vsGo">Проверить</button><button id="vsNext">Дальше</button></div>
+      <div id="vsFb"></div>
+      <span class="score" id="vsScore"></span>
+    </div>
+
+    <div data-vpanel="mood" hidden>
+      <p class="ru" style="margin:0">Факт, уверенность, мнение (sei, acho, tenho a certeza, é claro) → indicativo. Желание, сомнение, чувство → conjuntivo.</p>
+      <div id="vmList"></div>
+      <div class="row"><button class="primary" id="vmCheck">Проверить</button><button id="vmReset">Сбросить</button><span class="score" id="vmScore"></span></div>
+    </div>
+  </article>
+
+  <article class="card" id="p-quizlet">
+    <span class="label">Aula 9 · Léxico do diálogo</span>
+    <h3>Completa as frases com as expressões do quizlet.</h3>
+    <p class="ru" style="margin:0">Вставь выражение из диалога «Precisa-se empregada de limpeza». Глагол ставь в нужную форму.</p>
+    <div class="chips" id="qzBank"></div>
+    <ol class="hw-sent" id="qzList"></ol>
+    <div class="row"><button class="primary" id="qzCheck">Проверить</button><button id="qzReveal">Показать ответы</button><button id="qzReset">Сбросить</button><span class="score" id="qzScore"></span></div>
+    <div class="ex"><span class="label">10 · из презентации</span><span class="pt">Não concordo completamente contigo, mas acho que podemos <b>falar</b> sobre este assunto.</span><span class="ru">Я не совсем с тобой согласна, но думаю, что мы можем обсудить эту тему.</span></div>
+    <div class="note"><b>Пометка с урока: множественное число.</b><br><b>a reunião → as reuniões</b> (совещание → совещания): слова на -ão чаще всего дают -ões.<br><b>vir → virem</b>: форма для eles / vocês в Infinitivo Pessoal, <i>É bom eles virem cedo</i> (Хорошо, чтобы они пришли пораньше).</div>
+  </article>
+
+  <article class="card" id="p-frases">
+    <span class="label">Aula 8 · Diálogo «Precisa-se empregada de limpeza»</span>
+    <h3>Frases e expressões do diálogo</h3>
+    <p class="ru" style="margin:0">12 фраз для изучения в трёх режимах. Прогресс в карточках сохраняется в этом браузере.</p>
+    <div class="row" role="tablist">
+      <button class="fmode" data-fm="cards" aria-pressed="true">Карточки</button>
+      <button class="fmode" data-fm="type" aria-pressed="false">Напиши по-португальски</button>
+      <button class="fmode" data-fm="gap" aria-pressed="false">Вставь в диалог</button>
+    </div>
+
+    <div data-fpanel="cards">
+      <div class="row"><select id="fcDir" aria-label="Направление"><option value="ru">Русский → португальский</option><option value="pt">Португальский → русский</option></select><span class="score" id="fcLeft"></span></div>
+      <button id="fcCard" class="flash" type="button" aria-live="polite"><span id="fcFront"></span><span id="fcBack" class="ru" hidden></span><span id="fcHint" class="label">нажми, чтобы перевернуть</span></button>
+      <div class="row"><button id="fcAgain">Ещё повторить</button><button class="primary" id="fcKnow">Знаю</button><button id="fcRestart">Сначала</button></div>
+    </div>
+
+    <div data-fpanel="type" hidden>
+      <div class="prompt" id="ftPrompt"></div>
+      <div class="row"><input type="text" id="ftIn" autocomplete="off" autocapitalize="off" spellcheck="false" lang="pt-PT" placeholder="Por português…" aria-label="Ответ"><button class="primary" id="ftGo">Проверить</button><button id="ftHint">Подсказка</button><button id="ftNext">Дальше</button></div>
+      <div id="ftFb"></div>
+      <span class="score" id="ftScore"></span>
+    </div>
+
+    <div data-fpanel="gap" hidden>
+      <p class="ru" style="margin:0">Реплики из диалога. Выбери фразу, которая стоит на месте пропуска.</p>
+      <div id="fgList"></div>
+      <div class="row"><button class="primary" id="fgCheck">Проверить</button><button id="fgReset">Сбросить</button><span class="score" id="fgScore"></span></div>
+    </div>
+  </article>
+
+  <article class="card" id="p-unir">
+    <span class="label">Aula 8</span>
+    <h3>Una as duas partes de cada frase.</h3>
+    <p class="ru" style="margin:0">Соедините две части фразы. Потом режим со слайда: <i>Tapem as segundas partes das frases e inventem as vossas próprias versões alternativas</i>, то есть закройте вторые части и придумайте свои варианты или вспомните закрытые.</p>
+    <div class="row"><button id="unirMode" aria-pressed="false">Закрыть вторые части</button><button class="primary" id="unirCheck">Проверить</button><button id="unirReset">Сбросить</button><span class="score" id="unirScore"></span></div>
+    <div id="unirList"></div>
+  </article>
+
+  <article class="card" id="p-falar">
+    <span class="label">Aula 7 · Aula 5 · Aula 4 · Aula 2</span>
+    <h3>Para falar</h3>
+    <p class="ru" style="margin:0">Устные задания с уроков.</p>
+    <div id="speakList" style="display:grid;gap:12px"></div>
+  </article>
+
+  <article class="card" id="p-conj">
+    <span class="label">Aula 5</span>
+    <h3>Тренажёр: Presente do Conjuntivo</h3>
+    <div class="drill">
+      <div class="prompt" id="dPrompt"></div>
+      <div class="row"><input type="text" id="dIn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Форма глагола" aria-label="Ответ"><button class="primary" id="dGo">Проверить</button><button id="dNext">Дальше</button></div>
+      <div id="dFb"></div>
+      <span class="score" id="dScore"></span>
+    </div>
+  </article>
+
+  <article class="card" id="p-inf">
+    <span class="label">Aula 5</span>
+    <h3>Volte a escrever as frases retirando o «que»</h3>
+    <p class="ru" style="margin:0">Перепишите фразу без que, с личным инфинитивом.</p>
+    <div id="infList"></div>
+  </article>
+
+  <article class="card" id="p-perguntas">
+    <span class="label">Aula 4</span>
+    <h3>Perguntas sobre o diálogo</h3>
+    <p class="ru" style="margin:0">Ответы взяты прямо из текста диалога.</p>
+    <div id="qList"></div>
+  </article>
+
+  <article class="card" id="p-completa">
+    <span class="label">Aula 2</span>
+    <h3>Completa com a expressão adequada</h3>
+    <div id="fillList"></div>
+    <div class="row"><button class="primary" id="fillCheck">Проверить</button><button id="fillReset">Сбросить</button><span class="score" id="fillScore"></span></div>
+  </article>
+
+  <article class="card" id="p-reage">
+    <span class="label">Aula 2</span>
+    <h3>Reage à situação</h3>
+    <p class="ru" style="margin:0">Придумайте реплику, потом сравните с примером. Примеры составлены по лексике диалога, ваш вариант может быть другим.</p>
+    <div id="reageList"></div>
+  </article>
+
+</section>
+
+<!-- TPC -->
+<section data-view="tpc" id="tpc" hidden>
+  <div><h2>Trabalho de casa</h2><p class="lead">Домашние задания по урокам, новые сверху. Ответы сохраняются в этом браузере.</p></div>
+  <div class="chips"><a class="chip" href="#hw-1711">К 17.11.2026</a><a class="chip" href="#hw-1211">К 12.11.2026</a><a class="chip" href="#hw-aula8">Aula 8 · extra</a><a class="chip" href="#hw-0311">К 03.11.2026</a><a class="chip" href="#hw-2910">К 29.10.2026</a><a class="chip" href="#hw-2710">К 27.10.2026</a><a class="chip" href="#hw-2210">К 22.10.2026</a></div>
+
+<div class="hw-block" id="hw-1711">
+  <div class="hw-due"><span class="label">Задано на Aula 10 · 12.11</span><h3>К уроку 17.11.2026</h3><p class="ru" style="margin:0">Выучить диалог «Precisa-se Empregada de Limpeza». Ниже тренажёр: от чтения к пересказу по памяти. <a href="#t-limpeza" style="color:var(--cobalt)">Полный текст с переводом</a></p></div>
+  <article class="card" id="hw-decor">
+    <span class="label">Aprender o diálogo</span>
+    <h3>Precisa-se Empregada de Limpeza</h3>
+    <div class="row">
+      <button class="dmode" data-dm="cloze" aria-pressed="true">1. Пропуски</button>
+      <button class="dmode" data-dm="letters" aria-pressed="false">2. Первые буквы</button>
+      <button class="dmode" data-dm="order" aria-pressed="false">3. Порядок реплик</button>
+      <button class="dmode" data-dm="role" aria-pressed="false">4. Роль</button>
+    </div>
+
+    <div data-dpanel="cloze">
+      <p class="ru" style="margin:0">Часть слов спрятана. Проговори реплику вслух, потом нажми на серое слово, чтобы проверить себя. Увеличивай уровень, пока не сможешь рассказать весь диалог.</p>
+      <div class="row"><label class="label" for="dzLevel">Спрятать</label><select id="dzLevel"><option value="0.25">25% слов</option><option value="0.5">50% слов</option><option value="0.75">75% слов</option><option value="1">все слова</option></select><button id="dzNew">Другие слова</button><button id="dzShow">Открыть всё</button><button id="dzTr" aria-pressed="false">Показать перевод</button></div>
+      <div id="dzText"></div>
+    </div>
+
+    <div data-dpanel="letters" hidden>
+      <p class="ru" style="margin:0">От каждого слова осталась только первая буква. Восстанови реплику вслух, нажми на строку, чтобы увидеть полный текст. Русский перевод помогает вспомнить смысл.</p>
+      <div id="dlText"></div>
+    </div>
+
+    <div data-dpanel="order" hidden>
+      <p class="ru" style="margin:0">Реплики одной части диалога перемешаны. Нажимай на них по порядку.</p>
+      <div class="row"><select id="doPart" aria-label="Часть диалога"></select><button id="doNew">Перемешать</button><span class="score" id="doScore"></span></div>
+      <div id="doDone" style="display:grid;gap:6px"></div>
+      <div id="doPool" style="display:grid;gap:6px"></div>
+    </div>
+
+    <div data-dpanel="role" hidden>
+      <p class="ru" style="margin:0">Выбери роль. Реплики партнёра видны, свои пишешь по памяти (можно сначала сказать вслух). Проверка покажет, каких слов не хватило.</p>
+      <div class="row"><select id="drRole" aria-label="Роль"><option value="B">Я Bernardo</option><option value="J">Я Joana</option></select><button id="drRestart">Сначала</button><span class="score" id="drScore"></span></div>
+      <div id="drChat" style="display:grid;gap:8px"></div>
+      <div id="drTurn" style="display:grid;gap:8px">
+        <span class="ru" id="drHint"></span>
+        <textarea id="drIn" rows="2" lang="pt-PT" aria-label="Моя реплика" style="font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px;width:100%;resize:vertical"></textarea>
+        <div class="row"><button class="primary" id="drGo">Проверить</button><button id="drPeek">Подсказка</button><button id="drSkip">Показать и дальше</button></div>
+        <div id="drFb"></div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div class="hw-block" id="hw-1211">
+  <div class="hw-due"><span class="label">Задано на Aula 9 · 10.11</span><h3>К уроку 12.11.2026</h3><p class="ru" style="margin:0">Unidade 3: разобрать тему и сделать упражнения 3.1, 3.2, 3.3. <a href="#g-desejo" style="color:var(--cobalt)">Теория: verbos de desejo, ordem, dúvida, sentimento</a> · <a href="#p-verbos3" style="color:var(--cobalt)">Тренажёр: выучить эти глаголы</a></p></div>
+  <div class="hw-bar">
+    <div class="hw-scores"><a class="hw-chip" id="chip-31" href="#hw31">3.1 <b>0</b>/15</a><a class="hw-chip" id="chip-32" href="#hw32">3.2 <b>0</b>/17</a><a class="hw-chip" id="chip-33" href="#hw33">3.3 <b>0</b>/7</a></div>
+    <button class="primary" id="u3CheckAll">Проверить всё</button><button id="u3Reset">Очистить</button>
+  </div>
+  <article class="card" id="hw31">
+    <span class="label">3.1</span>
+    <h3>Complete com os verbos no presente do conjuntivo.</h3>
+    <p class="ru" style="margin:0">Допиши фразу: глагол в conjuntivo плюс остаток из скобок.</p>
+    <div class="hw-example"><span class="hw-orig">1. (correr bem) Espero que a viagem</span><span class="hw-start">corra bem</span>.</div>
+    <ol class="hw-sent" id="s31"></ol>
+    <div class="row"><button data-u3check="31">Проверить 3.1</button><button data-u3reveal="31">Показать ответы</button></div>
+  </article>
+  <article class="card" id="hw32">
+    <span class="label">3.2</span>
+    <h3>Ponha os verbos no presente do conjuntivo.</h3>
+    <p class="ru" style="margin:0">Вставь глагол из скобок. Возвратные пиши с местоимением: <i>se divirtam</i>.</p>
+    <ol class="hw-sent" id="s32"></ol>
+    <div class="row"><button data-u3check="32">Проверить 3.2</button><button data-u3reveal="32">Показать ответы</button></div>
+  </article>
+  <article class="card" id="hw33">
+    <span class="label">3.3</span>
+    <h3>Dê respostas curtas com os verbos no presente do conjuntivo.</h3>
+    <p class="ru" style="margin:0">Короткий ответ: глагол из вопроса (выделен) в conjuntivo. Следи за лицом: <i>consigo</i> в вопросе становится <i>consigas</i> в ответе.</p>
+    <div class="hw-example"><span class="hw-orig">1. Acham que já é tarde?</span>Esperemos que não <span class="hw-start">seja</span>.</div>
+    <ol class="hw-sent" id="s33"></ol>
+    <div class="row"><button data-u3check="33">Проверить 3.3</button><button data-u3reveal="33">Показать ответы</button></div>
+  </article>
+</div>
+
+<div class="hw-block" id="hw-aula8">
+  <div class="hw-due"><span class="label">Задано на Aula 8 · 03.11</span><h3>TPC extra: o tempo e o Futuro Imperfeito</h3><p class="ru" style="margin:0">Пост из Instagram о депрессии «Bruna»: текст, прогноз на неделю и карта предупреждений IPMA. <a href="#g-futuro" style="color:var(--cobalt)">Шпаргалка: Futuro Imperfeito и погода</a></p></div>
+  <div class="hw-bar">
+    <div class="hw-scores"><a class="hw-chip" id="chip-w1" href="#hw-w1">Ex. 1 <b>0</b>/5</a><a class="hw-chip" id="chip-w2" href="#hw-w2">Ex. 2 <b>0</b>/6</a></div>
+    <button class="primary" id="wCheckAll">Проверить всё</button>
+  </div>
+
+  <article class="card" id="hw-wtext">
+    <span class="label">Texto</span>
+    <h3>O tempo vai piorar já amanhã em todo o território de Portugal</h3>
+    <div class="row"><button id="wTr" aria-pressed="true">Перевод включён</button><a class="chip" href="https://www.instagram.com/p/DfX-DTQETyD/?img_index=2" target="_blank" rel="noopener">Пост в Instagram</a></div>
+    <div id="wText"></div>
+  </article>
+
+  <article class="card" id="hw-w1">
+    <span class="label">Exercício 1</span>
+    <h3>Encontre no texto os verbos no Futuro Imperfeito e escreva o infinitivo.</h3>
+    <p class="ru" style="margin:0">Найдите в тексте глаголы в Futuro Imperfeito и напишите инфинитив.</p>
+    <ol class="hw-sent" id="w1"></ol>
+  </article>
+
+  <article class="card" id="hw-w2">
+    <span class="label">Exercício 2</span>
+    <h3>Transforme: ir + infinitivo ↔ Futuro Imperfeito.</h3>
+    <p class="ru" style="margin:0">Перепишите выделенную часть другой формой будущего. Смысл не меняется: в речи чаще говорят <i>vai piorar</i>, в прогнозах и новостях пишут <i>piorará</i>.</p>
+    <ol class="hw-sent" id="w2"></ol>
+  </article>
+
+  <article class="card" id="hw-w3">
+    <span class="label">Exercício 3</span>
+    <h3>Responda às perguntas sobre o texto.</h3>
+    <p class="ru" style="margin:0">Ответы взяты прямо из текста.</p>
+    <div id="w3"></div>
+  </article>
+
+  <article class="card" id="hw-w4">
+    <span class="label">Exercício 4 · Previsão horária</span>
+    <h3>Escreva a previsão do tempo para a próxima semana.</h3>
+    <p class="ru" style="margin:0">Опишите прогноз со скриншота в Futuro Imperfeito: дождь, вероятность, минимум и максимум. Данные со слайда:</p>
+    <div class="tbl"><table>
+      <thead><tr><th>dia</th><th>céu</th><th>prob. de chuva</th><th>mín.</th><th>máx.</th></tr></thead>
+      <tbody id="wTable"></tbody>
+    </table></div>
+    <div class="hw-example"><span class="hw-orig">Exemplo</span>Na sexta-feira, choverá: a probabilidade de chuva será de 95%. A temperatura mínima será de 12 graus e a máxima de 17.<br>No sábado, a probabilidade de chuva descerá para 65% e fará mais calor: as temperaturas ficarão entre 17 e 21 graus.</div>
+    <textarea id="w4text" rows="8" lang="pt-PT" aria-label="Моя previsão" placeholder="No domingo, …" style="font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;width:100%;resize:vertical"></textarea>
+  </article>
+
+  <article class="card" id="hw-w5">
+    <span class="label">Exercício 5 · Aviso do IPMA</span>
+    <h3>Explique o aviso amarelo do mapa.</h3>
+    <p class="ru" style="margin:0">Расскажите своими словами, что показывает карта: какие округа, какой уровень, когда и сколько дождя. Данные со слайда: aviso amarelo (nível amarelo) para Viana do Castelo, Braga, Porto, Aveiro, Coimbra, Leiria, Lisboa e Setúbal; das 15 h de 06/11 até às 00 h de 07/11; 10 a 20 mm numa hora, 30 a 40 mm em seis horas.</p>
+    <textarea id="w5text" rows="5" lang="pt-PT" aria-label="Aviso" placeholder="O IPMA emitiu…" style="font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;width:100%;resize:vertical"></textarea>
+    <details><summary>Вариант для сравнения</summary><p style="margin:6px 0 0"><span class="pt">O IPMA emitiu aviso amarelo para oito distritos do litoral: Viana do Castelo, Braga, Porto, Aveiro, Coimbra, Leiria, Lisboa e Setúbal. O aviso estará em vigor das 15 horas de 6 de novembro até à meia-noite de 7 de novembro. Poderão cair entre 10 e 20 milímetros de chuva numa hora e entre 30 e 40 milímetros em seis horas.</span><br><span class="ru">IPMA объявил жёлтый уровень опасности для восьми прибрежных округов. Предупреждение будет действовать с 15:00 6 ноября до полуночи 7 ноября. За час может выпасть от 10 до 20 мм осадков, за шесть часов от 30 до 40 мм.</span></p></details>
+    <p class="ru" style="margin:0;font-size:14px">Тексты из упражнений 4 и 5 сохраняются в этом браузере. Пришлите их в чат, проверю.</p>
+  </article>
+</div>
+
+<div class="hw-block" id="hw-0311">
+  <div class="hw-due"><span class="label">Задано на Aula 7 · 29.10</span><h3>К уроку 03.11.2026</h3><p class="ru" style="margin:0">Диалог «Precisa-se Empregada de Limpeza» и перевод фраз с последней страницы презентации.</p></div>
+
+  <article class="card">
+    <span class="label">Parte 1 · Diálogo</span>
+    <h3>Precisa-se Empregada de Limpeza</h3>
+    <p class="ru" style="margin:0">Полный текст с переводом построчно лежит во вкладке «Тексты».</p>
+    <div class="row"><a class="chip" href="#t-limpeza">Открыть диалог</a></div>
+  </article>
+
+  <article class="card" id="p-traducao">
+    <span class="label">Parte 2 · Aula 7, última página</span>
+    <h3>Tradução</h3>
+    <p class="ru" style="margin:0">Переведите на португальский. В фразах использована лексика урока 5 (<a href="#lexico" style="color:var(--cobalt)">Léxico, Aula 5</a>), постарайся взять именно эти слова. Варианты для сравнения написаны мной, это не ключ учителя: твой перевод может отличаться и быть верным. Пришлите свои фразы в чат, проверю.</p>
+    <div id="trList"></div>
+  </article>
+
+</div>
+
+<div class="hw-block" id="hw-2910">
+  <div class="hw-due"><span class="label">Задано на Aula 6 · 27.10</span><h3>К уроку 29.10.2026</h3><p class="ru" style="margin:0">Упражнения со страниц 5 и 6 презентации Aula 6.</p></div>
+  <div class="hw-bar">
+    <div class="hw-scores">
+      <a class="hw-chip" id="chip-61" href="#hw61">Ex. 1 <b>0</b>/12</a>
+      <a class="hw-chip" id="chip-62" href="#hw62">Ex. 2 <b>0</b>/7</a>
+    </div>
+    <button class="primary" id="hwCheckAll6">Проверить всё</button>
+    <button id="hwReset6">Очистить</button>
+  </div>
+  <p style="margin:0"><a href="#g-conjuncoes" style="color:var(--cobalt)">Шпаргалка: союзы</a> · <a href="#g-fatuais" style="color:var(--cobalt)">факт или неуверенность</a></p>
+
+  <article class="card" id="hw61">
+    <span class="label">Página 5 · Exercício 1</span>
+    <h3>Una as frases utilizando a conjunção adequada (Gramática ativa, unidade 2) e conjugando os verbos entre parênteses.</h3>
+    <p class="ru" style="margin:0">Соедини две части подходящим союзом из Unidade 2 и поставь глаголы в нужную форму. Вариантов может быть несколько: проверка смотрит на форму conjuntivo. Ключ разобрали на Aula 7, он открывается рядом с каждой фразой.</p>
+    <ol class="hw-sent" id="s61"></ol>
+    <div class="row"><button data-hw6check="61">Проверить Ex. 1</button><button data-hw6reveal="61">Показать ключ с урока</button></div>
+  </article>
+
+  <article class="card" id="hw62">
+    <span class="label">Página 6 · Exercício 2</span>
+    <h3>Faça a correspondência entre as colunas e escreva as frases.</h3>
+    <p class="ru" style="margin:0">Подбери вторую часть к каждому началу. Каждая вторая часть используется один раз. Подсказка: факт → indicativo, сомнение → conjuntivo, без que → инфинитив.</p>
+    <ol class="hw-sent" id="s62"></ol>
+    <div class="row"><button data-hw6check="62">Проверить Ex. 2</button><button data-hw6reveal="62">Показать ответы</button></div>
+  </article>
+</div>
+
+<div class="hw-block" id="hw-2710">
+  <div class="hw-due"><span class="label">Задано на Aula 5 · 22.10</span><h3>К уроку 27.10.2026</h3><p class="ru" style="margin:0">Упражнение со страницы 7 презентации Aula 5 и Unidade 2, Gramática ativa.</p></div>
+
+  <article class="card" id="hw-p7">
+    <span class="label">Parte 1 · Aula 5, página 7</span>
+    <h3>Visita a Portugal</h3>
+    <p style="margin:0"><span class="pt">Dê alguns conselhos úteis a pessoas que queiram visitar Portugal. Use estruturas impessoais com o Presente do Conjuntivo e com o Infinitivo Pessoal. Faça pelo menos 6-7 conselhos.</span><br><span class="ru">Дайте полезные советы тем, кто хочет посетить Португалию. Используйте безличные конструкции с Presente do Conjuntivo и с Infinitivo Pessoal. Минимум 6-7 советов.</span></p>
+    <div class="grid2">
+      <div class="ex"><span class="label">С que + conjuntivo</span><span class="pt" style="font-weight:400">É bom que vejas o pôr do sol na praia de Matosinhos.</span><span class="pt" style="font-weight:400">Acho importante que experimentes a comida local nos restaurantes do Porto.</span></div>
+      <div class="ex"><span class="label">Без que + infinitivo pessoal</span><span class="pt" style="font-weight:400">É preciso visitares Vila Nova de Gaia e participares na degustação de vinhos.</span><span class="ru">На слайде «e participes»: внутри одной фразы держим одну конструкцию.</span></div>
+    </div>
+    <div class="chips"><span class="chip">É preciso (que)</span><span class="chip">É bom (que)</span><span class="chip">É importante (que)</span><span class="chip">Não é preciso (que)</span><span class="chip">É essencial (que)</span><span class="chip">Acho importante (que)</span><span class="chip">Parece-me necessário (que)</span><span class="chip">Considero útil (que)</span></div>
+    <label for="p7text" class="label">Мои советы (по одному на строку)</label>
+    <textarea id="p7text" rows="9" spellcheck="true" lang="pt-PT" placeholder="É importante que…&#10;Não é preciso…" style="font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;width:100%;resize:vertical"></textarea>
+    <div class="row"><span class="score" id="p7count"></span><button id="p7copy">Скопировать</button></div>
+    <p class="ru" style="margin:0;font-size:14px">Текст сохраняется в этом браузере. Когда допишешь, скопируй и пришли в чат, проверю каждую фразу.</p>
+  </article>
+
+  <div><span class="label">Parte 2 · Unidade 2, Gramática ativa</span><h3 style="margin-top:6px">Presente do conjuntivo com conjunções</h3><p class="lead" style="margin-top:4px">Пиши ответ и жми Enter: зелёный верно, жёлтый почти (проверь ударение), красный ошибка с объяснением.</p></div>
+  <div class="hw-bar">
+    <div class="hw-scores">
+      <a class="hw-chip" id="chip-21" href="#hw21">2.1 <b>0</b>/24</a>
+      <a class="hw-chip" id="chip-22" href="#hw22">2.2 <b>0</b>/20</a>
+      <a class="hw-chip" id="chip-23" href="#hw23">2.3 <b>0</b>/11</a>
+    </div>
+    <button class="primary" id="hwCheckAll">Проверить всё</button>
+    <button id="hwReset">Очистить</button>
+  </div>
+  <p style="margin:0"><a href="#g-conjuncoes" style="color:var(--cobalt)">Шпаргалка: союзы и неправильные глаголы</a></p>
+
+  <article class="card" id="hw21">
+    <span class="label">2.1</span>
+    <h3>Complete com os verbos no presente do conjuntivo.</h3>
+    <p class="ru" style="margin:0">Поставь глагол в presente do conjuntivo для указанного лица.</p>
+    <div class="hw-grid" id="g21"></div>
+    <div class="row"><button data-hwcheck="21">Проверить 2.1</button><button data-hwreveal="21">Показать ответы</button></div>
+  </article>
+
+  <article class="card" id="hw22">
+    <span class="label">2.2</span>
+    <h3>Complete as frases com o presente do conjuntivo.</h3>
+    <p class="ru" style="margin:0">Вставь глагол из скобок. Возвратные пиши вместе с местоимением: <i>te esqueças</i>.</p>
+    <ol class="hw-sent" id="s22"></ol>
+    <div class="row"><button data-hwcheck="22">Проверить 2.2</button><button data-hwreveal="22">Показать ответы</button></div>
+  </article>
+
+  <article class="card" id="hw23">
+    <span class="label">2.3</span>
+    <h3>Altere as frases sem lhes modificar o sentido.</h3>
+    <p class="ru" style="margin:0">Перепиши фразу, начиная с данных слов. Если глагол верный, а формулировка другая, увидишь эталон из учебника.</p>
+    <div class="hw-example"><span class="hw-orig">1. Ela é uma excelente funcionária, mas chega sempre atrasada.</span><span class="hw-start">Embora</span> ela seja uma excelente funcionária, chega sempre atrasada.</div>
+    <ol class="hw-sent" id="s23"></ol>
+    <div class="row"><button data-hwcheck="23">Проверить 2.3</button><button data-hwreveal="23">Показать ответы</button></div>
+  </article>
+</div>
+
+<div class="hw-block" id="hw-2210">
+  <div class="hw-due"><span class="label">Задано на Aula 4 · 20.10</span><h3>К уроку 22.10.2026</h3><p class="ru" style="margin:0">Unidade 1, Gramática ativa: Presente do conjuntivo com expressões impessoais.</p></div>
+  <div class="hw-bar">
+    <div class="hw-scores">
+      <a class="hw-chip" id="chip-11" href="#hw11">1.1 <b>0</b>/24</a>
+      <a class="hw-chip" id="chip-12" href="#hw12">1.2 <b>0</b>/14</a>
+      <a class="hw-chip" id="chip-13" href="#hw13">1.3 <b>0</b>/13</a>
+    </div>
+    <button class="primary" id="hwCheckAll1">Проверить всё</button>
+    <button id="hwReset1">Очистить</button>
+  </div>
+  <p style="margin:0"><a href="#g-impessoal" style="color:var(--cobalt)">Шпаргалка: как образуется и безличные выражения</a></p>
+
+  <article class="card" id="hw11">
+    <span class="label">1.1</span>
+    <h3>Complete com os seguintes verbos no presente do conjuntivo.</h3>
+    <p class="ru" style="margin:0">Поставь глагол в presente do conjuntivo для указанного лица.</p>
+    <div class="hw-grid" id="g11"></div>
+    <div class="row"><button data-hwcheck1="11">Проверить 1.1</button><button data-hwreveal1="11">Показать ответы</button></div>
+  </article>
+
+  <article class="card" id="hw12">
+    <span class="label">1.2</span>
+    <h3>Complete as frases com os verbos no presente do conjuntivo.</h3>
+    <p class="ru" style="margin:0">Допиши фразу: глагол в conjuntivo плюс остаток из скобок.</p>
+    <div class="hw-example"><span class="hw-orig">1. (ficar cansado) É natural que, depois de um dia de trabalho, ela</span><span class="hw-start">fique cansada</span>.</div>
+    <ol class="hw-sent" id="s12"></ol>
+    <div class="row"><button data-hwcheck1="12">Проверить 1.2</button><button data-hwreveal1="12">Показать ответы</button></div>
+  </article>
+
+  <article class="card" id="hw13">
+    <span class="label">1.3</span>
+    <h3>Transforme as frases usando expressões impessoais com o presente do conjuntivo.</h3>
+    <p class="ru" style="margin:0">Наречие или «нужно» превращается в безличное выражение, глагол уходит в conjuntivo. Если глагол верный, а фраза отличается от учебника, увидишь эталон.</p>
+    <div class="hw-example"><span class="hw-orig">1. Provavelmente eles ganharão o jogo.</span>É provável que eles ganhem o jogo.</div>
+    <ol class="hw-sent" id="s13"></ol>
+    <div class="row"><button data-hwcheck1="13">Проверить 1.3</button><button data-hwreveal1="13">Показать ответы</button></div>
+  </article>
+</div>
+</section>
+
+<footer>Новая презентация после урока: загрузите её в этот проект, и страница обновится.</footer>
+</div></main>
+
+<script>
+/* ===== DATA: add new lessons here ===== */
+const LESSONS=[
+ {n:1,missing:true},
+ {n:2,date:"13.10.2026",topics:[["O homem das entregas: léxico do diálogo","Курьер: лексика диалога","#lexico"]],
+  tasks:[["Completa com a expressão adequada","#p-completa"],["Reage à situação","#p-reage"],["Cria um novo diálogo","#p-falar"]]},
+ {n:3,missing:true},
+ {n:4,date:"20.10.2026",topics:[["O homem das entregas","Курьер: диалог","#t-entregas"],["Presente do Conjuntivo: frases impessoais","Сослагательное в безличных фразах","#g-impessoal"]],
+  tasks:[["TPC para 22.10: Unidade 1, Gramática ativa","#hw-2210"],["Perguntas sobre o diálogo","#p-perguntas"],["A secretária ideal","#p-falar"]]},
+ {n:5,date:"22.10.2026",topics:[["Verbos irregulares no Presente do Conjuntivo","Неправильные глаголы","#g-irregulares"],["Presente do Conjuntivo vs Infinitivo Pessoal","Сослагательное или личный инфинитив","#g-infinitivo"],["Requisitos para o meu cargo","Требования к моей должности","#p-falar"]],
+  tasks:[["TPC para 27.10: p. 7 + Gramática ativa","#hw-2710"],["Тренажёр Conjuntivo","#p-conj"],["Frases sem «que»","#p-inf"],["O homem ideal","#p-falar"],["Visita a Portugal","#p-falar"]]},
+ {n:6,date:"27.10.2026",topics:[["PC nas construções impessoais fatuais positivas e negativas","Безличные конструкции: факт или неуверенность","#g-fatuais"],["Visita a Portugal","Советы туристам","#hw-p7"],["Léxico da aula","Лексика урока","#lexico"]],
+  tasks:[["TPC: exercícios p. 5 e 6","#hw-2910"]]},
+ {n:7,date:"29.10.2026",topics:[["PC em construções com conjunções e locuções, nas construções impessoais","Сослагательное после союзов и в безличных конструкциях","#g-conjuncoes"],["Acho que / Não acho que","Думаю, что / Не думаю, что","#g-fatuais"],["Correção do Exercício 1","Разбор упражнения 1 из домашки","#hw61"]],
+  tasks:[["TPC para 03.11: diálogo + tradução","#hw-0311"],["A minha casa ideal","#p-falar"]]},
+ {n:8,date:"03.11.2026",topics:[["PC em construções com conjunções e locuções, nas construções impessoais","Сослагательное после союзов и в безличных конструкциях","#p-unir"],["Diálogo «Precisa-se empregada de limpeza»","Диалог «Требуется уборщица»","#t-limpeza"],["Frases e expressões do diálogo","Фразы и выражения для изучения","#lexico"]],
+  tasks:[["Frases do diálogo: карточки и упражнения","#p-frases"],["Una as duas partes de cada frase","#p-unir"],["TPC extra: o tempo e o Futuro Imperfeito","#hw-aula8"]]},
+ {n:9,date:"10.11.2026",topics:[["Presente do Conjuntivo com verbos/expressões de desejo, ordem, dúvida, etc.","Сослагательное после глаголов желания, приказа, сомнения","#g-desejo"],["Trabalho com o léxico do diálogo «Precisa-se empregada de limpeza»","Работа с лексикой диалога","#p-quizlet"]],
+  tasks:[["TPC para 12.11: Unidade 3, exercícios 3.1-3.3","#hw-1211"],["Completa as frases com as expressões do quizlet","#p-quizlet"],["Тренажёр: verbos de desejo, dúvida…","#p-verbos3"]]},
+ {n:10,date:"12.11.2026",topics:[["Presente do Conjuntivo com verbos/expressões de desejo, ordem, dúvida, etc. (prática)","Практика: сослагательное после глаголов желания, приказа, сомнения","#g-desejo"],["O conjuntivo na vida real: frases, felicitações, memes","Conjuntivo в живых фразах и поздравлениях","#g-vida"]],
+  tasks:[["TPC para 17.11: aprender o diálogo","#hw-1711"],["Indicativo ou conjuntivo?","#p-indconj10"],["Faça frases de acordo com as imagens","#p-imagens10"]]}
+];
+
+const EXPR=["É indispensável que","É importante que","Não é necessário que","É possível que","É essencial que","Não é fácil que","Não é provável que","É preciso que","É bom que","Acho importante que","Parece-me necessário que","Considero útil que"];
+
+const IRR={pessoas:["eu","tu","ele, ela, você","nós","eles, elas, vocês"],
+ verbos:{ser:["seja","sejas","seja","sejamos","sejam"],estar:["esteja","estejas","esteja","estejamos","estejam"],ir:["vá","vás","vá","vamos","vão"],dar:["dê","dês","dê","dêmos","deem"],querer:["queira","queiras","queira","queiramos","queiram"],saber:["saiba","saibas","saiba","saibamos","saibam"],haver:["","","haja","",""]}};
+const DRILL_EXTRA={ter:["tenha","tenhas","tenha","tenhamos","tenham"],obter:["obtenha","obtenhas","obtenha","obtenhamos","obtenham"],conseguir:["consiga","consigas","consiga","consigamos","consigam"],separar:["separe","separes","separe","separemos","separem"]};
+
+const VOCAB=[
+ {g:"Aula 2 · O homem das entregas",items:[
+  ["não consigo encontrar","не могу найти"],["estar a caminho","быть в пути, уже ехать"],["já estou a ver","уже вижу"],["dar com","найти, отыскать"],["tocar à campainha","позвонить в дверной звонок"],["não ouço nada","ничего не слышу"],["já vou abrir","сейчас открою"],["pode deixar","можете оставить"],["algures","где-нибудь"],["ao lado de","рядом с"],["desculpe ligar","извините, что звоню"],["quer que deixe a encomenda algures?","хотите, чтобы я оставил посылку где-нибудь?"],["é como preferir","как вам удобнее"],["assinar","подписать, расписаться"],["um resto de bom dia","хорошего вам оставшегося дня"],["para si também","и вам тоже"],["a encomenda","посылка, заказ"],["a entrega","доставка"],["o estafeta","курьер"],["o ponto de referência","ориентир"],["estar à porta","стоять у двери"],["estar no duche","быть в душе"]]},
+ {g:"Aula 4 · Do diálogo",items:[
+  ["o condomínio","жилой комплекс"],["o terceiro esquerdo","третий этаж, квартира слева"],["a assinatura","подпись"],["a rubrica","сокращённая подпись, роспись"],["o bilhete de identidade","удостоверение личности"],["aí tem","вот, пожалуйста"],["que coincidência","какое совпадение"],["a campainha deve ter-se estragado","звонок, наверное, сломался"],["um objeto perigoso","опасный предмет"],["o tapete de entrada","коврик у двери"],["Chiça!","Блин!"],["Caramba!","Ничего себе!"],["Como assim?!","В смысле?!"]]},
+ {g:"Aula 4 · A secretária ideal",items:[
+  ["pontual","пунктуальная"],["falar várias línguas","говорить на нескольких языках"],["disponível para viajar","готова к командировкам"],["saber usar computador","уметь пользоваться компьютером"],["bom aspeto","приятная внешность"],["ter carta de condução","иметь водительские права"],["poder trabalhar até tarde","может работать допоздна"],["organizada","организованная"],["indispensável","обязательный, необходимый"]]},
+ {g:"Aula 5 · Léxico da aula",items:[
+  ["o desenvolvimento","развитие"],["a formação técnica","техническое образование, профессиональная подготовка"],["a paixão pela moda","страсть к моде"],["a paixão por","страсть к чему-либо"],["expressar as ideias oralmente e por escrito","выражать мысли устно и письменно"],["capaz de programar","умеющий программировать"],["gerir as publicações","управлять публикациями"],["as ferramentas digitais","цифровые инструменты"],["a gestão de projetos","управление проектами"],["o equilíbrio","равновесие, баланс"],["leal","верный, преданный"],["a visão ampla","широкий кругозор"],["que ele ganhe mais do que eu","чтобы он зарабатывал больше, чем я"],["que ele seja alto","чтобы он был высоким"],["sustentar a família","обеспечивать семью"]]},
+ {g:"Aula 6 · Léxico da aula",items:[
+  ["o parceiro de negócios","деловой партнёр"],["o sítio de interesse favorito","любимая достопримечательность"],["o jacarandá","жакаранда"],["as larvas","личинки"],["comparámos","мы сравнивали"],["o Tawny porto","вид портвейна из красных сортов винограда"],["o barril, os barris","бочка, бочки"],["emotivos","эмоциональные"]]},
+ {g:"Aula 8 · Frases e expressões do diálogo",items:[
+  ["Estás safo!","Можешь расслабиться! Ты в порядке!"],["Assim que consigas","Как только сможешь"],["Importas-te?","Ты не против?"],["Desculpa ter vindo até aqui","Извини, что пришёл сюда"],["Posso perguntar-lhe se ela conhece alguém que tenha","Я могу спросить её, знает ли она кого-нибудь, у кого есть"],["Mas tem de ser já?","Но это нужно прямо сейчас?"],["Ele tem muita urgência","Ему очень срочно"],["Depois digo-te qualquer coisa","Я дам тебе знать"],["Ele é muito exigente","Он очень требовательный"],["O outro assistente dele foi despedido","Другой его помощник был уволен"],["Tu estás a aguentar-te bem","Ты держишься молодцом"],["Força e tem paciência!","Наберись терпения и вперёд!"]]},
+ {g:"Aula 8 · TPC extra: o tempo",items:[
+  ["piorar","ухудшаться"],["o território","территория"],["a depressão","депрессия, область низкого давления (циклон)"],["afetar","затрагивать, влиять"],["Portugal continental","континентальная Португалия"],["segundo as previsões","согласно прогнозам"],["por vezes","временами"],["acompanhada de trovoada","с грозой"],["prolongar-se","продлиться, затянуться"],["pelo menos","как минимум"],["a norte dos Açores","к северу от Азорских островов"],["a influência","влияние"],["estender-se a","распространиться на"],["é esperado","ожидается"],["o aumento da intensidade","усиление"],["o vento de sul","южный ветер"],["o litoral oeste","западное побережье"],["as zonas montanhosas","горные районы"],["as rajadas","порывы ветра"],["atingir","достигать"],["a previsão horária","почасовой прогноз"],["a probabilidade de chuva","вероятность дождя"],["o aviso amarelo","жёлтый уровень опасности"],["a nomeação","присвоение имени (циклону)"]]},
+ {g:"Aula 7",items:[["por dinheiro","ради денег"],["achar que","думать, считать, что"],["ter razão","быть правым"]]}
+];
+
+const DIALOGUE=[
+ ["j","Olá, bom dia! Desculpe estar a ligar tão cedo, mas tenho aqui uma entrega para si e não consigo encontrar o apartamento.","Здравствуйте, доброе утро! Извините, что звоню так рано, но у меня для вас доставка, и я не могу найти квартиру."],
+ ["c","Não há problema! Onde é que o senhor está?","Ничего страшного! Где вы сейчас?"],
+ ["j","Estou na Rua da Benfeitora. É o número trinta e quatro, correto?","Я на улице Бенфейтора. Дом тридцать четыре, верно?"],
+ ["c","Sim, exatamente. A entrada do condomínio é mesmo ao lado de uma estátua de um carapau. O apartamento é o terceiro esquerdo.","Да, именно. Вход в жилой комплекс прямо рядом со статуей ставриды. Квартира на третьем этаже, слева."],
+ ["j","Estou a caminho… Ah, já estou a ver o carapau. Vou tocar à campainha.","Иду… А, уже вижу ставриду. Сейчас позвоню."],
+ ["c","Obrigada, até já.","Спасибо, до встречи."],
+ ["j","Foi difícil dar com este lugar! Aqui tem a sua encomenda. Preciso que assine aqui e aqui.","Непросто было найти это место! Вот ваша посылка. Нужно, чтобы вы расписались здесь и здесь."],
+ ["c","A assinatura é conforme o bilhete de identidade ou pode ser rubrica?","Подпись как в удостоверении личности или можно сокращённую?"],
+ ["j","É como preferir.","Как вам удобнее."],
+ ["c","Aí tem.","Вот, пожалуйста."],
+ ["j","Obrigado e bom dia!","Спасибо, хорошего дня!"],
+ ["c","Para si também.","И вам тоже."],
+ ["s","Segunda entrega","Вторая доставка"],
+ ["j","Olá, sou eu outra vez. Tenho outra entrega para si!","Здравствуйте, это снова я. У меня для вас ещё одна доставка!"],
+ ["c","Que coincidência ser o senhor a entregar outra vez.","Какое совпадение, что снова доставляете вы."],
+ ["j","Pode abrir a porta?","Можете открыть дверь?"],
+ ["c","Toque à campainha, se faz favor.","Позвоните в звонок, пожалуйста."],
+ ["j","Estou a tocar.","Звоню."],
+ ["c","Não ouço nada. A campainha deve ter-se estragado. Já vou abrir…","Ничего не слышу. Наверное, звонок сломался. Сейчас открою…"],
+ ["j","Aqui tem! Tem de assinar aqui e aqui e aqui…","Вот, пожалуйста! Нужно расписаться здесь, и здесь, и здесь…"],
+ ["c","Ui, três assinaturas.","Ого, три подписи."],
+ ["j","Pois, deve ser um objeto perigoso.","Да, наверное, это опасный предмет."],
+ ["c","É só um machete de cortar mato.","Это всего лишь мачете для расчистки зарослей."],
+ ["j","Um objeto extremamente útil para se ter em casa... Um resto de bom dia!","Крайне полезная вещь в хозяйстве... Хорошего вам дня!"],
+ ["s","Terceira entrega","Третья доставка"],
+ ["c","Chiça, estão a ligar-me outra vez. Quem será?","Блин, мне опять звонят. Кто бы это мог быть?"],
+ ["j","Olá! Tenho ainda outra encomenda para si.","Здравствуйте! У меня для вас ещё одна посылка."],
+ ["c","Caramba, o senhor outra vez? Mas o senhor trabalha em todas as empresas de entregas do país?","Ничего себе, опять вы? Вы что, работаете во всех службах доставки страны?"],
+ ["j","Todas não digo...","Во всех, скажем так, нет..."],
+ ["c","Olhe, agora estou no duche… Não posso ir à porta.","Слушайте, я сейчас в душе… Не могу подойти к двери."],
+ ["j","Não há problema. Quer que deixe a encomenda algures?","Без проблем. Хотите, я оставлю посылку где-нибудь?"],
+ ["c","Sim, pode deixar à porta, ao lado do tapete de entrada.","Да, можете оставить у двери, рядом с ковриком."],
+ ["j","Ok. Já cá volto para entregar mais umas quantas.","Хорошо. Скоро вернусь, привезу ещё несколько."],
+ ["c","Como assim?!","В смысле?!"]
+];
+
+const FILL_OPTS=["não consigo encontrar","estou a caminho","já estou a ver","dar com","toque à campainha","não ouço nada","já vou abrir","pode deixar","algures","ao lado de"];
+const FILL=[
+ ["A: Onde está? B: ","estou a caminho",". Chego dentro de dois minutos."],
+ ["Estou em frente ao prédio, mas ","não consigo encontrar"," a entrada."],
+ ["A: Há uma farmácia na esquina. B: Ah, sim! ","já estou a ver"," a farmácia."],
+ ["Foi muito difícil ","dar com"," este prédio."],
+ ["A: Estou à porta. B: ","toque à campainha",", se faz favor."],
+ ["A: Estou a tocar. B: Estranho… ","não ouço nada","."],
+ ["Espere um bocadinho. ","já vou abrir"," a porta."],
+ ["Não estou em casa. ","pode deixar"," a encomenda à porta."],
+ ["Posso deixar a encomenda ","algures","? Sim, deixe junto à porta."],
+ ["A entrada fica ","ao lado de"," um café."]
+];
+
+const INF=[
+ ["É possível que tu tenhas mais cuidado?","É possível tu teres mais cuidado?"],
+ ["É importante que nós separemos o lixo.","É importante nós separarmos o lixo."],
+ ["É essencial que os professores deem bons conselhos.","É essencial os professores darem bons conselhos."],
+ ["Não é fácil que todos obtenham informações corretas.","Não é fácil todos obterem informações corretas."],
+ ["Não é provável que nós consigamos convencer todas as pessoas.","Não é provável nós conseguirmos convencer todas as pessoas."]
+];
+
+const REAGE=[
+ ["O estafeta está quase a chegar.","Курьер почти приехал.","Estou a caminho. Chego dentro de dois minutos."],
+ ["Ele não encontra o edifício.","Он не может найти здание.","Desculpe ligar, mas não consigo encontrar o edifício."],
+ ["Já encontrou o ponto de referência.","Он уже нашёл ориентир.","Ah, já estou a ver a farmácia!"],
+ ["Está em frente à porta do prédio.","Он стоит перед дверью дома.","Estou à porta. Pode abrir?"],
+ ["Toca à campainha, mas o cliente não ouve.","Звонит, но клиент не слышит.","Estranho, não ouço nada. Já vou abrir."],
+ ["O cliente está no duche.","Клиент в душе.","Agora estou no duche, não posso ir à porta."],
+ ["O cliente não pode receber a encomenda pessoalmente.","Клиент не может получить посылку лично.","Não estou em casa. Pode deixar a encomenda à porta."],
+ ["O estafeta precisa da assinatura.","Курьеру нужна подпись.","Preciso que assine aqui, se faz favor."]
+];
+
+const QUEST=[
+ ["Porque é que o João telefonou à Clara pela primeira vez?","Почему Жуан позвонил Кларе в первый раз?","Porque tinha uma entrega para ela e não conseguia encontrar o apartamento.","Потому что у него была для неё доставка, а он не мог найти квартиру."],
+ ["Como é que a Clara explicou ao João onde ficava o apartamento?","Как Клара объяснила Жуану, где квартира?","Disse que a entrada do condomínio é mesmo ao lado de uma estátua de um carapau e que o apartamento é o terceiro esquerdo.","Сказала, что вход в комплекс прямо рядом со статуей ставриды, а квартира на третьем этаже слева."],
+ ["Porque é que, na última entrega, a Clara pediu ao João para deixar a encomenda à porta?","Почему в последний раз Клара попросила оставить посылку у двери?","Porque estava no duche e não podia ir à porta.","Потому что была в душе и не могла подойти к двери."]
+];
+
+const SPEAK=[
+ ["Aula 2","Cria um novo diálogo","Estafeta (A) не может найти нужный вход в офис с двумя входами. Клиент (B) на совещании: вход рядом с кафе, напротив автобусной остановки, звонить на ресепшн. На ресепшн никого, посылку оставить у охранника или у двери офиса.","não consigo encontrar · estar a caminho · dar com · um resto de bom dia · para si também · tocar à campainha · quer que deixe a encomenda algures · é como preferir · assinar · desculpe ligar"],
+ ["Aula 4","A secretária ideal","Какими качествами должна обладать идеальная секретарь или ассистент.","É indispensável que ela… · É importante que ela… · Não é necessário que ela… · Acho importante que ela… · Parece-me necessário que ela… · Considero útil que ela…"],
+ ["Aula 5","Requisitos para o meu cargo","Требования к вашей текущей должности или к той, которую ищете. Только безличные фразы с Presente do Conjuntivo.","É indispensável que o candidato tenha… · É importante que saiba…"],
+ ["Aula 5","O homem ideal","Опишите идеального мужчину через Presente do Conjuntivo и Infinitivo Pessoal.","É indispensável (que) ele… · Não é necessário (que) ele…"],
+ ["Aula 7","A minha casa ideal","Опишите свой идеальный дом безличными конструкциями: где нужен conjuntivo, где indicativo (é claro, é evidente), где можно инфинитив.","É indispensável que a casa… · É importante que… · É agradável que… · Não é necessário que ela… · Basta que… · Acho importante ela… · É claro que… · É evidente/óbvio que… · Parece-me necessário ela… · Considero útil que ela…"],
+ ["Aula 5","Visita a Portugal","Минимум 6–7 советов тем, кто хочет посетить Португалию. Обе конструкции.","É preciso… · É bom que… · Acho importante que… · Não é preciso que…"]
+];
+
+/* ===== helpers ===== */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const norm=s=>s.normalize("NFC").toLowerCase().replace(/[.,!?¿¡«»"…]/g,"").replace(/\s+/g," ").trim();
+const bare=s=>norm(s).normalize("NFD").replace(/[̀-ͯ]/g,"");
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+
+/* ===== routing ===== */
+const VIEWS=["aulas","gramatica","lexico","textos","pratica","tpc"];
+const ANCHORS={"g-vida":"gramatica","p-indconj10":"pratica","p-imagens10":"pratica","hw-1711":"tpc","hw-decor":"tpc","p-quizlet":"pratica","p-verbos3":"pratica","g-desejo":"gramatica","hw-1211":"tpc","hw31":"tpc","hw32":"tpc","hw33":"tpc","p-frases":"pratica","hw-wtext":"tpc","hw-w1":"tpc","hw-w2":"tpc","hw-w3":"tpc","hw-w4":"tpc","hw-w5":"tpc","hw-aula8":"tpc","g-futuro":"gramatica","p-unir":"pratica","t-limpeza":"textos","p-traducao":"tpc","hw-0311":"tpc","hw-2910":"tpc","hw61":"tpc","hw62":"tpc","g-fatuais":"gramatica","hw-2710":"tpc","hw-2210":"tpc","hw11":"tpc","hw12":"tpc","hw13":"tpc","hw-p7":"tpc","g-conjuncoes":"gramatica","hw21":"tpc","hw22":"tpc","hw23":"tpc","g-impessoal":"gramatica","g-irregulares":"gramatica","g-infinitivo":"gramatica","t-entregas":"textos","p-completa":"pratica","p-conj":"pratica","p-inf":"pratica","p-reage":"pratica","p-perguntas":"pratica","p-falar":"pratica"};
+function route(){
+  const h=location.hash.slice(1);
+  const view=VIEWS.includes(h)?h:(ANCHORS[h]||"aulas");
+  document.querySelectorAll("[data-view]").forEach(s=>s.hidden=s.dataset.view!==view);
+  document.querySelectorAll("[data-tab]").forEach(a=>{if(a.dataset.tab===view)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+  if(ANCHORS[h]){const el=document.getElementById(h);if(el)requestAnimationFrame(()=>el.scrollIntoView({block:"start"}))}else window.scrollTo(0,0);
+}
+addEventListener("hashchange",route);
+
+/* ===== render: lessons ===== */
+$("#lessons").innerHTML=[...LESSONS].reverse().map(l=>l.missing?
+ `<div class="lesson missing"><div class="num"><b>${l.n}</b><span>нет материалов</span></div><div class="body"><span class="ru">Презентация этого урока ещё не загружена.</span></div></div>`:
+ `<div class="lesson"><div class="num"><b>${l.n}</b><span>${l.date}</span></div><div class="body">
+   <span class="label">Темы</span>
+   <ul>${l.topics.map(t=>`<li><a href="${t[2]}" style="color:inherit"><span class="pt">${esc(t[0])}</span></a><br><span class="ru">${esc(t[1])}</span></li>`).join("")}</ul>
+   <span class="label">Задания</span>
+   <div class="chips">${l.tasks.map(t=>`<a class="chip" href="${t[1]}">${esc(t[0])}</a>`).join("")}</div>
+ </div></div>`).join("");
+
+/* grammar */
+$("#expr").innerHTML=EXPR.map(e=>`<span class="chip">${esc(e)}</span>`).join("");
+$("#irrTable").innerHTML=IRR.pessoas.map((p,i)=>`<tr><td class="p">${p}</td>${Object.values(IRR.verbos).map(v=>`<td>${v[i]||"·"}</td>`).join("")}</tr>`).join("");
+
+/* vocab */
+const hideBtn=$("#hideRu");
+function renderVocab(){
+  const q=bare($("#vq").value||"");let n=0;
+  $("#vocab").innerHTML=VOCAB.map((g,i)=>[g,i]).sort((x,y)=>(+y[0].g.match(/Aula (\d+)/)[1])-(+x[0].g.match(/Aula (\d+)/)[1])||x[1]-y[1]).map(([g])=>g).map(g=>{
+    const rows=g.items.filter(([p,r])=>!q||bare(p).includes(q)||bare(r).includes(q));
+    n+=rows.length; if(!rows.length)return"";
+    return `<div class="vgroup"><h3>${esc(g.g)}</h3>${rows.map(([p,r])=>`<div class="vrow"><span class="pt">${esc(p)}</span><span class="ru">${esc(r)}</span></div>`).join("")}</div>`;
+  }).join("")||`<p class="ru">Ничего не найдено.</p>`;
+  $("#vcount").textContent=n+" выраж.";
+}
+$("#vq").addEventListener("input",renderVocab);
+hideBtn.addEventListener("click",()=>{const on=hideBtn.getAttribute("aria-pressed")!=="true";hideBtn.setAttribute("aria-pressed",on);$("#vocab").classList.toggle("hide-ru",on)});
+$("#vocab").addEventListener("click",e=>{const r=e.target.closest(".ru");if(r)r.classList.toggle("shown")});
+renderVocab();
+
+/* dialogue */
+$("#dialogue").innerHTML=DIALOGUE.map(([w,p,r])=>w==="s"?`<div class="scene">${esc(p)} <span class="ru">· ${esc(r)}</span></div>`:
+ `<div class="line"><span class="who ${w}">${w==="j"?"João":"Clara"}</span><div class="tx"><span>${esc(p)}</span><span class="ru">${esc(r)}</span></div></div>`).join("");
+$("#trBtn").addEventListener("click",e=>{const on=e.currentTarget.getAttribute("aria-pressed")!=="true";e.currentTarget.setAttribute("aria-pressed",on);e.currentTarget.textContent=on?"Перевод включён":"Перевод скрыт";$("#dialogue").classList.toggle("no-tr",!on)});
+
+/* fill */
+function renderFill(){
+  $("#fillList").innerHTML=FILL.map((f,i)=>`<div class="q"><div class="s">${i+1}. ${esc(f[0])}<select id="fill${i}" aria-label="Пропуск ${i+1}"><option value="">…</option>${FILL_OPTS.map(o=>`<option>${o}</option>`).join("")}</select>${esc(f[2])}</div><div id="fillFb${i}"></div></div>`).join("");
+  $("#fillScore").textContent="";
+}
+renderFill();
+$("#fillCheck").addEventListener("click",()=>{let ok=0;FILL.forEach((f,i)=>{const v=$("#fill"+i).value,fb=$("#fillFb"+i);if(v===f[1]){ok++;fb.className="fb ok";fb.textContent="Certo!"}else{fb.className="fb bad";fb.textContent="Правильно: "+f[1]}});$("#fillScore").textContent=ok+" / "+FILL.length;const best=store.get("fillBest",0);if(ok>best)store.set("fillBest",ok)});
+$("#fillReset").addEventListener("click",renderFill);
+
+/* conj drill */
+const POOL=[];
+Object.entries({...IRR.verbos,...DRILL_EXTRA}).forEach(([v,forms])=>forms.forEach((f,i)=>{if(f)POOL.push([v,i,f])}));
+let cur,dOk=store.get("dOk",0),dAll=store.get("dAll",0),answered=false;
+function nextD(){cur=POOL[Math.floor(Math.random()*POOL.length)];answered=false;
+  $("#dPrompt").innerHTML=`É importante que ${["eu","tu","ele","nós","eles"][cur[1]]} … <small>${esc(cur[0])} · ${IRR.pessoas[cur[1]]}</small>`;
+  $("#dIn").value="";$("#dFb").innerHTML="";$("#dIn").focus({preventScroll:true});}
+function showScore(){$("#dScore").textContent=dAll?`Верно ${dOk} из ${dAll}`:""}
+function checkD(){if(!cur||answered)return nextD();const a=$("#dIn").value;if(!a.trim())return;answered=true;dAll++;
+  let cls,msg;if(norm(a)===norm(cur[2])){dOk++;cls="ok";msg="Certo! "+cur[2]}else if(bare(a)===bare(cur[2])){cls="near";msg="Почти: проверьте ударение. Правильно: "+cur[2]}else{cls="bad";msg="Правильно: "+cur[2]}
+  $("#dFb").innerHTML=`<div class="fb ${cls}">${esc(msg)}</div>`;store.set("dOk",dOk);store.set("dAll",dAll);showScore();}
+$("#dGo").addEventListener("click",checkD);$("#dNext").addEventListener("click",nextD);
+$("#dIn").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();answered?nextD():checkD()}});
+nextD();showScore();
+
+/* infinitive rewrite */
+$("#infList").innerHTML=INF.map((f,i)=>`<div class="q"><span class="pt">${"abcde"[i]}. ${esc(f[0])}</span><div class="row"><input type="text" id="inf${i}" autocomplete="off" spellcheck="false" placeholder="Без que…" aria-label="Ответ ${"abcde"[i]}"><button data-inf="${i}">Проверить</button></div><div id="infFb${i}"></div></div>`).join("");
+$("#infList").addEventListener("click",e=>{const b=e.target.closest("[data-inf]");if(!b)return;const i=+b.dataset.inf,a=$("#inf"+i).value,c=INF[i][1],fb=$("#infFb"+i);
+  if(norm(a)===norm(c)){fb.className="fb ok";fb.textContent="Certo!"}else if(bare(a)===bare(c)){fb.className="fb near";fb.textContent="Почти, проверьте ударения: "+c}else{fb.className="fb bad";fb.textContent="Вариант: "+c}});
+
+/* reage */
+$("#reageList").innerHTML=REAGE.map((r,i)=>`<div class="q"><span class="pt">${i+1}. ${esc(r[0])}</span><span class="ru">${esc(r[1])}</span><details><summary>Пример реакции</summary><p style="margin:6px 0 0" class="pt">${esc(r[2])}</p></details></div>`).join("");
+
+/* questions */
+$("#qList").innerHTML=QUEST.map((q,i)=>`<div class="q"><span class="pt">${i+1}. ${esc(q[0])}</span><span class="ru">${esc(q[1])}</span><details><summary>Ответ</summary><p style="margin:6px 0 0"><span class="pt">${esc(q[2])}</span><br><span class="ru">${esc(q[3])}</span></p></details></div>`).join("");
+
+/* speaking */
+$("#speakList").innerHTML=SPEAK.map((x,i)=>[x,i]).sort((x,y)=>(+y[0][0].slice(5))-(+x[0][0].slice(5))||x[1]-y[1]).map(([x])=>x).map(s=>`<div class="q"><span class="label">${s[0]}</span><span class="pt">${esc(s[1])}</span><span class="ru">${esc(s[2])}</span><span style="font-size:14px">${esc(s[3])}</span></div>`).join("");
+
+/* ===== homework: Unidade 2, para 27.10.2026 ===== */
+(function(){
+const EX21=[["querer","eu","queira"],["saber","nós","saibamos"],["estar","ele","esteja"],["dar","ela","dê"],["ser","vocês","sejam"],["ir","tu","vás"],["ser","eu","seja"],["haver","","haja"],["ir","nós","vamos"],["saber","ele","saiba"],["querer","você","queira"],["estar","nós","estejamos"],["dar","eu","dê"],["estar","eles","estejam"],["saber","tu","saibas"],["ser","ela","seja"],["ir","eu","vá"],["querer","vocês","queiram"],["ir","ela","vá"],["ser","tu","sejas"],["estar","eu","esteja"],["querer","nós","queiramos"],["dar","eles","deem"],["saber","eu","saiba"]];
+const EX22=[
+ ["Mesmo que ela ",{v:"encontrar",a:"encontre"}," a carteira, é natural que o dinheiro não ",{v:"estar",a:"esteja"}," lá."],
+ ["Toma nota na agenda para que não ",{v:"esquecer-se",a:"te esqueças"}," da reunião."],
+ ["Sem que vocês ",{v:"fazer",a:"façam"}," os exercícios, não podem sair."],
+ ["Caso eu não ",{v:"poder",a:"possa"}," ir, telefono-vos."],
+ ["Embora ele ",{v:"ser",a:"seja"}," riquíssimo, leva uma vida modesta."],
+ ["Caso ",{v:"querer",a:"queiras"}," a minha ajuda, é só pedires."],
+ ["Todos têm de treinar, mesmo que ",{v:"estar",a:"esteja"}," mau tempo."],
+ ["Embora ela ",{v:"ter",a:"tenha"}," um bom curriculum, não foi aceite para o lugar."],
+ ["Logo que ",{v:"acabar",a:"acabem"}," de comer, vão lavar os dentes."],
+ ["Não podem tirar conclusões sem que ",{v:"saber",a:"saibam"}," os resultados da sondagem."],
+ ["Desde que não ",{v:"haver",a:"haja"}," inconveniente, podemos fazer o jantar no sábado."],
+ ["Vamos chegar tarde, a não ser que vocês ",{v:"despachar-se",a:"se despachem"},"."],
+ ["Não lhe digas nada, a menos que ela te ",{v:"perguntar",a:"pergunte"},"."],
+ ["Logo que eles ",{v:"chegar",a:"cheguem"},", avisem-me."],
+ ["Não falo mais com ele, nem que me ",{v:"pedir",a:"peça"}," desculpa."],
+ ["Come a sopa, antes que ",{v:"arrefecer",a:"arrefeça"},"."],
+ ["Come, antes que ",{v:"ficar",a:"fique"}," tudo frio!"],
+ ["Não apanho trânsito, desde que ",{v:"ir",a:"vá"}," cedo."],
+ ["Usa este amuleto, para que te ",{v:"dar",a:"dê"}," sorte."]];
+const EX23=[
+ ["Tenham cuidado para não partirem nada.","Tenham cuidado para que","não partam nada.","partam"],
+ ["Apesar de ele saber bem inglês, não foi admitido.","Embora","ele saiba bem inglês, não foi admitido.","saiba"],
+ ["No caso de não haver bilhetes para o teatro, vamos para minha casa.","Caso","não haja bilhetes para o teatro, vamos para minha casa.","haja"],
+ ["A senhora abre uma conta à ordem e recebe logo o cartão multibanco.","Logo que","a senhora abra uma conta à ordem, recebe o cartão multibanco.","abra"],
+ ["Sem falar com ele primeiro, não posso tirar conclusões.","Sem que","fale com ele primeiro, não posso tirar conclusões.","fale"],
+ ["Encomendamos mais comida no caso de ele vir.","Caso","ele venha, encomendamos mais comida.","venha"],
+ ["Não o conheço pessoalmente, mas falamos muito ao telefone.","Embora","não o conheça pessoalmente, falamos muito ao telefone.","conheça"],
+ ["Leva o mapa da cidade no caso de não conseguires encontrar a casa.","Leva o mapa da cidade caso","não consigas encontrar a casa.","consigas"],
+ ["Até estares completamente bom, não deves sair.","Até que","estejas completamente bom, não deves sair.","estejas"],
+ ["Podem oferecer-me as viagens, mas não trabalho mais com essa agência.","Nem que","me ofereçam as viagens, não trabalho mais com essa agência.","ofereçam"],
+ ["Empresto-te o carro, mas tens de guiar com cuidado.","Empresto-te o carro, desde que","guies com cuidado.","guies"]];
+const PERS=["eu","tu","ele/ela/você","nós","eles/vocês"];
+const PIDX={eu:0,tu:1,ele:2,ela:2,"você":2,"nós":3,eles:4,elas:4,"vocês":4,"":2};
+const CONJ={dar:["dê","dês","dê","dêmos","deem"],estar:["esteja","estejas","esteja","estejamos","estejam"],ir:["vá","vás","vá","vamos","vão"],querer:["queira","queiras","queira","queiramos","queiram"],saber:["saiba","saibas","saiba","saibamos","saibam"],ser:["seja","sejas","seja","sejamos","sejam"],haver:["","","haja","",""]};
+const IND={dar:["dou","dás","dá","damos","dão"],estar:["estou","estás","está","estamos","estão"],ir:["vou","vais","vai","vamos","vão"],querer:["quero","queres","quer","queremos","querem"],saber:["sei","sabes","sabe","sabemos","sabem"],ser:["sou","és","é","somos","são"],haver:["","","há","",""]};
+const n2=s=>s.toLowerCase().replace(/[.,!?;:«»"]/g," ").replace(/\s+/g," ").trim();
+const st=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"");
+const e2=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+function exp21(v){
+  if(v==="haver")return "haver в conjuntivo используется только в форме <b>haja</b> (há → haja): <i>É possível que haja trânsito.</i>";
+  const extra=v==="ir"?" Обрати внимание: nós = <b>vamos</b>, как в indicativo.":v==="dar"?" nós пишется со знаком: <b>dêmos</b>.":"";
+  return `${v} не строится от формы eu, его формы учим наизусть: ${CONJ[v].join(", ")}.${extra}`;}
+function diag21(v,p,val){const w=st(n2(val)),k=PIDX[p];const ci=CONJ[v].findIndex(f=>f&&st(f)===w);
+  if(ci>-1&&ci!==k)return `Это conjuntivo, но для лица <b>${PERS[ci]}</b>, а нужно <b>${p}</b>.`;
+  if(IND[v].some(f=>f&&st(f)===w))return "Это presente do indicativo. Нужен conjuntivo.";return "";}
+const EXP22=[
+ "<b>mesmo que</b> + conjuntivo. encontrar: eu encontro → encontr- + <b>e</b> (у -ar гласная e).",
+ "<b>é natural que</b> (безличное выражение) + conjuntivo. estar неправильный: <b>esteja</b>.",
+ "<b>para que</b> + conjuntivo. Toma nota = tu, значит местоимение <b>te</b>. После que и não местоимение идёт перед глаголом. esquecer: esqueço → esqueç- + <b>as</b>.",
+ "<b>sem que</b> + conjuntivo. Лицо vocês. fazer: eu faço → faç- + <b>am</b>.",
+ "<b>caso</b> + conjuntivo (без que). poder: eu posso → poss- + <b>a</b>.",
+ "<b>embora</b> + conjuntivo. ser неправильный: <b>seja</b>.",
+ "<b>caso</b> + conjuntivo. Лицо tu: это видно по <i>pedires</i>. querer неправильный: <b>queiras</b>.",
+ "<b>mesmo que</b> + conjuntivo. <i>estar mau tempo</i> без подлежащего, форма ele: <b>esteja</b>.",
+ "<b>embora</b> + conjuntivo. ter: eu tenho → tenh- + <b>a</b>.",
+ "<b>logo que</b> + conjuntivo (будущее действие). Лицо eles/vocês, как в <i>vão lavar</i>. acabar: acabo → acab- + <b>em</b>.",
+ "<b>sem que</b> + conjuntivo. Лицо eles, как в <i>podem</i>. saber неправильный: <b>saibam</b>.",
+ "<b>desde que</b> + conjuntivo = «при условии, что». haver только <b>haja</b>.",
+ "<b>a não ser que</b> + conjuntivo. Лицо vocês, местоимение <b>se</b> перед глаголом. despachar: despacho → despach- + <b>em</b>.",
+ "<b>a menos que</b> + conjuntivo. Лицо ela. perguntar: pergunto → pergunt- + <b>e</b>.",
+ "<b>logo que</b> + conjuntivo. chegar: chego → cheg- + em, но по орфографии -gar → <b>-gue</b>: cheguem.",
+ "<b>nem que</b> + conjuntivo = «даже если». Подлежащее ele. pedir: eu peço → peç- + <b>a</b>.",
+ "<b>antes que</b> + conjuntivo. Подлежащее a sopa (ela). arrefecer: arrefeço → arrefeç- + <b>a</b>.",
+ "<b>antes que</b> + conjuntivo. ficar: fico → fic- + e, по орфографии -car → <b>-que</b>: fique.",
+ "<b>desde que</b> + conjuntivo. Подлежащее eu (<i>Não apanho</i>). ir неправильный: <b>vá</b>.",
+ "<b>para que</b> + conjuntivo. Подлежащее o amuleto (ele). dar неправильный: <b>dê</b>."];
+const EXP23=[
+ "para + инфинитив (<i>para não partirem</i>) → <b>para que</b> + conjuntivo. partirem = vocês. partir: parto → part- + <b>am</b>.",
+ "apesar de + инфинитив → <b>embora</b> + conjuntivo. saber: <b>saiba</b> (неправильный).",
+ "no caso de + инфинитив → <b>caso</b> + conjuntivo. haver: <b>haja</b>.",
+ "«открыть → получить» превращается в «как только откроет, получит». <b>logo que</b> + conjuntivo. abrir: abro → abr- + <b>a</b>. Слово logo уходит из второй части.",
+ "sem + инфинитив → <b>sem que</b> + conjuntivo. Подлежащее eu (<i>não posso</i>). falar: falo → fal- + <b>e</b>.",
+ "no caso de + инфинитив → <b>caso</b> + conjuntivo. Часть с caso ставим первой. vir: venho → venh- + <b>a</b>.",
+ "Часть с mas меняем на <b>embora</b> + conjuntivo, mas исчезает. conhecer: conheço → conheç- + <b>a</b>. Местоимение o остаётся перед глаголом.",
+ "no caso de + инфинитив → <b>caso</b> + conjuntivo. conseguires = tu. conseguir: consigo → consig- + <b>as</b>.",
+ "até + инфинитив → <b>até que</b> + conjuntivo. estares = tu. estar неправильный: <b>estejas</b>.",
+ "«Могут предложить, но я не буду» = «даже если предложат». <b>nem que</b> + conjuntivo, mas исчезает. oferecer: ofereço → ofereç- + <b>am</b>. Местоимение me перед глаголом.",
+ "«но ты должен» = условие: <b>desde que</b> + conjuntivo. guiar: guio → gui- + <b>es</b>."];
+function diagGeneric(i,val){const v=n2(val),a=n2(i.dataset.ans),aw=a.split(" ");
+  if(aw.length===2&&["te","se","me","nos"].includes(aw[0])){
+    if(st(v)===st(aw[1]))return `Не хватает местоимения <b>${aw[0]}</b>: глагол возвратный.`;
+    if(st(v.replace(/-/g," "))===st(aw[1]+" "+aw[0]))return "После que местоимение ставится <b>перед</b> глаголом.";}
+  return "";}
+const KEY="tpc-2710-v1";let saved=store.get(KEY,{})||{};
+const persist=()=>store.set(KEY,saved);
+const all=[];
+function mkInput(id,cls){const i=document.createElement("input");i.type="text";i.id=id;i.className="blank"+(cls?" "+cls:"");
+  i.autocomplete="off";i.autocapitalize="off";i.spellcheck=false;i.value=saved[id]||"";
+  i.addEventListener("input",()=>{saved[id]=i.value;persist();i.classList.remove("ok","near","bad");const f=document.getElementById(id+"-fb");if(f){f.textContent="";f.className="hfb"}});
+  i.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();check(i);const k=all.indexOf(i);if(all[k+1])all[k+1].focus()}});
+  i.addEventListener("blur",()=>{if(i.value.trim())check(i)});return i;}
+const mkFb=id=>{const s=document.createElement("span");s.className="hfb";s.id=id+"-fb";return s};
+const g21=document.getElementById("g21");
+EX21.forEach(([v,p,a],k)=>{const id="e21-"+k,box=document.createElement("div"),c=document.createElement("div");c.className="hw-cell";
+  c.innerHTML=`<span class="n">${k+1}.</span><span class="lbl">${v}${p?` <em>/ ${p}</em>`:""}</span>`;
+  const i=mkInput(id);Object.assign(i.dataset,{ans:a,ex:"21",v:v,p:p,exp:exp21(v)});i.style.width="100%";i.style.minWidth="0";i.setAttribute("aria-label",`${v} ${p}`);
+  c.appendChild(i);box.appendChild(c);box.appendChild(mkFb(id));g21.appendChild(box);all.push(i);});
+const s22=document.getElementById("s22");let b=0;
+EX22.forEach((segs,k)=>{const li=document.createElement("li");li.innerHTML=`<span class="n">${k+1}.</span>`;
+  const line=document.createElement("div");line.className="hw-line";const fbs=[];
+  segs.forEach(sg=>{if(typeof sg==="string"){line.appendChild(document.createTextNode(sg));return}
+    const id="e22-"+b,i=mkInput(id);Object.assign(i.dataset,{ans:sg.a,ex:"22",exp:EXP22[b++]});i.setAttribute("aria-label",`${k+1}: ${sg.v}`);
+    line.appendChild(i);const inf=document.createElement("span");inf.className="hw-inf";inf.textContent=` (${sg.v})`;line.appendChild(inf);fbs.push(mkFb(id));all.push(i);});
+  fbs.forEach(f=>line.appendChild(f));li.appendChild(line);s22.appendChild(li);});
+const s23=document.getElementById("s23");
+EX23.forEach(([orig,start,ans,key],k)=>{const id="e23-"+k,li=document.createElement("li");li.innerHTML=`<span class="n">${k+2}.</span>`;
+  const line=document.createElement("div");line.className="hw-line";
+  const o=document.createElement("span");o.className="hw-orig";o.textContent=orig;line.appendChild(o);
+  const w=document.createElement("div");w.className="longwrap";const s0=document.createElement("span");s0.className="hw-start";s0.textContent=start;w.appendChild(s0);
+  const i=mkInput(id,"long");Object.assign(i.dataset,{ans:ans,key:key,ex:"23",exp:EXP23[k]});i.setAttribute("aria-label",`${k+2}: ${start}`);
+  w.appendChild(i);line.appendChild(w);line.appendChild(mkFb(id));li.appendChild(line);s23.appendChild(li);all.push(i);});
+const whyBtn=`<button class="ghost" type="button">как правильно и почему</button>`;
+const explain=i=>`Ответ: <span class="ans">${e2(i.dataset.ans)}</span><span class="why">${i.dataset.exp||""}</span>`;
+function setState(i,s,html){i.classList.remove("ok","near","bad");if(s)i.classList.add(s);const f=document.getElementById(i.id+"-fb");f.className="hfb"+(s?" "+s:"");f.innerHTML=html||"";updateScores();}
+function check(i){const v=n2(i.value),a=n2(i.dataset.ans);if(!v)return setState(i,"","");
+  if(i.dataset.ex==="23"){const words=v.split(" "),key=i.dataset.key;
+    if(v===a)return setState(i,"ok","Верно");
+    if(words.includes(key))return setState(i,"ok",`Глагол верный. Учебник: <span class="ans">${e2(i.dataset.ans)}</span>`);
+    if(words.map(st).includes(st(key)))return setState(i,"near",`Почти: проверь знак в глаголе <span class="ans">${key}</span>`);
+    return setState(i,"bad",`Глагола <b>${key}</b> в ответе нет. ${whyBtn}`);}
+  if(v===a)return setState(i,"ok","");
+  if(st(v)===st(a))return setState(i,"near",`Почти: <span class="ans">${e2(i.dataset.ans)}</span>`);
+  const d=i.dataset.ex==="21"?diag21(i.dataset.v,i.dataset.p,i.value):diagGeneric(i,i.value);
+  setState(i,"bad",(d?d+" ":"")+whyBtn);}
+document.getElementById("tpc").addEventListener("click",e=>{const g=e.target.closest(".hfb .ghost");if(!g)return;const fb=g.parentElement;fb.innerHTML=explain(document.getElementById(fb.id.replace(/-fb$/,"")))});
+function updateScores(){const tot={"21":24,"22":20,"23":11};["21","22","23"].forEach(ex=>{const n=all.filter(i=>i.dataset.ex===ex&&i.classList.contains("ok")).length;const c=document.getElementById("chip-"+ex);c.querySelector("b").textContent=n;c.classList.toggle("done",n===tot[ex])});}
+document.querySelectorAll("[data-hwcheck]").forEach(x=>x.addEventListener("click",()=>all.filter(i=>i.dataset.ex===x.dataset.hwcheck).forEach(check)));
+document.querySelectorAll("[data-hwreveal]").forEach(x=>x.addEventListener("click",()=>all.filter(i=>i.dataset.ex===x.dataset.hwreveal&&!i.classList.contains("ok")).forEach(i=>{const f=document.getElementById(i.id+"-fb");f.className="hfb "+(i.value.trim()?"bad":"near");f.innerHTML=explain(i)})));
+document.getElementById("hwCheckAll").addEventListener("click",()=>all.forEach(check));
+let armed=false;const rb=document.getElementById("hwReset");
+rb.addEventListener("click",()=>{if(!armed){armed=true;rb.textContent="Точно очистить?";setTimeout(()=>{armed=false;rb.textContent="Очистить"},3000);return}
+  armed=false;rb.textContent="Очистить";all.forEach(i=>{i.value="";setState(i,"","")});saved={};persist();});
+all.filter(i=>i.value.trim()).forEach(check);updateScores();
+})();
+
+/* homework part 1 draft */
+(function(){const t=document.getElementById("p7text"),c=document.getElementById("p7count");
+  t.value=store.get("p7draft","");
+  const upd=()=>{const n=t.value.split("\n").filter(l=>l.trim()).length;c.textContent=`Советов: ${n} из 6-7`};
+  t.addEventListener("input",()=>{store.set("p7draft",t.value);upd()});upd();
+  const b=document.getElementById("p7copy");
+  b.addEventListener("click",()=>{const done=()=>{b.textContent="Скопировано";setTimeout(()=>b.textContent="Скопировать",1500)};
+    try{navigator.clipboard.writeText(t.value).then(done,()=>{t.select();b.textContent="Выделено, нажми Ctrl+C"})}catch(e){t.select()}});
+})();
+
+/* ===== homework: Unidade 1, para 22.10.2026 ===== */
+(function(){
+const EX11=[["ter","eu","tenha","tenho"],["vir","ela","venha","venho"],["ver","ele","veja","vejo"],["comprar","nós","compremos","compro"],["fazer","tu","faças","faço"],["pedir","você","peça","peço"],
+ ["abrir","eles","abram","abro"],["pagar","eu","pague","pago","-gar → -gue, чтобы g звучал твёрдо"],["seguir","vocês","sigam","sigo"],["pôr","ela","ponha","ponho"],["trazer","ele","traga","trago"],["vestir","tu","vistas","visto"],
+ ["ficar","você","fique","fico","-car → -que, чтобы c звучал как [к]"],["despir","eles","dispam","dispo"],["ouvir","ela","ouça","ouço"],["perder","eu","perca","perco"],["conseguir","nós","consigamos","consigo"],["ler","vocês","leiam","leio"],
+ ["dormir","eu","durma","durmo"],["beber","você","beba","bebo"],["dizer","eles","digam","digo"],["sair","tu","saias","saio"],["poder","ela","possa","posso"],["trabalhar","nós","trabalhemos","trabalho"]];
+const EX12=[
+ ["ter cuidado","É conveniente que ele","tenha cuidado","tenha","<b>é conveniente que</b> + conjuntivo. Лицо ele. ter: eu tenho → tenh- + <b>a</b>."],
+ ["ouvir","É bom que eles me","ouçam","ouçam","<b>é bom que</b> + conjuntivo. Лицо eles, местоимение me уже стоит перед пропуском. ouvir: eu ouço → ouç- + <b>am</b>."],
+ ["seguir as instruções","É aconselhável que vocês","sigam as instruções","sigam","<b>é aconselhável que</b> + conjuntivo. seguir: eu sigo → sig- + <b>am</b>. Буква u пропадает, потому что основа от sigo."],
+ ["vir cá a casa","É possível que ele","venha cá a casa","venha","<b>é possível que</b> + conjuntivo. vir: eu venho → venh- + <b>a</b>."],
+ ["começar mais tarde","É provável que a reunião","comece mais tarde","comece","<b>é provável que</b> + conjuntivo. a reunião = ela. começar: começo → começ- + e, по орфографии -çar → <b>-ce</b>."],
+ ["ver a Ana hoje","É natural que eu","veja a Ana hoje","veja","<b>é natural que</b> + conjuntivo. ver: eu vejo → vej- + <b>a</b>."],
+ ["comer tanto","É melhor que tu não","comas tanto","comas","<b>é melhor que</b> + conjuntivo. Лицо tu. comer: eu como → com- + <b>as</b>."],
+ ["ler o artigo","Convém que vocês","leiam o artigo","leiam","<b>convém que</b> + conjuntivo. ler: eu leio → lei- + <b>am</b>."],
+ ["pagar com cartão de crédito","É preferível que os senhores","paguem com cartão de crédito","paguem","<b>é preferível que</b> + conjuntivo. os senhores = eles. pagar: eu pago → pag- + em, по орфографии -gar → <b>-gue</b>: paguem."],
+ ["pôr o casaco","É conveniente que tu","ponhas o casaco","ponhas","<b>é conveniente que</b> + conjuntivo. pôr: eu ponho → ponh- + <b>as</b>."],
+ ["fazer barulho","É bom que vocês não","façam barulho","façam","<b>é bom que</b> + conjuntivo. fazer: eu faço → faç- + <b>am</b>."],
+ ["sentir frio","É natural que ela","sinta frio","sinta","<b>é natural que</b> + conjuntivo. sentir: eu sinto → sint- + <b>a</b>."],
+ ["levar uns amigos","É provável que nós","levemos uns amigos","levemos","<b>é provável que</b> + conjuntivo. levar: eu levo → lev- + <b>emos</b>."],
+ ["pedir as chaves ao porteiro","Basta que tu","peças as chaves ao porteiro","peças","<b>basta que</b> + conjuntivo. pedir: eu peço → peç- + <b>as</b>."]];
+const EX13=[
+ ["Possivelmente encontrarás lá o Pedro.","É possível que encontres lá o Pedro.","encontres","Possivelmente → <b>é possível que</b>. encontrarás = tu. encontrar: encontro → encontr- + <b>es</b>."],
+ ["Ele precisa de investir melhor o dinheiro.","É preciso que ele invista melhor o dinheiro.","invista","precisar de → <b>é preciso que</b>. investir: eu invisto → invist- + <b>a</b>."],
+ ["A senhora necessita de fazer dieta.","É necessário que a senhora faça dieta.","faça","necessitar de → <b>é necessário que</b>. a senhora = ela. fazer: eu faço → faç- + <b>a</b>."],
+ ["Possivelmente conseguirás emprego.","É possível que consigas emprego.","consigas","Possivelmente → <b>é possível que</b>. conseguirás = tu. conseguir: eu consigo → consig- + <b>as</b>."],
+ ["Necessitas de estudar mais.","É necessário que estudes mais.","estudes","necessitar de → <b>é necessário que</b>. Лицо tu. estudar: estudo → estud- + <b>es</b>."],
+ ["Provavelmente ainda farei alguns erros.","É provável que eu ainda faça alguns erros.","faça","Provavelmente → <b>é provável que</b>. farei = eu. fazer: faço → faç- + <b>a</b>. ainda остаётся перед глаголом."],
+ ["Provavelmente ficarei em casa.","É provável que eu fique em casa.","fique","Provavelmente → <b>é provável que</b>. ficarei = eu. ficar: fico → fic- + e, по орфографии -car → <b>-que</b>."],
+ ["Precisas de ter cuidado com a alimentação.","É preciso que tenhas cuidado com a alimentação.","tenhas","precisar de → <b>é preciso que</b>. Лицо tu. ter: tenho → tenh- + <b>as</b>."],
+ ["Ela tem necessidade de descansar mais.","É necessário que ela descanse mais.","descanse","ter necessidade de → <b>é necessário que</b>. descansar: descanso → descans- + <b>e</b>."],
+ ["Possivelmente virão visitar-me.","É possível que me venham visitar.","venham","Possivelmente → <b>é possível que</b>. virão = eles. vir: venho → venh- + <b>am</b>. После que местоимение me удобнее поставить перед глаголом."],
+ ["Provavelmente não te sentirás à vontade.","É provável que não te sintas à vontade.","sintas","Provavelmente → <b>é provável que</b>. sentirás = tu. sentir: sinto → sint- + <b>as</b>. Порядок: não + te + глагол."],
+ ["Possivelmente ainda nos vemos hoje.","É possível que ainda nos vejamos hoje.","vejamos","Possivelmente → <b>é possível que</b>. vemos = nós. ver: vejo → vej- + <b>amos</b>. vemo-nos → nos vejamos, местоимение перед глаголом."],
+ ["Naturalmente estás cansadíssimo.","É natural que estejas cansadíssimo.","estejas","Naturalmente → <b>é natural que</b>. estás = tu. estar неправильный: <b>estejas</b>."]];
+const PERS=["eu","tu","ele/ela/você","nós","eles/vocês"];
+const PIDX={eu:0,tu:1,ele:2,ela:2,"você":2,"nós":3,eles:4,elas:4,"vocês":4};
+const n2=s=>s.toLowerCase().replace(/[.,!?;:«»"]/g," ").replace(/\s+/g," ").trim();
+const st=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"");
+const e2=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+function paradigm(ans,p){const ends={a:["a","as","a","amos","am"],e:["e","es","e","emos","em"]};const k=PIDX[p];
+  for(const v of ["a","e"]){const e=ends[v][k];if(ans.endsWith(e)){const s0=ans.slice(0,-e.length);return{stem:s0,vowel:v,forms:ends[v].map(x=>s0+x)}}}return null;}
+function exp11(inf,p,ans,eu,note){const pr=paradigm(ans,p);const kind=inf.endsWith("ar")?"-ar → гласная <b>e</b>":"-er/-ir → гласная <b>a</b>";const base=eu.slice(0,-1);
+  return `eu ${eu} → убираем -o → <b>${base}-</b>${base!==pr.stem?` → <b>${pr.stem}-</b>`:""}, ${kind}. Для ${p}: <b>${ans}</b>.${note?" Орфография: "+note+".":""} Все формы: ${pr.forms.join(", ")}.`;}
+function diag11(i){const v=st(n2(i.value)),p=i.dataset.p,inf=i.dataset.v,ans=i.dataset.ans,eu=i.dataset.eu;const pr=paradigm(ans,p),k=PIDX[p];
+  const idx=pr.forms.findIndex(f=>st(f)===v);if(idx>-1&&idx!==k)return `Это форма для <b>${PERS[idx]}</b>, а нужно <b>${p}</b>.`;
+  if(pr.stem.endsWith("qu")||pr.stem.endsWith("gu")){const bad=(pr.stem.endsWith("qu")?pr.stem.slice(0,-2)+"c":pr.stem.slice(0,-1))+pr.forms[k].slice(pr.stem.length);if(st(bad)===v)return "Почти: нужна орфографическая замена, чтобы сохранить звук.";}
+  const ind=inf.endsWith("ar")?["o","as","a","amos","am"]:inf.endsWith("ir")?["o","es","e","imos","em"]:["o","es","e","emos","em"];
+  if(ind.some(e=>st(eu.slice(0,-1)+e)===v))return "Это presente do indicativo. Нужен conjuntivo.";
+  const other=pr.vowel==="a"?"e":"a";const sw=pr.stem+pr.forms[k].slice(pr.stem.length).replace(pr.vowel,other);
+  if(st(sw)===v)return inf.endsWith("ar")?"У глаголов на -ar в conjuntivo гласная <b>e</b>, а не a.":"У глаголов на -er/-ir в conjuntivo гласная <b>a</b>, а не e.";
+  const istem=st(inf.replace(/ôr$/,"or").slice(0,-2));if(istem!==st(pr.stem)&&v.startsWith(istem)&&v.length<=istem.length+4)return `Основа берётся не от инфинитива, а от формы eu: <b>${eu}</b>.`;
+  return "";}
+const KEY="tpc-2210-v1";let saved=store.get(KEY,{})||{};const persist=()=>store.set(KEY,saved);
+const all=[];
+function mkInput(id,cls){const i=document.createElement("input");i.type="text";i.id=id;i.className="blank"+(cls?" "+cls:"");
+  i.autocomplete="off";i.autocapitalize="off";i.spellcheck=false;i.value=saved[id]||"";
+  i.addEventListener("input",()=>{saved[id]=i.value;persist();i.classList.remove("ok","near","bad");const f=document.getElementById(id+"-fb");if(f){f.textContent="";f.className="hfb"}updateScores()});
+  i.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();check(i);const k=all.indexOf(i);if(all[k+1])all[k+1].focus()}});
+  i.addEventListener("blur",()=>{if(i.value.trim())check(i)});return i;}
+const mkFb=id=>{const s=document.createElement("span");s.className="hfb";s.id=id+"-fb";return s};
+const g11=document.getElementById("g11");
+EX11.forEach(([v,p,a,eu,note],k)=>{const id="e11-"+k,box=document.createElement("div"),c=document.createElement("div");c.className="hw-cell";
+  c.innerHTML=`<span class="n">${k+1}.</span><span class="lbl">${v} <em>/ ${p}</em></span>`;
+  const i=mkInput(id);i.style.width="100%";i.style.minWidth="0";Object.assign(i.dataset,{ans:a,ex:"11",v:v,p:p,eu:eu,exp:exp11(v,p,a,eu,note)});i.setAttribute("aria-label",`${v} ${p}`);
+  c.appendChild(i);box.appendChild(c);box.appendChild(mkFb(id));g11.appendChild(box);all.push(i);});
+const s12=document.getElementById("s12");
+EX12.forEach(([inf,before,ans,key,exp],k)=>{const id="e12-"+k,li=document.createElement("li");li.innerHTML=`<span class="n">${k+2}.</span>`;
+  const line=document.createElement("div");line.className="hw-line";const w=document.createElement("div");w.className="longwrap";
+  const s0=document.createElement("span");s0.innerHTML=`<span class="hw-inf">(${inf})</span> ${before}`;w.appendChild(s0);
+  const i=mkInput(id,"long");i.style.flexBasis="200px";Object.assign(i.dataset,{ans:ans,key:key,ex:"12",exp:exp});i.setAttribute("aria-label",`${k+2}: ${inf}`);
+  w.appendChild(i);line.appendChild(w);line.appendChild(mkFb(id));li.appendChild(line);s12.appendChild(li);all.push(i);});
+const s13=document.getElementById("s13");
+EX13.forEach(([orig,ans,key,exp],k)=>{const id="e13-"+k,li=document.createElement("li");li.innerHTML=`<span class="n">${k+2}.</span>`;
+  const line=document.createElement("div");line.className="hw-line";const o=document.createElement("span");o.className="hw-orig";o.textContent=orig;line.appendChild(o);
+  const i=mkInput(id,"long");i.placeholder="É … que …";Object.assign(i.dataset,{ans:ans,key:key,ex:"13",exp:exp});i.setAttribute("aria-label",`${k+2}: ${orig}`);
+  line.appendChild(i);line.appendChild(mkFb(id));li.appendChild(line);s13.appendChild(li);all.push(i);});
+const whyBtn=`<button class="ghost" type="button">как правильно и почему</button>`;
+const explain=i=>`Ответ: <span class="ans">${e2(i.dataset.ans)}</span><span class="why">${i.dataset.exp||""}</span>`;
+function setState(i,s,html){i.classList.remove("ok","near","bad");if(s)i.classList.add(s);const f=document.getElementById(i.id+"-fb");f.className="hfb"+(s?" "+s:"");f.innerHTML=html||"";updateScores();}
+function check(i){const v=n2(i.value),a=n2(i.dataset.ans);if(!v)return setState(i,"","");
+  if(v===a)return setState(i,"ok","");
+  if(st(v)===st(a))return setState(i,"near",`Почти: <span class="ans">${e2(i.dataset.ans)}</span>`);
+  if(i.dataset.ex==="11"){const d=diag11(i);return setState(i,"bad",(d?d+" ":"")+whyBtn)}
+  const words=v.split(" "),key=i.dataset.key;
+  if(words.includes(key)){
+    if(i.dataset.ex==="13"&&!/^é .+ que |^convém que |^basta que /.test(v))return setState(i,"near",`Глагол верный, но начни с безличного выражения. Учебник: <span class="ans">${e2(i.dataset.ans)}</span>`);
+    return setState(i,"ok",`Глагол верный. Учебник: <span class="ans">${e2(i.dataset.ans)}</span>`);}
+  if(words.map(st).includes(st(key)))return setState(i,"near",`Почти: проверь знак в глаголе <span class="ans">${key}</span>`);
+  return setState(i,"bad",`Нужна форма conjuntivo: глагола <b>${key}</b> в ответе нет. ${whyBtn}`);}
+document.getElementById("hw-2210").addEventListener("click",e=>{const g=e.target.closest(".hfb .ghost");if(!g)return;e.stopPropagation();const fb=g.parentElement;fb.innerHTML=explain(document.getElementById(fb.id.replace(/-fb$/,"")))});
+function updateScores(){const tot={"11":24,"12":14,"13":13};Object.keys(tot).forEach(ex=>{const n=all.filter(i=>i.dataset.ex===ex&&i.classList.contains("ok")).length;const c=document.getElementById("chip-"+ex);c.querySelector("b").textContent=n;c.classList.toggle("done",n===tot[ex])});}
+document.querySelectorAll("[data-hwcheck1]").forEach(x=>x.addEventListener("click",()=>all.filter(i=>i.dataset.ex===x.dataset.hwcheck1).forEach(check)));
+document.querySelectorAll("[data-hwreveal1]").forEach(x=>x.addEventListener("click",()=>all.filter(i=>i.dataset.ex===x.dataset.hwreveal1&&!i.classList.contains("ok")).forEach(i=>{const f=document.getElementById(i.id+"-fb");f.className="hfb "+(i.value.trim()?"bad":"near");f.innerHTML=explain(i)})));
+document.getElementById("hwCheckAll1").addEventListener("click",()=>all.forEach(check));
+let armed=false;const rb=document.getElementById("hwReset1");
+rb.addEventListener("click",()=>{if(!armed){armed=true;rb.textContent="Точно очистить?";setTimeout(()=>{armed=false;rb.textContent="Очистить"},3000);return}
+  armed=false;rb.textContent="Очистить";all.forEach(i=>{i.value="";setState(i,"","")});saved={};persist();});
+all.filter(i=>i.value.trim()).forEach(check);updateScores();
+})();
+
+/* ===== homework: Aula 6, para 29.10.2026 ===== */
+(function(){
+const EX61=[
+ ["Ele não (ter) muito dinheiro / (querer) comprar um carro novo.",[["tenha"]],"Embora ele não tenha muito dinheiro, quer comprar um carro novo.","Уступка: <b>embora / mesmo que / ainda que</b> + conjuntivo. ter: tenho → <b>tenha</b>. Вторая часть остаётся в indicativo: quer."],
+ ["Ela (estudar) / não (passar) no exame.",[["estude"]],"Embora (se bem que, ainda que) ela estude, não vai passar no exame.","Уступка: <b>embora</b> + conjuntivo. estudar: estudo → <b>estude</b>. Можно и наоборот: <i>Ela não passa no exame a menos que estude.</i>"],
+ ["(Chover), eu não vou à praia.",[["chova"]],"Não vou à praia caso chova.","Условие: <b>caso</b> + conjuntivo. chover: chove → <b>chova</b> (безличный глагол, форма ele)."],
+ ["Ela (descansar) com muito prazer / não (ter) tempo.",[["tenha"]],"Ela descansa com muito prazer, embora não tenha tempo.","<b>mesmo que</b> = даже если. ter: tenho → <b>tenha</b>. Вариант: <i>embora não tenha tempo</i>."],
+ ["Maria (emagrecer) / (praticar) um desporto e (comer) menos.",[["pratique","coma"],["emagreça"]],"Maria emagrece desde que pratique um desporto e coma menos.","Условие: <b>desde que</b> + conjuntivo, оба глагола в conjuntivo: praticar → <b>pratique</b> (-car → -que), comer → <b>coma</b>. Вариант с целью: <i>Para que emagreça, Maria pratica um desporto e come menos.</i>"],
+ ["A minha equipa (ganhar) o jogo / (ser) importante / os futebolistas (jogar) bem.",[["ganhe","joguem"]],"Para que a minha equipa ganhe o jogo, é importante que os futebolistas joguem bem. Também: é importante os futebolistas jogarem bem…","Два conjuntivo: <b>para que</b> + ganhe, <b>é importante que</b> + joguem. jogar: jogo → jog- + em, -gar → <b>-gue</b>: joguem."],
+ ["O Eduardo e o Jaime (estudar) para o exame / eles não (ir passar).",[["vão"],["estudem"]],"Ainda que o Eduardo e o Jaime estudem para o exame, eles não vão passar.","<b>embora</b> + conjuntivo. ir для eles: <b>vão</b>, форма совпадает с indicativo. Вариант: <i>O Eduardo e o Jaime não vão passar, a menos que estudem para o exame.</i>"],
+ ["Eu não (sair) daqui / ele (ficar) melhor da dor de cabeça.",[["fique"]],"Eu não saio daqui até que ele fique melhor da dor de cabeça.","Время: <b>até que</b> = пока не. ficar: fico → fic- + e, -car → <b>-que</b>: fique."],
+ ["O Paulo (dar) livros aos amigos estrangeiros / eles (conhecer) a literatura portuguesa.",[["conheçam"]],"O Paulo dá livros aos amigos estrangeiros para que eles conheçam a literatura portuguesa.","Цель: <b>para que</b> + conjuntivo. conhecer: conheço → conheç- + <b>am</b>."],
+ ["O cão (ficar) no jardim / os donos (regressar) do trabalho.",[["regressem"]],"O cão fica no jardim até que os donos regressem do trabalho.","Время: <b>até que</b> + conjuntivo. regressar: regresso → regress- + <b>em</b>."],
+ ["Vocês (fazer) tudo o que podem / os vossos filhos (ser) felizes.",[["sejam"]],"Vocês fazem tudo o que podem para que os vossos filhos sejam felizes.","Цель: <b>para que</b> + conjuntivo. ser неправильный: <b>sejam</b>."],
+ ["Nós (ficar) na sala de aula / a aula (acabar).",[["acabe"]],"Nós ficamos na sala de aula até que a aula acabe.","Время: <b>até que</b> + conjuntivo. acabar: acabo → acab- + <b>e</b>."]];
+const LEFT=[["É agradável","inf"],["É claro que","ind"],["É evidente que","ind"],["Não é óbvio que","conj"],["É possível que","conj"],["Não é provável que","conj"],["Não é evidente que","conj"]];
+const RIGHT=[["ele esteja em casa hoje à tarde.","conj"],["eles estarem em Paris.","inf"],["nós somos boas pessoas.","ind"],["eu vá à praia amanhã.","conj"],["ela vai arranjar um bom emprego.","ind"],["ele saiba onde eu moro.","conj"],["a Ana queira sair connosco.","conj"]];
+const SUG=[1,2,4,5,0,3,6];
+const WHY={inf:"<b>É agradável</b> без que → инфинитив: <i>eles estarem</i>.",ind:"<b>É claro / É evidente que</b> утверждают факт → indicativo: <i>somos, vai arranjar</i>.",conj:"Отрицание или возможность (<b>não é óbvio, é possível, não é provável, não é evidente</b>) → conjuntivo: <i>esteja, vá, saiba, queira</i>."};
+const n2=s=>s.toLowerCase().replace(/[.,!?;:«»"]/g," ").replace(/\s+/g," ").trim();
+const st=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"");
+const e2=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const KEY="tpc-2910-v1";let saved=store.get(KEY,{})||{};const persist=()=>store.set(KEY,saved);
+const fb=id=>document.getElementById(id+"-fb");
+function set(el,stt,html){el.classList.remove("ok","near","bad");if(stt)el.classList.add(stt);const f=fb(el.id);f.className="hfb"+(stt?" "+stt:"");f.innerHTML=html||"";score();}
+/* ex1 */
+const s61=document.getElementById("s61"),in61=[];
+EX61.forEach(([q,keys,model,exp],k)=>{const id="e61-"+k,li=document.createElement("li");li.innerHTML=`<span class="n">${k+1}.</span>`;
+  const line=document.createElement("div");line.className="hw-line";const o=document.createElement("span");o.className="hw-orig";o.textContent=q;line.appendChild(o);
+  const i=document.createElement("input");i.type="text";i.id=id;i.className="blank long";i.autocomplete="off";i.autocapitalize="off";i.spellcheck=false;i.value=saved[id]||"";i.placeholder="Embora… / para que… / até que…";i.setAttribute("aria-label",`${k+1}: ${q}`);
+  i.addEventListener("input",()=>{saved[id]=i.value;persist();set(i,"","")});
+  i.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();c61(i,k);const nx=in61[k+1];if(nx)nx.focus()}});
+  i.addEventListener("blur",()=>{if(i.value.trim())c61(i,k)});
+  line.appendChild(i);const f=document.createElement("span");f.className="hfb";f.id=id+"-fb";line.appendChild(f);li.appendChild(line);s61.appendChild(li);in61.push(i);});
+const ex61=k=>`Ключ с урока 29.10: <span class="ans">${e2(EX61[k][2])}</span><span class="why">${EX61[k][3]}</span>`;
+const wb=`<button class="ghost" type="button">пример и объяснение</button>`;
+function c61(i,k){const v=n2(i.value);if(!v)return set(i,"","");const w=v.split(" "),ws=w.map(st);
+  const alts=EX61[k][1];
+  if(alts.some(a=>a.every(x=>w.includes(x))))return set(i,"ok",`Conjuntivo на месте. ${wb}`);
+  if(alts.some(a=>a.every(x=>ws.includes(st(x)))))return set(i,"near",`Почти: проверь ударение. ${wb}`);
+  const need=alts.map(a=>a.join(" + ")).join(" или ");
+  set(i,"bad",`Не вижу нужной формы conjuntivo (${need}). ${wb}`);}
+document.getElementById("hw61").addEventListener("click",e=>{const g=e.target.closest(".hfb .ghost");if(!g)return;e.stopPropagation();const f=g.parentElement,id=f.id.replace(/-fb$/,"");f.innerHTML=ex61(+id.split("-")[1])+(f.classList.contains("ok")?"":"")});
+/* ex2 */
+const s62=document.getElementById("s62"),sel62=[];
+LEFT.forEach(([l],k)=>{const id="e62-"+k,li=document.createElement("li");li.innerHTML=`<span class="n">${"abcdefg"[k]})</span>`;
+  const line=document.createElement("div");line.className="hw-line";
+  const sel=document.createElement("select");sel.id=id;sel.setAttribute("aria-label",l);
+  sel.innerHTML=`<option value="">…</option>`+RIGHT.map((r,j)=>`<option value="${j}">${e2(r[0])}</option>`).join("");
+  sel.value=saved[id]??"";sel.style.maxWidth="100%";
+  sel.addEventListener("change",()=>{saved[id]=sel.value;persist();set(sel,"","");dup()});
+  line.innerHTML=`<span class="pt">${e2(l)}</span> `;line.appendChild(sel);
+  const f=document.createElement("span");f.className="hfb";f.id=id+"-fb";line.appendChild(f);li.appendChild(line);s62.appendChild(li);sel62.push(sel);});
+function dup(){const used={};sel62.forEach(x=>{if(x.value!=="")used[x.value]=(used[x.value]||0)+1});
+  sel62.forEach(x=>{if(x.value!==""&&used[x.value]>1&&!x.classList.contains("bad")){const f=fb(x.id);f.className="hfb near";f.textContent="Эта часть уже выбрана в другой строке."}});}
+function c62(x,k){if(x.value==="")return set(x,"","");const r=RIGHT[+x.value],l=LEFT[k];const full=`${l[0]} ${r[0]}`;
+  if(r[1]===l[1]){const best=+x.value===SUG[k];return set(x,"ok",`<span class="ans">${e2(full)}</span>${best?"":` <span class="ru">Тоже верно. В ключе, скорее всего: ${e2(l[0])} ${e2(RIGHT[SUG[k]][0])}</span>`}`)}
+  set(x,"bad",`Не сочетается. <span class="why">${WHY[l[1]]}</span>`);}
+/* score + buttons */
+function score(){const a=in61.filter(i=>i.classList.contains("ok")).length,b=sel62.filter(i=>i.classList.contains("ok")).length;
+  const c1=document.getElementById("chip-61"),c2=document.getElementById("chip-62");c1.querySelector("b").textContent=a;c2.querySelector("b").textContent=b;c1.classList.toggle("done",a===12);c2.classList.toggle("done",b===7);}
+const chk=ex=>ex==="61"?in61.forEach((i,k)=>c61(i,k)):sel62.forEach((x,k)=>c62(x,k));
+document.querySelectorAll("[data-hw6check]").forEach(b=>b.addEventListener("click",()=>chk(b.dataset.hw6check)));
+document.querySelectorAll("[data-hw6reveal]").forEach(b=>b.addEventListener("click",()=>{
+  if(b.dataset.hw6reveal==="61")in61.forEach((i,k)=>{if(!i.classList.contains("ok")){const f=fb(i.id);f.className="hfb near";f.innerHTML=ex61(k)}});
+  else sel62.forEach((x,k)=>{if(!x.classList.contains("ok")){const f=fb(x.id);f.className="hfb near";f.innerHTML=`<span class="ans">${e2(LEFT[k][0]+" "+RIGHT[SUG[k]][0])}</span><span class="why">${WHY[LEFT[k][1]]}</span>`}});}));
+document.getElementById("hwCheckAll6").addEventListener("click",()=>{chk("61");chk("62")});
+let armed=false;const rb=document.getElementById("hwReset6");
+rb.addEventListener("click",()=>{if(!armed){armed=true;rb.textContent="Точно очистить?";setTimeout(()=>{armed=false;rb.textContent="Очистить"},3000);return}
+  armed=false;rb.textContent="Очистить";in61.forEach(i=>{i.value="";set(i,"","")});sel62.forEach(x=>{x.value="";set(x,"","")});saved={};persist();});
+in61.forEach((i,k)=>{if(i.value.trim())c61(i,k)});sel62.forEach((x,k)=>{if(x.value!=="")c62(x,k)});score();
+})();
+
+/* tradução aula 7 */
+(function(){
+const TR=[
+ ["Хотя у него нет технического образования, он умеет программировать и управлять проектами.","Embora ele não tenha formação técnica, é capaz de programar e de gerir projetos.","embora + conjuntivo: tenha · лексика Aula 5: a formação técnica, capaz de programar, a gestão de projetos (gerir projetos)"],
+ ["Даже если мой деловой партнёр будет зарабатывать больше меня, я хочу сохранять баланс в наших профессиональных отношениях.","Mesmo que o meu parceiro de negócios ganhe mais do que eu, quero manter o equilíbrio na nossa relação profissional.","mesmo que + conjuntivo: ganhe · лексика Aula 5: que ele ganhe mais do que eu, o equilíbrio · Aula 6: o parceiro de negócios"],
+ ["Несмотря на то, что она очень увлечена модой, она предпочитает работать в сфере логистики.","Embora ela tenha uma grande paixão pela moda, prefere trabalhar na área da logística.","embora + conjuntivo: tenha · лексика Aula 5: a paixão pela moda"],
+ ["Я не откажусь от этого проекта, даже если мне придётся работать в выходные.","Não vou desistir deste projeto, nem que tenha de trabalhar aos fins de semana.","nem que + conjuntivo: tenha de"],
+ ["Если тебе не удастся найти это место, позвони мне. Я уже в пути.","Caso não consigas encontrar o sítio, liga-me. Já estou a caminho.","caso + conjuntivo: consigas"],
+ ["Можешь пользоваться моими цифровыми инструментами при условии, что не удалишь мои файлы.","Podes usar as minhas ferramentas digitais, desde que não apagues os meus ficheiros.","desde que + conjuntivo: apagues · лексика Aula 5: as ferramentas digitais"],
+ ["Не стоит звонить так рано, если только ситуация не срочная.","Não vale a pena ligar tão cedo, a não ser que a situação seja urgente.","a não ser que + conjuntivo: seja"],
+ ["Компания инвестирует в обучение сотрудников, чтобы у всех было больше возможностей для профессионального развития.","A empresa investe na formação dos funcionários para que todos tenham mais oportunidades de desenvolvimento profissional.","para que + conjuntivo: tenham · лексика Aula 5: o desenvolvimento"],
+ ["Как только у меня появятся новости от моего делового партнёра, я тебе позвоню.","Logo que tenha notícias do meu parceiro de negócios, telefono-te.","logo que + conjuntivo: tenha · лексика Aula 6: o parceiro de negócios"],
+ ["Очевидно, что он умеет смотреть на проблемы широко, но неясно, сможет ли он самостоятельно обеспечивать семью.","É evidente que ele tem uma visão ampla dos problemas, mas não é claro que consiga sustentar a família sozinho.","é evidente que + indicativo: tem; não é claro que + conjuntivo: consiga · лексика Aula 5: a visão ampla, sustentar a família"]];
+const saved=store.get("tr7",{})||{};
+document.getElementById("trList").innerHTML=TR.map((t,i)=>`<div class="q"><span>${i+1}. ${esc(t[0])}</span><textarea id="tr${i}" rows="2" lang="pt-PT" aria-label="Перевод ${i+1}" style="font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px;width:100%;resize:vertical"></textarea><details><summary>Вариант для сравнения</summary><p style="margin:6px 0 0"><span class="pt">${esc(t[1])}</span><br><span class="ru">${esc(t[2])}</span></p></details></div>`).join("");
+TR.forEach((t,i)=>{const a=document.getElementById("tr"+i);a.value=saved[i]||"";a.addEventListener("input",()=>{saved[i]=a.value;store.set("tr7",saved)})});
+})();
+
+/* dialogue 2: Precisa-se Empregada de Limpeza */
+(function(){
+const D=[
+ ["B","Olá, Joana!","Привет, Жуана!"],
+ ["J","Olá, Bernardo.","Привет, Бернарду."],
+ ["B","Como estás?","Как дела?"],
+ ["J","Bem, mas um pouco ocupada.","Хорошо, но я немного занята."],
+ ["B","Desculpa ter vindo até aqui, mas preciso de falar contigo. Podes?","Извини, что пришёл сюда, но мне нужно с тобой поговорить. Можешь?"],
+ ["J","Posso, mas **peço-te que sejas breve**.","Могу, но прошу тебя, покороче."],
+ ["B","Não te preocupes, não vou ocupar muito o teu tempo. O Hernâni quer que eu **veja contigo** se sabes de alguém que **faça limpeza**.","Не волнуйся, я не займу у тебя много времени. Эрнани хочет, чтобы я узнал у тебя, не знаешь ли ты кого-нибудь, кто занимается уборкой."],
+ ["J","Ah, nós falámos disso há pouco tempo. Só conheço a minha empregada, mas posso perguntar-lhe se ela tem disponibilidade, ou se conhece alguém que tenha.","А, мы об этом недавно говорили. Я знаю только свою домработницу, но могу спросить у неё, есть ли у неё время или знает ли она кого-то, у кого есть."],
+ ["B","Importas-te que eu **peça** para fazeres isso?","Ты не против, если я попрошу тебя это сделать?"],
+ ["J","Não, claro que não. Mas tem de ser já?","Нет, конечно нет. Но это нужно прямо сейчас?"],
+ ["B","**Assim que consigas.**","Как только сможешь."],
+ ["J","Está bem. Já percebi que ele está num daqueles dias…","Хорошо. Я уже поняла, что у него один из тех самых дней…"],
+ ["B","Ele **tem muita urgência**. A família chega depois de amanhã e ele tem a casa num caos.","Ему очень срочно. Семья приезжает послезавтра, а у него дома хаос."],
+ ["J","Registado. Depois digo-te qualquer coisa.","Принято. Потом дам тебе знать."],
+ ["B","Obrigado!","Спасибо!"],
+ ["J","Relaxa. Estás a fazer um ótimo trabalho!","Расслабься. Ты отлично справляешься!"],
+ ["B","Achas? O Hernâni é muito exigente.","Думаешь? Эрнани очень требовательный."],
+ ["J","Sim. O outro assistente dele **foi despedido** ao fim de uma semana. Tu estás a aguentar-te bem. Tenho a certeza de que ele está a gostar.","Да. Его прошлого ассистента уволили через неделю. А ты хорошо держишься. Я уверена, что ему нравится."],
+ ["B","**Espero que tenhas razão.**","Надеюсь, ты права."],
+ ["J","**Força**… e tem paciência!","Держись… и наберись терпения!"],
+ ["B","Isso eu tenho!","Вот этого у меня хватает!"],
+ ["J","Então estás safo!","Тогда ты в порядке!"],
+ ["B","Bem, **dizes-me** quando souberes alguma coisa da tua empregada?","Ну что, скажешь мне, когда что-нибудь узнаешь от своей домработницы?"],
+ ["J","Claro. Não **te preocupes**!","Конечно. Не волнуйся!"],
+ ["B","Obrigado, Joana. Até logo!","Спасибо, Жуана. До встречи!"],
+ ["J","Até logo!","До встречи!"]];
+window.LIMPEZA=D;
+const b=t=>esc(t).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>");
+const box=document.getElementById("dialogue2");
+box.innerHTML=D.map(([w,p,r])=>`<div class="line"><span class="who ${w==="B"?"j":"c"}">${w==="B"?"Bernardo":"Joana"}</span><div class="tx"><span>${b(p)}</span><span class="ru">${esc(r)}</span></div></div>`).join("");
+document.getElementById("trBtn2").addEventListener("click",e=>{const on=e.currentTarget.getAttribute("aria-pressed")!=="true";e.currentTarget.setAttribute("aria-pressed",on);e.currentTarget.textContent=on?"Перевод включён":"Перевод скрыт";box.classList.toggle("no-tr",!on)});
+})();
+
+/* aula 8: una as duas partes */
+(function(){
+const L=["Vamos esperar aqui até que …","Ele acha que vai ganhar o jogo embora …","Ele vai telefonar aos colegas para que …","Não aceito trabalhar ao domingo a não ser que …","Devolvemos-lhe o dinheiro caso …","Podemos alterar o projeto desde que …","Amanhã vamos à praia mesmo que …","Vamos arrumar a sala antes que …","Quero acabar isto hoje nem que …","Eles não podem comprar equipamento novo sem que …"];
+const R=["não se esqueçam da reunião.","saia daqui à meia-noite.","não esteja muito calor.","me paguem muito bem.","não fique satisfeito com os resultados.","a secretária nos chame.","o diretor dê autorização.","todos estejam de acordo.","o adversário seja o favorito.","os convidados cheguem."];
+const KEYS=[9,8,0,3,4,7,2,5,1,6];
+const RU=["Подождём здесь, пока не приедут гости.","Он думает, что выиграет матч, хотя фаворит соперник.","Он позвонит коллегам, чтобы они не забыли о совещании.","Я не соглашусь работать в воскресенье, если только мне не заплатят очень хорошо.","Мы вернём вам деньги, если вы не будете довольны результатами.","Мы можем изменить проект при условии, что все согласны.","Завтра пойдём на пляж, даже если будет не очень жарко.","Давай уберём в комнате, пока нас не позвала секретарь.","Хочу закончить это сегодня, даже если уйду отсюда в полночь.","Они не могут купить новое оборудование без разрешения директора."];
+const box=document.getElementById("unirList");let saved=store.get("unir8",{})||{};let hide=false;
+function render(){
+  box.innerHTML=L.map((l,i)=>{const id="un"+i;
+    const ctrl=hide?`<input type="text" id="${id}t" autocomplete="off" spellcheck="false" lang="pt-PT" placeholder="Моя вторая часть…" aria-label="${i+1}" style="flex:1 1 220px;min-width:0" value="${esc(saved["t"+i]||"")}">`
+      :`<select id="${id}" aria-label="${i+1}"><option value="">…</option>${R.map((r,j)=>`<option value="${j}"${String(saved[i])===String(j)?" selected":""}>${"abcdefghij"[j]}) ${esc(r)}</option>`).join("")}</select>`;
+    return `<div class="q"><span class="pt">${i+1}. ${esc(l)}</span><div class="row">${ctrl}</div><div id="${id}fb"></div></div>`}).join("");
+  document.getElementById("unirScore").textContent="";
+  box.querySelectorAll("select").forEach((x,i)=>x.addEventListener("change",()=>{saved[i]=x.value;store.set("unir8",saved);document.getElementById("un"+i+"fb").innerHTML=""}));
+  box.querySelectorAll("input").forEach((x,i)=>x.addEventListener("input",()=>{saved["t"+i]=x.value;store.set("unir8",saved)}));
+}
+document.getElementById("unirMode").addEventListener("click",e=>{hide=!hide;e.currentTarget.setAttribute("aria-pressed",hide);e.currentTarget.textContent=hide?"Показать варианты a–j":"Закрыть вторые части";render()});
+document.getElementById("unirCheck").addEventListener("click",()=>{let ok=0;L.forEach((l,i)=>{const fb=document.getElementById("un"+i+"fb");const full=l.replace(" …"," ")+R[KEYS[i]];
+  if(hide){const v=(saved["t"+i]||"").trim();fb.innerHTML=`<div class="fb near">${v?"Ваш вариант: "+esc(v)+"<br>":""}В оригинале: <b>${esc(full)}</b><br><span class="ru">${esc(RU[i])}</span></div>`;return}
+  const v=saved[i];if(String(v)===String(KEYS[i])){ok++;fb.innerHTML=`<div class="fb ok">Certo! <span class="ru">${esc(RU[i])}</span></div>`}
+  else fb.innerHTML=`<div class="fb bad">Правильно: ${"abcdefghij"[KEYS[i]]}) ${esc(full)}<br><span class="ru">${esc(RU[i])}</span></div>`});
+  if(!hide)document.getElementById("unirScore").textContent=ok+" / 10";});
+document.getElementById("unirReset").addEventListener("click",()=>{saved={};store.set("unir8",saved);render()});
+render();
+})();
+
+/* aula 8 extra: weather */
+(function(){
+const TXT=[
+ ["O tempo vai piorar já amanhã em todo o território de Portugal.","Погода ухудшится уже завтра на всей территории Португалии."],
+ ["A partir de domingo, a depressão «Bruna» vai afetar Portugal continental, mas o tempo <b>começará</b> a piorar já amanhã.","С воскресенья депрессия «Бруна» затронет континентальную Португалию, но погода начнёт ухудшаться уже завтра."],
+ ["Segundo as previsões do Instituto Português do Mar e da Atmosfera (IPMA), a chuva, por vezes forte e acompanhada de trovoada, <b>poderá</b> prolongar-se pelo menos até ao final da próxima semana.","Согласно прогнозам Португальского института моря и атмосферы (IPMA), дождь, временами сильный и с грозой, может продлиться как минимум до конца следующей недели."],
+ ["O centro da depressão <b>ficará</b> a norte dos Açores, mas a sua influência <b>deverá</b> estender-se a Portugal continental já no domingo.","Центр депрессии будет находиться к северу от Азорских островов, но её влияние, вероятно, распространится на континентальную Португалию уже в воскресенье."],
+ ["É também esperado um aumento da intensidade do vento de sul. No litoral oeste e nas zonas montanhosas, as rajadas <b>poderão</b> atingir os 70 km/h.","Также ожидается усиление южного ветра. На западном побережье и в горных районах порывы могут достигать 70 км/ч."]];
+const tb=document.getElementById("wText");
+tb.innerHTML=TXT.map(([p,r])=>`<div class="line" style="grid-template-columns:1fr"><div class="tx"><span>${p}</span><span class="ru">${r}</span></div></div>`).join("");
+document.getElementById("wTr").addEventListener("click",e=>{const on=e.currentTarget.getAttribute("aria-pressed")!=="true";e.currentTarget.setAttribute("aria-pressed",on);e.currentTarget.textContent=on?"Перевод включён":"Перевод скрыт";tb.classList.toggle("no-tr",!on)});
+const W1=[["começará","começar"],["poderá","poder"],["ficará","ficar"],["deverá","dever"],["poderão","poder"]];
+const W2=[
+ ["O tempo <b>vai piorar</b> já amanhã.","piorará","ir + infinitivo → futuro: piorar + á."],
+ ["A depressão «Bruna» <b>vai afetar</b> Portugal continental.","afetará","ir + infinitivo → futuro: afetar + á."],
+ ["O tempo <b>começará</b> a piorar já amanhã.","vai começar","futuro → ir + infinitivo: vai + começar."],
+ ["O centro da depressão <b>ficará</b> a norte dos Açores.","vai ficar","futuro → ir + infinitivo: vai + ficar."],
+ ["As rajadas <b>poderão</b> atingir os 70 km/h.","vão poder","as rajadas = elas → vão + poder."],
+ ["Amanhã <b>vai fazer</b> frio.","fará","fazer → основа far-: fará."]];
+const n2=s=>s.toLowerCase().replace(/[.,!?;:«»"]/g," ").replace(/\s+/g," ").trim();
+const st=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"");
+const saved=store.get("w8",{})||{};const all=[];
+function mk(id,ans,why,host,label){const i=document.createElement("input");i.type="text";i.id=id;i.className="blank";i.autocomplete="off";i.autocapitalize="off";i.spellcheck=false;i.value=saved[id]||"";i.dataset.ans=ans;i.dataset.why=why;i.setAttribute("aria-label",label);
+  const f=document.createElement("span");f.className="hfb";f.id=id+"-fb";
+  i.addEventListener("input",()=>{saved[id]=i.value;store.set("w8",saved);i.classList.remove("ok","near","bad");f.className="hfb";f.innerHTML="";sc()});
+  i.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();chk(i);const k=all.indexOf(i);if(all[k+1])all[k+1].focus()}});
+  i.addEventListener("blur",()=>{if(i.value.trim())chk(i)});host.appendChild(i);host.appendChild(f);all.push(i);return i;}
+function chk(i){const v=n2(i.value),a=n2(i.dataset.ans),f=document.getElementById(i.id+"-fb");i.classList.remove("ok","near","bad");if(!v){f.innerHTML="";sc();return}
+  if(v===a){i.classList.add("ok");f.className="hfb ok";f.innerHTML=""}
+  else if(st(v)===st(a)){i.classList.add("near");f.className="hfb near";f.innerHTML=`Почти: <span class="ans">${esc(i.dataset.ans)}</span>`}
+  else{i.classList.add("bad");f.className="hfb bad";f.innerHTML=`Ответ: <span class="ans">${esc(i.dataset.ans)}</span><span class="why">${i.dataset.why}</span>`}sc();}
+const w1=document.getElementById("w1");
+W1.forEach(([f,inf],k)=>{const li=document.createElement("li");li.innerHTML=`<span class="n">${k+1}.</span>`;const d=document.createElement("div");d.className="hw-line";d.innerHTML=`<span class="pt">${f}</span> → `;
+  mk("w1-"+k,inf,`${f}: отбрасываем окончание ${f.endsWith("ão")?"-ão":"-á"} и получаем инфинитив <b>${inf}</b>.`,d,f);li.appendChild(d);w1.appendChild(li)});
+const w2=document.getElementById("w2");
+W2.forEach(([q,a,why],k)=>{const li=document.createElement("li");li.innerHTML=`<span class="n">${k+1}.</span>`;const d=document.createElement("div");d.className="hw-line";d.innerHTML=`<span class="hw-orig" style="color:var(--ink);font-size:15px">${q}</span>`;
+  mk("w2-"+k,a,why,d,"Ex 2."+(k+1));li.appendChild(d);w2.appendChild(li)});
+function sc(){[["w1",5],["w2",6]].forEach(([p,t])=>{const n=all.filter(i=>i.id.startsWith(p+"-")&&i.classList.contains("ok")).length;const c=document.getElementById("chip-"+p);c.querySelector("b").textContent=n;c.classList.toggle("done",n===t)})}
+document.getElementById("wCheckAll").addEventListener("click",()=>all.forEach(chk));
+all.filter(i=>i.value.trim()).forEach(chk);sc();
+const Q=[
+ ["Quando é que o tempo começará a piorar?","Когда погода начнёт ухудшаться?","O tempo começará a piorar já amanhã.","Погода начнёт ухудшаться уже завтра."],
+ ["A partir de quando é que a depressão «Bruna» vai afetar Portugal continental?","С какого момента депрессия «Бруна» затронет континентальную Португалию?","A partir de domingo.","С воскресенья."],
+ ["Até quando poderá prolongar-se a chuva?","До какого времени может продлиться дождь?","Pelo menos até ao final da próxima semana.","Как минимум до конца следующей недели."],
+ ["Onde ficará o centro da depressão?","Где будет находиться центр депрессии?","O centro da depressão ficará a norte dos Açores.","К северу от Азорских островов."],
+ ["Que velocidade poderão atingir as rajadas e onde?","Какой скорости могут достигать порывы и где?","As rajadas poderão atingir os 70 km/h no litoral oeste e nas zonas montanhosas.","До 70 км/ч на западном побережье и в горных районах."]];
+document.getElementById("w3").innerHTML=Q.map((q,i)=>`<div class="q"><span class="pt">${i+1}. ${esc(q[0])}</span><span class="ru">${esc(q[1])}</span><details><summary>Ответ</summary><p style="margin:6px 0 0"><span class="pt">${esc(q[2])}</span><br><span class="ru">${esc(q[3])}</span></p></details></div>`).join("");
+const T=[["hoje","nublado","·","9°","19°"],["sexta","chuva","95%","12°","17°"],["sábado","chuva","65%","17°","21°"],["domingo","chuva","70%","17°","20°"],["segunda","chuva","95%","17°","20°"],["terça","chuva","95%","17°","19°"],["quarta","chuva","90%","16°","19°"],["quinta","chuva","65%","16°","20°"]];
+document.getElementById("wTable").innerHTML=T.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("");
+["w4text","w5text"].forEach(id=>{const t=document.getElementById(id);t.value=saved[id]||"";t.addEventListener("input",()=>{saved[id]=t.value;store.set("w8",saved)})});
+})();
+
+/* aula 8: frases do diálogo */
+(function(){
+const F=[
+ ["Estás safo!","Можешь расслабиться! Ты в порядке!",["estas safo"]],
+ ["Assim que consigas","Как только сможешь",[]],
+ ["Importas-te?","Ты не против?",["importas te"]],
+ ["Desculpa ter vindo até aqui","Извини, что пришёл сюда",[]],
+ ["Posso perguntar-lhe se ela conhece alguém que tenha","Я могу спросить её, знает ли она кого-нибудь, у кого есть",[]],
+ ["Mas tem de ser já?","Но это нужно прямо сейчас?",[]],
+ ["Ele tem muita urgência","Ему очень срочно",[]],
+ ["Depois digo-te qualquer coisa","Я дам тебе знать",[]],
+ ["Ele é muito exigente","Он очень требовательный",[]],
+ ["O outro assistente dele foi despedido","Другой его помощник был уволен",[]],
+ ["Tu estás a aguentar-te bem","Ты держишься молодцом",["estas a aguentar te bem"]],
+ ["Força e tem paciência!","Наберись терпения и вперёд!",[]]];
+const n2=s=>s.toLowerCase().replace(/[-.,!?;:«»"…]/g," ").replace(/\s+/g," ").trim();
+const st=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"");
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+/* modes */
+document.querySelectorAll(".fmode").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".fmode").forEach(x=>x.setAttribute("aria-pressed",x===b));document.querySelectorAll("[data-fpanel]").forEach(p=>p.hidden=p.dataset.fpanel!==b.dataset.fm);if(b.dataset.fm==="type")document.getElementById("ftIn").focus({preventScroll:true})}));
+/* cards */
+let deck,cur,flipped=false;const dir=document.getElementById("fcDir");
+function startDeck(){const known=store.get("fcKnown8",[]);deck=shuffle(F.map((_,i)=>i).filter(i=>!known.includes(i)));if(!deck.length){store.set("fcKnown8",[]);deck=shuffle(F.map((_,i)=>i))}showCard()}
+function showCard(){flipped=false;const front=document.getElementById("fcFront"),back=document.getElementById("fcBack"),left=document.getElementById("fcLeft");
+  if(!deck.length){front.textContent="Все 12 фраз выучены!";back.hidden=true;document.getElementById("fcHint").textContent="нажми «Сначала», чтобы пройти ещё раз";left.textContent="";return}
+  cur=deck[0];const ru=dir.value==="ru";front.textContent=ru?F[cur][1]:F[cur][0];back.textContent=ru?F[cur][0]:F[cur][1];back.hidden=true;
+  document.getElementById("fcHint").textContent="нажми, чтобы перевернуть";left.textContent="Осталось: "+deck.length+" из 12";}
+document.getElementById("fcCard").addEventListener("click",()=>{if(!deck.length)return;flipped=!flipped;document.getElementById("fcBack").hidden=!flipped;document.getElementById("fcHint").textContent=flipped?"":"нажми, чтобы перевернуть"});
+document.getElementById("fcKnow").addEventListener("click",()=>{if(!deck.length)return;const k=store.get("fcKnown8",[]);k.push(deck.shift());store.set("fcKnown8",k);showCard()});
+document.getElementById("fcAgain").addEventListener("click",()=>{if(!deck.length)return;deck.push(deck.shift());showCard()});
+document.getElementById("fcRestart").addEventListener("click",()=>{store.set("fcKnown8",[]);startDeck()});
+dir.addEventListener("change",showCard);startDeck();
+/* type */
+let tq=[],ti,tdone=false,tok=0,tall=0,hints=0;
+function nextT(){if(!tq.length)tq=shuffle(F.map((_,i)=>i));ti=tq.shift();tdone=false;hints=0;document.getElementById("ftPrompt").innerHTML=esc(F[ti][1]);const i=document.getElementById("ftIn");i.value="";document.getElementById("ftFb").innerHTML="";i.focus({preventScroll:true})}
+function chkT(){if(tdone)return nextT();const v=n2(document.getElementById("ftIn").value);if(!v)return;tdone=true;tall++;const a=n2(F[ti][0]);let cls,msg;
+  if(v===a){tok++;cls="ok";msg="Certo! "+F[ti][0]}
+  else if(st(v)===st(a)){cls="near";msg="Почти, проверь ударение: "+F[ti][0]}
+  else{cls="bad";msg="Правильно: "+F[ti][0]}
+  document.getElementById("ftFb").innerHTML=`<div class="fb ${cls}">${esc(msg)}</div>`;document.getElementById("ftScore").textContent=`Верно ${tok} из ${tall}`;}
+document.getElementById("ftGo").addEventListener("click",chkT);document.getElementById("ftNext").addEventListener("click",nextT);
+document.getElementById("ftIn").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();chkT()}});
+document.getElementById("ftHint").addEventListener("click",()=>{if(tdone)return;hints++;const words=F[ti][0].split(" ");document.getElementById("ftFb").innerHTML=`<div class="fb near">${esc(words.slice(0,Math.min(hints,words.length)).join(" "))} …</div>`});
+nextT();
+/* gap */
+const G=[
+ ["B","___, mas preciso de falar contigo. Podes?",3],
+ ["J","Só conheço a minha empregada, mas ___ se ela tem disponibilidade.",4],
+ ["B","___ que eu peça para fazeres isso?",2],
+ ["J","Não, claro que não. ___",5],
+ ["B","(Mas tem de ser já?) ___.",1],
+ ["B","___. A família chega depois de amanhã e ele tem a casa num caos.",6],
+ ["J","Registado. ___.",7],
+ ["B","Achas? O Hernâni ___.",8,"é muito exigente"],
+ ["J","Sim. ___ ao fim de uma semana.",9],
+ ["J","___. Tenho a certeza de que ele está a gostar.",10],
+ ["J","___",11],
+ ["J","(Isso eu tenho!) Então ___",0]];
+const OPT=["Estás safo!","Assim que consigas","Importas-te","Desculpa ter vindo até aqui","posso perguntar-lhe","Mas tem de ser já?","Ele tem muita urgência","Depois digo-te qualquer coisa","é muito exigente","O outro assistente dele foi despedido","Tu estás a aguentar-te bem","Força… e tem paciência!"];
+let gs=store.get("gap8",{})||{};const order=shuffle(OPT.map((_,i)=>i));
+function renderG(){document.getElementById("fgList").innerHTML=G.map((g,i)=>{const sel=`<select id="fg${i}" aria-label="Пропуск ${i+1}"><option value="">…</option>${order.map(j=>`<option value="${j}"${String(gs[i])===String(j)?" selected":""}>${esc(OPT[j])}</option>`).join("")}</select>`;
+  const parts=esc(g[1]).split("___");return `<div class="line"><span class="who ${g[0]==="B"?"j":"c"}">${g[0]==="B"?"Bernardo":"Joana"}</span><div class="tx"><span class="s">${parts[0]}${sel}${parts[1]||""}</span><div id="fg${i}fb"></div></div></div>`}).join("");
+  document.getElementById("fgScore").textContent="";
+  G.forEach((g,i)=>document.getElementById("fg"+i).addEventListener("change",e=>{gs[i]=e.target.value;store.set("gap8",gs);document.getElementById("fg"+i+"fb").innerHTML=""}));}
+document.getElementById("fgCheck").addEventListener("click",()=>{let ok=0;G.forEach((g,i)=>{const fb=document.getElementById("fg"+i+"fb");const full=g[3]?g[3]:g[1].replace("___",OPT[g[2]]);
+  if(String(gs[i])===String(g[2])){ok++;fb.innerHTML=`<div class="fb ok">Certo!</div>`}else fb.innerHTML=`<div class="fb bad">${esc(g[3]?"В диалоге: "+full:"Правильно: "+OPT[g[2]])}</div>`});document.getElementById("fgScore").textContent=ok+" / "+G.length});
+document.getElementById("fgReset").addEventListener("click",()=>{gs={};store.set("gap8",gs);renderG()});
+renderG();
+})();
+
+/* ===== Unidade 3, para 12.11.2026 ===== */
+(function(){
+const EXD=[["<b>Espero que</b> amanhã <b>esteja</b> bom tempo.","Надеюсь, завтра будет хорошая погода."],["<b>Queres que</b> eu te <b>ajude</b>?","Хочешь, я тебе помогу?"],["<b>Lamentamos que</b> vocês não <b>possam</b> ficar.","Жаль, что вы не можете остаться."],["<b>Duvido que</b> ele <b>tenha</b> razão.","Сомневаюсь, что он прав."],["<b>Receio</b> bem <b>que</b> eles se <b>percam</b> na cidade.","Очень боюсь, что они заблудятся в городе."],["<b>Prefiro que venham</b> mais cedo.","Предпочитаю, чтобы вы пришли пораньше."],["O professor <b>pede que</b> o <b>ouçam</b> com atenção.","Преподаватель просит, чтобы его слушали внимательно."],["Ela só <b>deseja que</b> tudo <b>corra</b> bem.","Она только хочет, чтобы всё прошло хорошо."],["<b>Agradeço que</b> se <b>sentem</b> para começarmos a reunião.","Прошу вас сесть, чтобы мы начали собрание."],["<b>Exijo que</b> me <b>contem</b> toda a verdade.","Требую, чтобы мне рассказали всю правду."],["<b>Proíbo-te que</b> me <b>fales</b> nesse tom.","Запрещаю тебе говорить со мной таким тоном."],["<b>Sinto</b> muito <b>que</b> afinal não <b>possas</b> vir.","Мне очень жаль, что ты всё-таки не сможешь прийти."],["<b>Sugiro que vá</b> primeiro ao médico.","Советую вам сначала сходить к врачу."],["<b>Não gosto que</b> te <b>vistas</b> dessa maneira.","Мне не нравится, что ты так одеваешься."],["<b>Tenho</b> imensa <b>pena que</b> não <b>fique</b> mais tempo.","Мне очень жаль, что вы не остаётесь подольше."],["<b>Temos</b> muitas <b>dúvidas que</b> ele <b>saiba</b> tudo.","Мы очень сомневаемся, что он знает всё."],["A Ana <b>tem medo que</b> o marido <b>seja</b> despedido.","Ана боится, что мужа уволят."]];
+document.getElementById("desejoEx").innerHTML=EXD.map(([p,r])=>`<div class="ex"><span class="pt" style="font-weight:400">${p}</span><span class="ru">${r}</span></div>`).join("");
+const EX31=[
+ ["saber tantas línguas","Duvido que ele","saiba tantas línguas","saiba","<b>duvidar</b> = сомнение → conjuntivo. saber неправильный: <b>saiba</b>."],
+ ["poder ficar","Lamento que a Ana não","possa ficar","possa","<b>lamentar</b> = чувство → conjuntivo. poder: eu posso → poss- + <b>a</b>."],
+ ["dar todas as informações","Agradecemos que os senhores nos","deem todas as informações","deem","<b>agradecer que</b> = вежливая просьба → conjuntivo. os senhores = eles. dar неправильный: <b>deem</b>."],
+ ["esquecer o assunto","Prefiro que tu","esqueças o assunto","esqueças","<b>preferir</b> → conjuntivo. esquecer: esqueço → esqueç- + <b>as</b>."],
+ ["sentir-se bem","Só desejamos que a senhora","se sinta bem","sinta","<b>desejar</b> → conjuntivo. a senhora = ela, местоимение <b>se</b> перед глаголом. sentir: sinto → sint- + <b>a</b>."],
+ ["estar melhor","Espero que o seu marido","esteja melhor","esteja","<b>esperar</b> = надеяться → conjuntivo. estar неправильный: <b>esteja</b>."],
+ ["vir comigo","Gosto que tu","venhas comigo","venhas","<b>gostar que</b> → conjuntivo. vir: venho → venh- + <b>as</b>."],
+ ["fazer barulho","Receio bem que eles","façam barulho","façam","<b>recear</b> = опасаться → conjuntivo. fazer: faço → faç- + <b>am</b>."],
+ ["devolver o dinheiro","Exijo que a loja me","devolva o dinheiro","devolva","<b>exigir</b> → conjuntivo. a loja = ela. devolver: devolvo → devolv- + <b>a</b>."],
+ ["ser um bom aluno","Queremos que tu","sejas um bom aluno","sejas","<b>querer</b> → conjuntivo. ser неправильный: <b>sejas</b>."],
+ ["haver algum problema","Tenho medo que","haja algum problema","haja","<b>ter medo que</b> → conjuntivo. haver только <b>haja</b>."],
+ ["telefonar mais tarde","Prefiro que o senhor me","telefone mais tarde","telefone","<b>preferir</b> → conjuntivo. o senhor = ele. telefonar: telefono → telefon- + <b>e</b>."],
+ ["apanhar um táxi","Duvido que a estas horas tu","apanhes um táxi","apanhes","<b>duvidar</b> → conjuntivo. apanhar: apanho → apanh- + <b>es</b>."],
+ ["jantar connosco","Tenho pena que vocês não","jantem connosco","jantem","<b>ter pena que</b> → conjuntivo. jantar: janto → jant- + <b>em</b>."],
+ ["consultar o médico","Sugiro que tu","consultes o médico","consultes","<b>sugerir</b> → conjuntivo. consultar: consulto → consult- + <b>es</b>."]];
+const EX32=[
+ ["Ele não admite que eu ",{v:"chegar",a:"chegue",e:"<b>não admitir que</b> → conjuntivo. chegar: chego → cheg- + e, -gar → <b>-gue</b>."}," atrasada."],
+ ["Não acredito que ela ",{v:"conseguir",a:"consiga",e:"<b>não acreditar que</b> = сомнение → conjuntivo. conseguir: consigo → consig- + <b>a</b>."}," o lugar."],
+ ["Duvido que eles ",{v:"vencer",a:"vençam",e:"<b>duvidar</b> → conjuntivo. vencer: venço → venç- + <b>am</b> (ç сохраняется перед a)."}," na final."],
+ ["Espero que vocês ",{v:"vir",a:"venham",e:"<b>esperar</b> → conjuntivo. vir: venho → venh- + <b>am</b>."}," cá mais vezes."],
+ ["Peço-vos que ",{v:"ter",a:"tenham",e:"<b>pedir</b> → conjuntivo. vos = vocês. ter: tenho → tenh- + <b>am</b>."}," mais um pouco de paciência."],
+ ["Quero que ",{v:"ajudar",a:"ajudes",e:"<b>querer</b> → conjuntivo. <i>o teu irmão</i> показывает лицо tu. ajudar: ajudo → ajud- + <b>es</b>."}," o teu irmão com os trabalhos."],
+ ["Espero que agora tu ",{v:"ver",a:"vejas",e:"<b>esperar</b> → conjuntivo. ver: vejo → vej- + <b>as</b>."}," melhor com esses óculos."],
+ ["Prefiro que ",{v:"ir",a:"vá",e:"<b>preferir</b> → conjuntivo. <i>para si</i> показывает лицо você. ir неправильный: <b>vá</b>."}," de táxi. É mais prático para si."],
+ ["Queres que eu lhe ",{v:"dizer",a:"diga",e:"<b>querer</b> → conjuntivo. dizer: digo → dig- + <b>a</b>."},"?"],
+ ["Só desejo que vocês ",{v:"divertir-se",a:"se divirtam",e:"<b>desejar</b> → conjuntivo. Местоимение <b>se</b> перед глаголом. divertir: divirto → divirt- + <b>am</b>."}," muito."],
+ ["Receio bem que ele ainda não ",{v:"saber",a:"saiba",e:"<b>recear</b> → conjuntivo. saber неправильный: <b>saiba</b>."}," o que aconteceu."],
+ ["Espero que tu ",{v:"dormir",a:"durmas",e:"<b>esperar</b> → conjuntivo. dormir: durmo → durm- + <b>as</b>."}," bem hoje e que amanhã ",{v:"estar",a:"estejas",e:"Второе <b>que</b> зависит от того же <b>espero</b>. estar неправильный: <b>estejas</b>."}," melhor."],
+ ["Tenho dúvidas que ela ",{v:"acreditar",a:"acredite",e:"<b>ter dúvidas que</b> → conjuntivo. acreditar: acredito → acredit- + <b>e</b>."}," nessa história."],
+ ["Agradeço que, da próxima vez, vocês ",{v:"trazer",a:"tragam",e:"<b>agradecer que</b> → conjuntivo. trazer: trago → trag- + <b>am</b>."}," os livros."],
+ ["Detesto que vocês me ",{v:"mentir",a:"mintam",e:"<b>detestar que</b> = чувство → conjuntivo. mentir: minto → mint- + <b>am</b>."},"."],
+ ["Sinto muito que não ",{v:"poder",a:"possas",e:"<b>sentir muito que</b> → conjuntivo. <i>tua visita</i> показывает лицо tu. poder: posso → poss- + <b>as</b>."}," ficar mais tempo. Gostei da tua visita."]];
+const EX33=[
+ ["Achas que eles se <b>lembram</b> de mim?","Duvido que","se lembrem","lembrem","<b>duvidar</b> → conjuntivo. lembrar-se: lembro → lembr- + <b>em</b>, местоимение se перед глаголом. Можно и полнее: <i>se lembrem de ti</i>."],
+ ["Achas que ela <b>está</b> a mentir?","Receio que","esteja","esteja","<b>recear</b> → conjuntivo. estar неправильный: <b>esteja</b>. Полнее: <i>esteja a mentir</i>."],
+ ["Achas que <b>consigo</b> chegar a tempo?","Duvido que","consigas","consigas","Спрашивают про «я», отвечаешь про «ты»: лицо tu. <b>duvidar</b> → conjuntivo. conseguir: consigo → consig- + <b>as</b>."],
+ ["Acha que <b>há</b> algum problema?","Espero que não","haja","haja","<b>esperar</b> → conjuntivo. há → <b>haja</b>."],
+ ["Achas que ela <b>aceita</b> o convite?","Duvido que","aceite","aceite","<b>duvidar</b> → conjuntivo. aceitar: aceito → aceit- + <b>e</b>."],
+ ["Acham que ele <b>sabe</b> alguma coisa?","Duvidamos que","saiba","saiba","<b>duvidar</b> → conjuntivo. saber неправильный: <b>saiba</b>."],
+ ["Achas que eles <b>vêm</b> hoje?","Espero que","venham","venham","<b>esperar</b> → conjuntivo. vir: venho → venh- + <b>am</b>."]];
+const n2=s=>s.toLowerCase().replace(/[.,!?;:«»"]/g," ").replace(/\s+/g," ").trim();
+const st=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"");
+const e2=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const KEY="tpc-1211-v1";let saved=store.get(KEY,{})||{};const persist=()=>store.set(KEY,saved);
+const all=[];
+function mk(id,cls){const i=document.createElement("input");i.type="text";i.id=id;i.className="blank"+(cls?" "+cls:"");i.autocomplete="off";i.autocapitalize="off";i.spellcheck=false;i.value=saved[id]||"";
+  i.addEventListener("input",()=>{saved[id]=i.value;persist();i.classList.remove("ok","near","bad");const f=document.getElementById(id+"-fb");f.className="hfb";f.innerHTML="";sc()});
+  i.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();chk(i);const k=all.indexOf(i);if(all[k+1])all[k+1].focus()}});
+  i.addEventListener("blur",()=>{if(i.value.trim())chk(i)});all.push(i);return i;}
+const mkFb=id=>{const f=document.createElement("span");f.className="hfb";f.id=id+"-fb";return f};
+/* 3.1 */
+const s31=document.getElementById("s31");
+EX31.forEach(([inf,before,ans,key,exp],k)=>{const id="u31-"+k,li=document.createElement("li");li.innerHTML=`<span class="n">${k+2}.</span>`;
+  const line=document.createElement("div");line.className="hw-line";const w=document.createElement("div");w.className="longwrap";
+  const s0=document.createElement("span");s0.innerHTML=`<span class="hw-inf">(${inf})</span> ${before}`;w.appendChild(s0);
+  const i=mk(id,"long");i.style.flexBasis="200px";Object.assign(i.dataset,{ans:ans,key:key,ex:"31",exp:exp});i.setAttribute("aria-label",`3.1 ${k+2}: ${inf}`);
+  w.appendChild(i);line.appendChild(w);line.appendChild(mkFb(id));li.appendChild(line);s31.appendChild(li);});
+/* 3.2 */
+const s32=document.getElementById("s32");let b=0;
+EX32.forEach((segs,k)=>{const li=document.createElement("li");li.innerHTML=`<span class="n">${k+1}.</span>`;const line=document.createElement("div");line.className="hw-line";const fbs=[];
+  segs.forEach(sg=>{if(typeof sg==="string"){line.appendChild(document.createTextNode(sg));return}
+    const id="u32-"+(b++),i=mk(id);Object.assign(i.dataset,{ans:sg.a,ex:"32",exp:sg.e});i.setAttribute("aria-label",`3.2 ${k+1}: ${sg.v}`);
+    line.appendChild(i);const inf=document.createElement("span");inf.className="hw-inf";inf.textContent=` (${sg.v})`;line.appendChild(inf);fbs.push(mkFb(id));});
+  fbs.forEach(f=>line.appendChild(f));li.appendChild(line);s32.appendChild(li);});
+/* 3.3 */
+const s33=document.getElementById("s33");
+EX33.forEach(([q,start,ans,key,exp],k)=>{const id="u33-"+k,li=document.createElement("li");li.innerHTML=`<span class="n">${k+2}.</span>`;
+  const line=document.createElement("div");line.className="hw-line";const o=document.createElement("span");o.className="hw-orig";o.style.color="var(--ink)";o.innerHTML=q;line.appendChild(o);
+  const w=document.createElement("div");w.className="longwrap";const s0=document.createElement("span");s0.className="hw-start";s0.textContent=start;w.appendChild(s0);
+  const i=mk(id,"long");i.style.flexBasis="160px";Object.assign(i.dataset,{ans:ans,key:key,ex:"33",exp:exp});i.setAttribute("aria-label",`3.3 ${k+2}`);
+  w.appendChild(i);line.appendChild(w);line.appendChild(mkFb(id));li.appendChild(line);s33.appendChild(li);});
+const whyBtn=`<button class="ghost" type="button">как правильно и почему</button>`;
+const explain=i=>`Ответ: <span class="ans">${e2(i.dataset.ans)}</span><span class="why">${i.dataset.exp||""}</span>`;
+function set(i,stt,html){i.classList.remove("ok","near","bad");if(stt)i.classList.add(stt);const f=document.getElementById(i.id+"-fb");f.className="hfb"+(stt?" "+stt:"");f.innerHTML=html||"";sc();}
+function chk(i){const v=n2(i.value),a=n2(i.dataset.ans);if(!v)return set(i,"","");
+  if(v===a)return set(i,"ok","");
+  if(st(v)===st(a))return set(i,"near",`Почти: <span class="ans">${e2(i.dataset.ans)}</span>`);
+  if(i.dataset.key){const w=v.split(" "),key=i.dataset.key;
+    if(w.includes(key)){if(i.dataset.ex==="33"&&a.startsWith("se ")&&!w.includes("se"))return set(i,"near",`Не хватает местоимения <b>se</b>: <span class="ans">${e2(i.dataset.ans)}</span>`);return set(i,"ok",`Глагол верный. Учебник: <span class="ans">${e2(i.dataset.ans)}</span>`)}
+    if(w.map(st).includes(st(key)))return set(i,"near",`Почти: проверь знак в глаголе <span class="ans">${key}</span>`);}
+  else{const aw=a.split(" ");if(aw.length===2&&aw[0]==="se"&&v===aw[1])return set(i,"bad",`Не хватает местоимения <b>se</b>. ${whyBtn}`);}
+  set(i,"bad",whyBtn);}
+document.getElementById("hw-1211").addEventListener("click",e=>{const g=e.target.closest(".hfb .ghost");if(!g)return;e.stopPropagation();const f=g.parentElement;f.innerHTML=explain(document.getElementById(f.id.replace(/-fb$/,"")))});
+function sc(){[["31",15],["32",17],["33",7]].forEach(([ex,t])=>{const n=all.filter(i=>i.dataset.ex===ex&&i.classList.contains("ok")).length;const c=document.getElementById("chip-"+ex);c.querySelector("b").textContent=n;c.classList.toggle("done",n===t)})}
+document.querySelectorAll("[data-u3check]").forEach(x=>x.addEventListener("click",()=>all.filter(i=>i.dataset.ex===x.dataset.u3check).forEach(chk)));
+document.querySelectorAll("[data-u3reveal]").forEach(x=>x.addEventListener("click",()=>all.filter(i=>i.dataset.ex===x.dataset.u3reveal&&!i.classList.contains("ok")).forEach(i=>{const f=document.getElementById(i.id+"-fb");f.className="hfb "+(i.value.trim()?"bad":"near");f.innerHTML=explain(i)})));
+document.getElementById("u3CheckAll").addEventListener("click",()=>all.forEach(chk));
+let armed=false;const rb=document.getElementById("u3Reset");
+rb.addEventListener("click",()=>{if(!armed){armed=true;rb.textContent="Точно очистить?";setTimeout(()=>{armed=false;rb.textContent="Очистить"},3000);return}
+  armed=false;rb.textContent="Очистить";all.forEach(i=>{i.value="";set(i,"","")});saved={};persist();});
+all.filter(i=>i.value.trim()).forEach(chk);sc();
+})();
+
+/* Unidade 3: verbos trainer */
+(function(){
+const V=[["agradecer que","благодарить, что / буду благодарен, если","Agradeço que se sentem."],["desejar que","желать, чтобы","Ela só deseja que tudo corra bem."],["duvidar que","сомневаться, что","Duvido que ele tenha razão."],["esperar que","надеяться, что","Espero que amanhã esteja bom tempo."],["exigir que","требовать, чтобы","Exijo que me contem toda a verdade."],["gostar que","нравиться, что","Não gosto que te vistas dessa maneira."],["lamentar que","сожалеть, что","Lamentamos que vocês não possam ficar."],["pedir que","просить, чтобы","O professor pede que o ouçam com atenção."],["preferir que","предпочитать, чтобы","Prefiro que venham mais cedo."],["proibir que","запрещать, чтобы","Proíbo-te que me fales nesse tom."],["querer que","хотеть, чтобы","Queres que eu te ajude?"],["recear que","опасаться, что","Receio bem que eles se percam na cidade."],["sentir que","сожалеть (sinto muito que = мне очень жаль, что)","Sinto muito que afinal não possas vir."],["sugerir que","советовать, предлагать, чтобы","Sugiro que vá primeiro ao médico."],["ter dúvidas que","сомневаться, что","Temos muitas dúvidas que ele saiba tudo."],["ter medo que","бояться, что","A Ana tem medo que o marido seja despedido."],["ter pena que","жалеть, что","Tenho imensa pena que não fique mais tempo."]];
+const n2=s=>s.toLowerCase().replace(/[-.,!?;:«»"…]/g," ").replace(/\s+/g," ").trim();
+const st=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"");
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+document.querySelectorAll(".vmode").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".vmode").forEach(x=>x.setAttribute("aria-pressed",x===b));document.querySelectorAll("[data-vpanel]").forEach(p=>p.hidden=p.dataset.vpanel!==b.dataset.vm);if(b.dataset.vm==="say")document.getElementById("vsIn").focus({preventScroll:true})}));
+/* cards */
+let deck,cur,flip=false;const dir=document.getElementById("vcDir");
+function start(){const k=store.get("vcKnown3",[]);deck=shuffle(V.map((_,i)=>i).filter(i=>!k.includes(i)));if(!deck.length){store.set("vcKnown3",[]);deck=shuffle(V.map((_,i)=>i))}show()}
+function show(){flip=false;const F=document.getElementById("vcFront"),B=document.getElementById("vcBack"),E=document.getElementById("vcEx"),H=document.getElementById("vcHint"),L=document.getElementById("vcLeft");
+  B.hidden=true;E.hidden=true;
+  if(!deck.length){F.textContent="Все 17 глаголов выучены!";H.textContent="нажми «Сначала», чтобы пройти ещё раз";L.textContent="";return}
+  cur=deck[0];const pt=dir.value==="pt";F.textContent=pt?V[cur][0]:V[cur][1];B.textContent=pt?V[cur][1]:V[cur][0];E.textContent=V[cur][2];H.textContent="нажми, чтобы перевернуть";L.textContent="Осталось: "+deck.length+" из 17";}
+document.getElementById("vcCard").addEventListener("click",()=>{if(!deck.length)return;flip=!flip;document.getElementById("vcBack").hidden=!flip;document.getElementById("vcEx").hidden=!flip;document.getElementById("vcHint").textContent=flip?"":"нажми, чтобы перевернуть"});
+document.getElementById("vcKnow").addEventListener("click",()=>{if(!deck.length)return;const k=store.get("vcKnown3",[]);k.push(deck.shift());store.set("vcKnown3",k);show()});
+document.getElementById("vcAgain").addEventListener("click",()=>{if(!deck.length)return;deck.push(deck.shift());show()});
+document.getElementById("vcRestart").addEventListener("click",()=>{store.set("vcKnown3",[]);start()});
+dir.addEventListener("change",show);start();
+/* say */
+const S=[["Я надеюсь, что…","esperar","Espero que"],["Он хочет, чтобы…","querer","Ele quer que"],["Мы предпочитаем, чтобы…","preferir","Preferimos que"],["Я сомневаюсь, что…","duvidar","Duvido que"],["Они просят, чтобы…","pedir","Eles pedem que"],["Я требую, чтобы…","exigir","Exijo que"],["Запрещаю тебе…","proibir","Proíbo-te que"],["Советую, чтобы…","sugerir","Sugiro que"],["Мне жаль, что…","lamentar","Lamento que"],["Мне очень жаль, что…","sentir","Sinto muito que"],["Я опасаюсь, что…","recear","Receio que"],["Я боюсь, что…","ter medo","Tenho medo que"],["Мне жаль, что…","ter pena","Tenho pena que"],["Мне нравится, что…","gostar","Gosto que"],["Буду благодарен, если…","agradecer","Agradeço que"],["Мы желаем, чтобы…","desejar","Desejamos que"],["У меня есть сомнения, что…","ter dúvidas","Tenho dúvidas que"],["Ты хочешь, чтобы…","querer","Queres que"],["Мы сомневаемся, что…","duvidar","Duvidamos que"],["Она надеется, что…","esperar","Ela espera que"]];
+let q=[],si,done=false,ok=0,tot=0;
+function next(){if(!q.length)q=shuffle(S.map((_,i)=>i));si=q.shift();done=false;document.getElementById("vsPrompt").innerHTML=`${esc(S[si][0])}<small>(${esc(S[si][1])})</small>`;const i=document.getElementById("vsIn");i.value="";document.getElementById("vsFb").innerHTML="";i.focus({preventScroll:true})}
+function check(){if(done)return next();const raw=document.getElementById("vsIn").value;let v=n2(raw);if(!v)return;done=true;tot++;
+  let a=n2(S[si][2]);const strip=x=>x.replace(/^(eu|ele|ela|eles|elas|nós|tu) /,"");
+  let cls,msg;
+  if(v===a||strip(v)===strip(a)){ok++;cls="ok";msg="Certo! "+S[si][2]}
+  else if(st(v)===st(a)||st(strip(v))===st(strip(a))){cls="near";msg="Почти, проверь ударение: "+S[si][2]}
+  else if(!v.endsWith(" que")&&(v+" que"===a||strip(v+" que")===strip(a))){cls="near";msg="Не забудь que: "+S[si][2]}
+  else{cls="bad";msg="Правильно: "+S[si][2]}
+  document.getElementById("vsFb").innerHTML=`<div class="fb ${cls}">${esc(msg)}</div>`;document.getElementById("vsScore").textContent=`Верно ${ok} из ${tot}`;}
+document.getElementById("vsGo").addEventListener("click",check);document.getElementById("vsNext").addEventListener("click",next);
+document.getElementById("vsIn").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();check()}});
+next();
+/* mood */
+const M=[["Acho que ele ___ razão.","tem","tenha",0,"acho que = мнение → indicativo."],["Duvido que ele ___ razão.","tem","tenha",1,"duvidar = сомнение → conjuntivo."],["Espero que amanhã ___ bom tempo.","está","esteja",1,"esperar = надежда → conjuntivo."],["É claro que amanhã ___ bom tempo.","está","esteja",0,"é claro que = уверенность → indicativo."],["Tenho a certeza de que ela ___ a verdade.","sabe","saiba",0,"ter a certeza = уверенность → indicativo."],["Receio que ela não ___ a verdade.","sabe","saiba",1,"recear = опасение → conjuntivo."],["Sei que vocês ___ cedo.","vêm","venham",0,"saber = факт → indicativo."],["Prefiro que vocês ___ cedo.","vêm","venham",1,"preferir = желание → conjuntivo."],["Não acho que ele ___ hoje.","vem","venha",1,"não acho que = сомнение → conjuntivo."],["Acho que ele ___ hoje.","vem","venha",0,"acho que = мнение → indicativo."],["Sabemos que não ___ ficar.","podes","possas",0,"saber = факт → indicativo."],["Lamentamos que não ___ ficar.","podes","possas",1,"lamentar = чувство → conjuntivo."],["Tenho medo que ___ algum problema.","há","haja",1,"ter medo = страх → conjuntivo."],["Parece-me que ___ algum problema.","há","haja",0,"parece-me que = мнение → indicativo."]];
+let order=shuffle(M.map((_,i)=>i)),ms={};
+function render(){document.getElementById("vmList").innerHTML=order.map((k,n)=>{const m=M[k],parts=esc(m[0]).split("___");
+  return `<div class="q"><span class="s">${n+1}. ${parts[0]}<select id="vm${k}" aria-label="${n+1}"><option value="">…</option><option value="0">${esc(m[1])}</option><option value="1">${esc(m[2])}</option></select>${parts[1]}</span><div id="vm${k}fb"></div></div>`}).join("");
+  document.getElementById("vmScore").textContent="";
+  M.forEach((m,k)=>document.getElementById("vm"+k).addEventListener("change",e=>{ms[k]=e.target.value;document.getElementById("vm"+k+"fb").innerHTML=""}));}
+document.getElementById("vmCheck").addEventListener("click",()=>{let c=0;M.forEach((m,k)=>{const fb=document.getElementById("vm"+k+"fb");const right=m[3]?m[2]:m[1];
+  if(ms[k]===undefined||ms[k]===""){fb.innerHTML="";return}
+  if(+ms[k]===m[3]){c++;fb.innerHTML=`<div class="fb ok">Certo! ${esc(m[4])}</div>`}else fb.innerHTML=`<div class="fb bad">Правильно: ${esc(right)}. ${esc(m[4])}</div>`});
+  document.getElementById("vmScore").textContent=c+" / "+M.length});
+document.getElementById("vmReset").addEventListener("click",()=>{ms={};order=shuffle(M.map((_,i)=>i));render()});
+render();
+})();
+
+/* Aula 9: quizlet gap fill */
+(function(){
+const Q=[
+ ["O chefe da Marta nunca está satisfeito com o trabalho dos funcionários. É muito ","exigente",".",[],"Начальник Марты никогда не доволен работой сотрудников. Он очень требовательный."],
+ ["Não te preocupes! Já consegui resolver o problema. Agora ","estás safo","!",[],"Не волнуйся! Я уже решила проблему. Теперь можешь расслабиться!"],
+ ["A Ana perdeu o emprego porque a empresa decidiu reduzir o número de funcionários. Ela ","foi despedida",".",[],"Ана потеряла работу, потому что компания решила сократить штат. Её уволили. (Ана = она, поэтому despedida)"],
+ ["Ainda não sei se posso ir à reunião. Amanhã ","digo-te qualquer coisa",".",[],"Ещё не знаю, смогу ли пойти на совещание. Завтра дам тебе знать."],
+ ["Sei que estás a passar por uma fase difícil, mas ","estás a aguentar-te"," muito bem!",[],"Знаю, что у тебя трудный период, но ты отлично держишься!"],
+ ["Preciso de encontrar um novo assistente ainda hoje. ","Tenho muita urgência","!",[],"Мне нужно найти нового ассистента ещё сегодня. Мне очень срочно!"],
+ ["","Importas-te"," se eu utilizar o teu computador durante uns minutos?",[],"Ты не против, если я воспользуюсь твоим компьютером пару минут?"],
+ ["Podemos falar sobre isso amanhã ou ","tem de ser já","?",["tens muita urgência"],"Можем поговорить об этом завтра или это нужно прямо сейчас? (на уроке приняли и вариант tens muita urgência)"],
+ ["Sei que estás cansado, mas tens de ","ter paciência",". A situação vai melhorar.",[],"Знаю, что ты устал, но нужно набраться терпения. Ситуация улучшится."]];
+const n2=s=>s.toLowerCase().replace(/[-.,!?;:«»"…]/g," ").replace(/\s+/g," ").trim();
+const st=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"");
+document.getElementById("qzBank").innerHTML=["exigente","estar safo","ser despedido","digo-te qualquer coisa","aguentar-se","ter muita urgência","importar-se","tem de ser já","ter paciência"].sort().map(x=>`<span class="chip">${esc(x)}</span>`).join("");
+let saved=store.get("qz9",{})||{};
+const list=document.getElementById("qzList");
+function render(){list.innerHTML=Q.map((q,i)=>`<li><span class="n">${i+1}.</span><div class="hw-line">${esc(q[0])}<input type="text" class="blank" id="qz${i}" autocomplete="off" autocapitalize="off" spellcheck="false" lang="pt-PT" aria-label="${i+1}" value="${esc(saved[i]||"")}" style="width:12em">${esc(q[2])}<span class="hfb" id="qz${i}-fb"></span></div></li>`).join("");
+  document.getElementById("qzScore").textContent="";
+  Q.forEach((q,i)=>{const el=document.getElementById("qz"+i);el.addEventListener("input",()=>{saved[i]=el.value;store.set("qz9",saved);el.classList.remove("ok","near","bad");document.getElementById("qz"+i+"-fb").innerHTML=""});
+    el.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();chk(i);const nx=document.getElementById("qz"+(i+1));if(nx)nx.focus()}})});}
+function chk(i){const el=document.getElementById("qz"+i),f=document.getElementById("qz"+i+"-fb"),q=Q[i],v=n2(el.value);el.classList.remove("ok","near","bad");if(!v){f.className="hfb";f.innerHTML="";return false}
+  const alts=[q[1],...q[3]].map(n2);
+  if(alts.includes(v)){el.classList.add("ok");f.className="hfb ok";f.innerHTML=`<span class="ru">${esc(q[4])}</span>`;return true}
+  if(alts.map(st).includes(st(v))){el.classList.add("near");f.className="hfb near";f.innerHTML=`Почти, проверь ударение: <span class="ans">${esc(q[1])}</span>`;return false}
+  el.classList.add("bad");f.className="hfb bad";f.innerHTML=`Ответ: <span class="ans">${esc(q[1])}</span><span class="why">${esc(q[4])}</span>`;return false}
+document.getElementById("qzCheck").addEventListener("click",()=>{let ok=0;Q.forEach((q,i)=>{if(chk(i))ok++});document.getElementById("qzScore").textContent=ok+" / "+Q.length});
+document.getElementById("qzReveal").addEventListener("click",()=>Q.forEach((q,i)=>{const el=document.getElementById("qz"+i);if(el.classList.contains("ok"))return;const f=document.getElementById("qz"+i+"-fb");f.className="hfb near";f.innerHTML=`Ответ: <span class="ans">${esc(q[1])}</span><span class="why">${esc(q[4])}</span>`}));
+document.getElementById("qzReset").addEventListener("click",()=>{saved={};store.set("qz9",saved);render()});
+render();
+})();
+
+/* Aula 10: indicativo ou conjuntivo */
+(function(){
+const P=[["Parece-me que","eles gostam de música clássica.","ind"],["Não me parece que","eles gostem de música clássica.","conj"],["Ele quer que","o Miguel chegue às nove horas.","conj"],["Ele sabe que","o Miguel chega às nove horas.","ind"],["Tenho a certeza que","ele não compreende a minha posição.","ind"],["Tenho pena que","ele não compreenda a minha posição.","conj"],["É óbvio que","ela ajuda o irmão a fazer os trabalhos.","ind"],["É provável que","ela ajude o irmão a fazer os trabalhos.","conj"],["Ele pede que","lhe enviem as informações por correio.","conj"],["Ele diz que","lhe enviam as informações por correio.","ind"]];
+const WHY={ind:"Мнение, знание, уверенность или сообщение → indicativo.",conj:"Желание, просьба, сомнение, чувство, вероятность → conjuntivo."};
+const sh=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+let opts=sh(P.map((_,i)=>i)),sel={};
+function render(){document.getElementById("ic10List").innerHTML=P.map((p,i)=>`<div class="q"><span class="s"><span class="pt">${esc(p[0])}</span> <select id="ic${i}" aria-label="${esc(p[0])}" style="max-width:100%"><option value="">…</option>${opts.map(j=>`<option value="${j}">${esc(P[j][1])}</option>`).join("")}</select></span><div id="ic${i}fb"></div></div>`).join("");
+  document.getElementById("ic10Score").textContent="";P.forEach((p,i)=>document.getElementById("ic"+i).addEventListener("change",e=>{sel[i]=e.target.value;document.getElementById("ic"+i+"fb").innerHTML=""}));}
+document.getElementById("ic10Check").addEventListener("click",()=>{let ok=0;P.forEach((p,i)=>{const fb=document.getElementById("ic"+i+"fb");if(sel[i]===undefined||sel[i]==="")return;
+  if(+sel[i]===i){ok++;fb.innerHTML=`<div class="fb ok">Certo! ${WHY[p[2]]}</div>`}else fb.innerHTML=`<div class="fb bad">Правильно: ${esc(p[0]+" "+p[1])} ${WHY[p[2]]}</div>`});
+  document.getElementById("ic10Score").textContent=ok+" / "+P.length});
+document.getElementById("ic10Reset").addEventListener("click",()=>{sel={};opts=sh(P.map((_,i)=>i));render()});
+render();
+})();
+
+/* Aula 10: frases com imagens */
+(function(){
+const I=[["Uma mulher na praia com uma bebida. Amanhã eu quero ir à praia.","Женщина на пляже. Завтра хочу пойти на пляж.","Quero / Espero que não chova."],["Um polícia fala com um homem que fuma. «É proibido fumar aqui, senhor.»","Полицейский и курящий мужчина. «Здесь курить запрещено».","Eu proíbo que você fume."],["Um homem corre com dinheiro. Vou levar dinheiro rapidamente para casa.","Человек бежит с деньгами. Быстро отнесу деньги домой.","Eu receio que / tenho medo de que algum ladrão me roube."],["Amigos chegam ao aeroporto. Os meus amigos devem vir a Portugal.","Друзья в аэропорту. Мои друзья должны приехать в Португалию.","Eu espero / quero / desejo / gosto / receio que venham visitar a minha cidade."],["Um chefe e uma secretária no escritório. Todos os dias…","Начальник и секретарь в офисе. Каждый день…","Todos os dias eu espero que / peço que a minha secretária me traga um café, mas ela esquece-se sempre."],["Uma casa à venda. O Paulo quer vender a casa, mas a casa é muito cara.","Дом на продажу. Паулу хочет продать дом, но дом очень дорогой.","Eu receio que / duvido que ele consiga a vender."],["Um palhaço com crianças.","Клоун с детьми.","As crianças esperam / querem / desejam / gostam / receiam que os palhaços as façam rir."],["Uma mesa de jantar. Amanhã vou fazer um jantar na minha casa.","Ужин. Завтра устраиваю ужин у себя дома.","Espero / Duvido que os meus amigos cheguem a horas."]];
+const saved=store.get("im10",{})||{};
+document.getElementById("im10List").innerHTML=I.map((x,i)=>`<div class="q"><span class="pt">${i+1}. ${esc(x[0])}</span><span class="ru">${esc(x[1])}</span><textarea id="im${i}" rows="2" lang="pt-PT" aria-label="Фраза ${i+1}" style="font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px;width:100%;resize:vertical"></textarea><details><summary>Варианты с урока</summary><p style="margin:6px 0 0" class="pt">${esc(x[2])}</p>${i===4?`<p class="ru" style="margin:4px 0 0">На слайде было «mas ela esqueça-se sempre». Это факт, поэтому нужен indicativo: <b>esquece-se</b>.</p>`:""}${i===5?`<p class="ru" style="margin:4px 0 0">Так на слайде. Естественнее «consiga vendê-la».</p>`:""}</details></div>`).join("");
+I.forEach((x,i)=>{const t=document.getElementById("im"+i);t.value=saved[i]||"";t.addEventListener("input",()=>{saved[i]=t.value;store.set("im10",saved)})});
+})();
+
+/* TPC 17.11: aprender o diálogo */
+(function(){
+const D=(window.LIMPEZA||[]).map(([w,p,r])=>[w,p.replace(/\*\*/g,""),r]);
+const NAME={B:"Bernardo",J:"Joana"};
+const n2=s=>s.toLowerCase().replace(/[-.,!?;:«»"…]/g," ").replace(/\s+/g," ").trim();
+const st=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"");
+const sh=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+document.querySelectorAll(".dmode").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".dmode").forEach(x=>x.setAttribute("aria-pressed",x===b));document.querySelectorAll("[data-dpanel]").forEach(p=>p.hidden=p.dataset.dpanel!==b.dataset.dm)}));
+const lineBox=(w,inner,ru)=>`<div class="line"><span class="who ${w==="B"?"j":"c"}">${NAME[w]}</span><div class="tx"><span>${inner}</span>${ru?`<span class="ru">${esc(ru)}</span>`:""}</div></div>`;
+/* 1 cloze */
+let showTr=false;
+function cloze(){const lv=+document.getElementById("dzLevel").value;
+  document.getElementById("dzText").innerHTML=D.map(([w,p,r])=>{const toks=p.split(/(\s+)/);
+    const words=toks.map((t,i)=>/[A-Za-zÀ-ÿ]/.test(t)?i:-1).filter(i=>i>=0);const k=Math.round(words.length*lv);const hide=new Set(sh(words).slice(0,k));
+    const html=toks.map((t,i)=>hide.has(i)?`<span class="dz hid" tabindex="0">${esc(t)}</span>`:esc(t)).join("");
+    return lineBox(w,html,showTr?r:"")}).join("");}
+document.getElementById("dzText").addEventListener("click",e=>{const z=e.target.closest(".dz");if(z)z.classList.toggle("hid")});
+document.getElementById("dzText").addEventListener("keydown",e=>{const z=e.target.closest(".dz");if(z&&(e.key==="Enter"||e.key===" ")){e.preventDefault();z.classList.toggle("hid")}});
+document.getElementById("dzLevel").addEventListener("change",cloze);document.getElementById("dzNew").addEventListener("click",cloze);
+document.getElementById("dzShow").addEventListener("click",()=>document.querySelectorAll("#dzText .dz").forEach(z=>z.classList.remove("hid")));
+document.getElementById("dzTr").addEventListener("click",e=>{showTr=!showTr;e.currentTarget.setAttribute("aria-pressed",showTr);e.currentTarget.textContent=showTr?"Скрыть перевод":"Показать перевод";cloze()});
+cloze();
+/* 2 first letters */
+const first=p=>p.split(/(\s+)/).map(t=>{const m=t.match(/^([^A-Za-zÀ-ÿ]*)([A-Za-zÀ-ÿ])([A-Za-zÀ-ÿ'-]*)(.*)$/);return m?m[1]+m[2]+m[3].replace(/[A-Za-zÀ-ÿ]/g,"·")+m[4]:t}).join("");
+document.getElementById("dlText").innerHTML=D.map(([w,p,r],i)=>`<div class="line dl" data-i="${i}" tabindex="0"><span class="who ${w==="B"?"j":"c"}">${NAME[w]}</span><div class="tx"><span class="mask" style="font-family:var(--mono);font-size:14px">${esc(first(p))}</span><span class="full pt" hidden>${esc(p)}</span><span class="ru">${esc(r)}</span></div></div>`).join("");
+const tog=el=>{const f=el.querySelector(".full"),m=el.querySelector(".mask");f.hidden=!f.hidden;m.hidden=!f.hidden};
+document.getElementById("dlText").addEventListener("click",e=>{const l=e.target.closest(".dl");if(l)tog(l)});
+document.getElementById("dlText").addEventListener("keydown",e=>{const l=e.target.closest(".dl");if(l&&(e.key==="Enter"||e.key===" ")){e.preventDefault();tog(l)}});
+/* 3 order */
+const PARTS=[[0,6],[6,12],[12,18],[18,D.length]];
+document.getElementById("doPart").innerHTML=PARTS.map((p,i)=>`<option value="${i}">Часть ${i+1}: реплики ${p[0]+1}-${p[1]}</option>`).join("");
+let next,pool;
+function order(){const [a,b]=PARTS[+document.getElementById("doPart").value];next=a;pool=sh(Array.from({length:b-a},(_,k)=>a+k));
+  document.getElementById("doDone").innerHTML="";document.getElementById("doScore").textContent="";drawPool();}
+function drawPool(){document.getElementById("doPool").innerHTML=pool.map(i=>`<button class="oline" data-i="${i}" type="button"><span class="label">${NAME[D[i][0]]}</span><br>${esc(D[i][1])}</button>`).join("");
+  if(!pool.length)document.getElementById("doScore").textContent="Готово! Эта часть собрана.";}
+document.getElementById("doPool").addEventListener("click",e=>{const b=e.target.closest(".oline");if(!b)return;const i=+b.dataset.i;
+  if(i===next){pool=pool.filter(x=>x!==i);next++;document.getElementById("doDone").insertAdjacentHTML("beforeend",`<div class="oline done"><span class="label">${NAME[D[i][0]]}</span><br>${esc(D[i][1])}</div>`);drawPool()}
+  else{b.classList.add("wrong");setTimeout(()=>b.classList.remove("wrong"),600)}});
+document.getElementById("doPart").addEventListener("change",order);document.getElementById("doNew").addEventListener("click",order);
+order();
+/* 4 role */
+let pos=0,hits=0,turns=0,peek=0;
+function compare(user,target){const u=n2(user).split(" ").map(st);let j=0;
+  return target.split(/(\s+)/).map(t=>{if(!/[A-Za-zÀ-ÿ]/.test(t))return esc(t);const w=st(n2(t));const k=u.indexOf(w,j);if(k>=0){j=k+1;return `<span class="wm">${esc(t)}</span>`}return `<span class="wx">${esc(t)}</span>`}).join("");}
+function advance(){const me=document.getElementById("drRole").value,chat=document.getElementById("drChat");
+  while(pos<D.length&&D[pos][0]!==me){chat.insertAdjacentHTML("beforeend",`<div class="bubble"><span class="who">${NAME[D[pos][0]]}</span>${esc(D[pos][1])}<br><span class="ru">${esc(D[pos][2])}</span></div>`);pos++}
+  const turn=document.getElementById("drTurn");
+  if(pos>=D.length){turn.hidden=true;document.getElementById("drScore").textContent=`Диалог закончен. Без подсказок и полностью верно: ${hits} из ${turns}`;return}
+  turn.hidden=false;peek=0;document.getElementById("drHint").textContent="Твоя реплика: "+D[pos][2];document.getElementById("drIn").value="";document.getElementById("drFb").innerHTML="";}
+function commit(text,ok){const chat=document.getElementById("drChat");chat.insertAdjacentHTML("beforeend",`<div class="bubble me"><span class="who">${NAME[D[pos][0]]}</span>${text}</div>`);turns++;if(ok)hits++;pos++;advance();}
+function restart(){pos=0;hits=0;turns=0;document.getElementById("drChat").innerHTML="";document.getElementById("drScore").textContent="";advance()}
+document.getElementById("drGo").addEventListener("click",()=>{const v=document.getElementById("drIn").value;if(!v.trim())return;const t=D[pos][1];
+  const exact=n2(v)===n2(t);const loose=st(n2(v))===st(n2(t));
+  if(exact||loose){document.getElementById("drFb").innerHTML=`<div class="fb ok">${exact?"Certo!":"Почти: проверь ударения."}</div>`;setTimeout(()=>commit(esc(t),exact&&peek===0),500)}
+  else document.getElementById("drFb").innerHTML=`<div class="fb bad">Сравни: ${compare(v,t)}<br><span class="ru">Зелёное ты сказала, красного не хватает. Исправь и проверь ещё раз или нажми «Показать и дальше».</span></div>`;});
+document.getElementById("drIn").addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();document.getElementById("drGo").click()}});
+document.getElementById("drPeek").addEventListener("click",()=>{peek++;const w=D[pos][1].split(" ");document.getElementById("drFb").innerHTML=`<div class="fb near">${esc(w.slice(0,Math.min(peek*2,w.length)).join(" "))} …</div>`});
+document.getElementById("drSkip").addEventListener("click",()=>commit(esc(D[pos][1]),false));
+document.getElementById("drRestart").addEventListener("click",restart);document.getElementById("drRole").addEventListener("change",restart);
+restart();
+})();
+
+route();
+</script>
+</body>
+</html>
