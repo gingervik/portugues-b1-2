@@ -651,11 +651,11 @@ footer{color:var(--muted);font-size:13px}
     </div>
 
     <div data-dpanel="role" hidden>
-      <p class="ru" style="margin:0">Выбери роль. Реплики партнёра видны, свои пишешь по памяти (можно сначала сказать вслух). Проверка покажет, каких слов не хватило.</p>
+      <p class="ru" style="margin:0">Выбери роль. Всё по-португальски: реплики партнёра видны, от своей реплики видишь только первые буквы слов, саму реплику пишешь по памяти (можно сначала сказать вслух). Проверка покажет, каких слов не хватило.</p>
       <div class="row"><select id="drRole" aria-label="Роль"><option value="B">Я Bernardo</option><option value="J">Я Joana</option></select><button id="drRestart">Сначала</button><span class="score" id="drScore"></span></div>
       <div id="drChat" style="display:grid;gap:8px"></div>
       <div id="drTurn" style="display:grid;gap:8px">
-        <span class="ru" id="drHint"></span>
+        <span class="label">Твоя реплика</span><span id="drHint" style="font-family:var(--mono);font-size:14px"></span>
         <textarea id="drIn" rows="2" lang="pt-PT" aria-label="Моя реплика" style="font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px;width:100%;resize:vertical"></textarea>
         <div class="row"><button class="primary" id="drGo">Проверить</button><button id="drPeek">Подсказка</button><button id="drSkip">Показать и дальше</button></div>
         <div id="drFb"></div>
@@ -1897,10 +1897,10 @@ let pos=0,hits=0,turns=0,peek=0;
 function compare(user,target){const u=n2(user).split(" ").map(st);let j=0;
   return target.split(/(\s+)/).map(t=>{if(!/[A-Za-zÀ-ÿ]/.test(t))return esc(t);const w=st(n2(t));const k=u.indexOf(w,j);if(k>=0){j=k+1;return `<span class="wm">${esc(t)}</span>`}return `<span class="wx">${esc(t)}</span>`}).join("");}
 function advance(){const me=document.getElementById("drRole").value,chat=document.getElementById("drChat");
-  while(pos<D.length&&D[pos][0]!==me){chat.insertAdjacentHTML("beforeend",`<div class="bubble"><span class="who">${NAME[D[pos][0]]}</span>${esc(D[pos][1])}<br><span class="ru">${esc(D[pos][2])}</span></div>`);pos++}
+  while(pos<D.length&&D[pos][0]!==me){chat.insertAdjacentHTML("beforeend",`<div class="bubble"><span class="who">${NAME[D[pos][0]]}</span>${esc(D[pos][1])}</div>`);pos++}
   const turn=document.getElementById("drTurn");
   if(pos>=D.length){turn.hidden=true;document.getElementById("drScore").textContent=`Диалог закончен. Без подсказок и полностью верно: ${hits} из ${turns}`;return}
-  turn.hidden=false;peek=0;document.getElementById("drHint").textContent="Твоя реплика: "+D[pos][2];document.getElementById("drIn").value="";document.getElementById("drFb").innerHTML="";}
+  turn.hidden=false;peek=0;document.getElementById("drHint").textContent=first(D[pos][1]);document.getElementById("drIn").value="";document.getElementById("drFb").innerHTML="";}
 function commit(text,ok){const chat=document.getElementById("drChat");chat.insertAdjacentHTML("beforeend",`<div class="bubble me"><span class="who">${NAME[D[pos][0]]}</span>${text}</div>`);turns++;if(ok)hits++;pos++;advance();}
 function restart(){pos=0;hits=0;turns=0;document.getElementById("drChat").innerHTML="";document.getElementById("drScore").textContent="";advance()}
 document.getElementById("drGo").addEventListener("click",()=>{const v=document.getElementById("drIn").value;if(!v.trim())return;const t=D[pos][1];
