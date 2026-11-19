@@ -160,6 +160,13 @@ footer{color:var(--muted);font-size:13px}
 .aplayer input[type=range]{width:100%;accent-color:var(--cobalt)}
 .aplayer .atime{font:500 13px var(--mono);font-variant-numeric:tabular-nums;color:var(--muted)}
 .aplayer .aspeed button[aria-pressed="true"]{background:var(--cobalt-soft);border-color:var(--cobalt);color:var(--cobalt)}
+#ctText.no-tr .ru{display:none}
+.tok{cursor:pointer;border-radius:4px;padding:0 1px}
+.tok.sel{background:var(--cobalt-soft);outline:1px solid var(--cobalt)}
+.tok.good{background:var(--ok-soft);outline:1px solid var(--ok)}
+.tok.wrong{background:var(--bad-soft);outline:1px solid var(--bad)}
+.tok.miss{outline:2px dashed var(--ok)}
+#tpText .ru[hidden]{display:none}
 /* homework */
 .flash{display:grid;gap:8px;place-items:center;text-align:center;min-height:150px;padding:24px 16px;border-radius:12px;border:1px solid var(--line);background:var(--cobalt-soft);font:700 22px/1.3 var(--display);color:var(--ink);cursor:pointer;width:100%}
 .flash #vcBack{font:700 22px/1.3 var(--display);color:var(--cobalt)}
@@ -457,6 +464,15 @@ footer{color:var(--muted);font-size:13px}
 <!-- TEXTOS -->
 <section data-view="textos" hidden>
   <div><h2>Textos</h2><p class="lead">Тексты и диалоги курса с переводом.</p></div>
+  <article class="card" id="t-portugal">
+    <span class="label">Aula 11</span>
+    <h3>Conhecer Portugal</h3>
+    <p style="margin:0"><span class="pt" style="font-weight:400">Ouça, leia e traduza o texto. Encontre verbos no conjuntivo.</span><br><span class="ru">Послушайте, прочитайте и переведите текст. Найдите глаголы в conjuntivo. Нажимай на слова, которые считаешь формами conjuntivo, потом «Проверить».</span></p>
+    <div class="row"><button id="tpTr" aria-pressed="false">Показать перевод</button><button class="primary" id="tpCheck">Проверить</button><button id="tpReset">Сбросить</button><span class="score" id="tpScore"></span></div>
+    <div id="tpText" style="display:grid;gap:10px"></div>
+    <div class="note" id="tpNote" hidden>Presente do Conjuntivo: <b>conheça</b> (é preciso que), <b>visitem, conheçam, provem</b> (gostam que), <b>tenham</b> (esperam que). Бонус: <b>gostar</b> в «Se você gostar do nosso Portugalinho» это Futuro do Conjuntivo после se, его проходят позже.<br><b>Não é à toa</b> = не зря.</div>
+  </article>
+
   <article class="card" id="t-limpeza">
     <span class="label">Aula 7 · TPC para 03.11</span>
     <h3>Precisa-se Empregada de Limpeza</h3>
@@ -626,7 +642,49 @@ footer{color:var(--muted);font-size:13px}
 <!-- TPC -->
 <section data-view="tpc" id="tpc" hidden>
   <div><h2>Trabalho de casa</h2><p class="lead">Домашние задания по урокам, новые сверху. Ответы сохраняются в этом браузере.</p></div>
-  <div class="chips"><a class="chip" href="#hw-1711">К 17.11.2026</a><a class="chip" href="#hw-1211">К 12.11.2026</a><a class="chip" href="#hw-aula8">Aula 8 · extra</a><a class="chip" href="#hw-0311">К 03.11.2026</a><a class="chip" href="#hw-2910">К 29.10.2026</a><a class="chip" href="#hw-2710">К 27.10.2026</a><a class="chip" href="#hw-2210">К 22.10.2026</a></div>
+  <div class="chips"><a class="chip" href="#hw-1911">К 19.11.2026</a><a class="chip" href="#hw-1711">К 17.11.2026</a><a class="chip" href="#hw-1211">К 12.11.2026</a><a class="chip" href="#hw-aula8">Aula 8 · extra</a><a class="chip" href="#hw-0311">К 03.11.2026</a><a class="chip" href="#hw-2910">К 29.10.2026</a><a class="chip" href="#hw-2710">К 27.10.2026</a><a class="chip" href="#hw-2210">К 22.10.2026</a></div>
+
+<div class="hw-block" id="hw-1911">
+  <div class="hw-due"><span class="label">Задано на Aula 11 · 17.11</span><h3>К уроку 19.11.2026</h3><p class="ru" style="margin:0">Ler e traduzir o conto e fazer os exercícios depois do texto. Прочитать и перевести рассказ «Apanhado a dizer a verdade», сделать упражнения после текста.</p></div>
+  <div class="hw-bar">
+    <div class="hw-scores"><a class="hw-chip" id="chip-c1" href="#hw-c1">1 <b>0</b>/5</a><a class="hw-chip" id="chip-c2" href="#hw-c2">2 <b>0</b>/4</a><a class="hw-chip" id="chip-c3" href="#hw-c3">3 <b>0</b>/8</a></div>
+    <button class="primary" id="cCheckAll">Проверить всё</button><button id="cReset">Очистить</button>
+  </div>
+
+  <article class="card" id="hw-conto">
+    <span class="label">Conto · páginas 38-39</span>
+    <h3>Apanhado a dizer a verdade</h3>
+<p class="ru" style="margin:0">Текст рассказа есть в учебнике (Lidel, с. 38-39). Здесь только словарик и упражнения.</p>
+    <details><summary>Словарик к тексту</summary>
+      <div class="grid2" style="margin-top:10px"><div class="ex"><span class="pt"><sup>1</sup> Mentira piedosa</span><span style='font-size:14px'>é a mentira que uma pessoa diz para não magoar a outra.</span><span class="ru">ложь во спасение</span></div><div class="ex"><span class="pt"><sup>2</sup> Compulsivo</span><span style='font-size:14px'>que não se consegue controlar.</span><span class="ru">навязчивый, патологический</span></div><div class="ex"><span class="pt"><sup>3</sup> Mirabolante</span><span style='font-size:14px'>fantástico.</span><span class="ru">невероятный</span></div><div class="ex"><span class="pt"><sup>4</sup> Filhós</span><span style='font-size:14px'>doce tradicional de Natal.</span><span class="ru">рождественский пончик</span></div><div class="ex"><span class="pt"><sup>5</sup> Gruta</span><span class="ru">пещера</span></div><div class="ex"><span class="pt"><sup>6</sup> Careca</span><span style='font-size:14px'>sem cabelo.</span><span class="ru">лысый</span></div><div class="ex"><span class="pt"><sup>7</sup> Entranhado</span><span style='font-size:14px'>que está no interior do corpo e que custa a sair.</span><span class="ru">въевшийся, засевший глубоко</span></div><div class="ex"><span class="pt"><sup>8</sup> Severo</span><span style='font-size:14px'>que dá fortes castigos.</span><span class="ru">суровый</span></div><div class="ex"><span class="pt"><sup>9</sup> Rigoroso</span><span style='font-size:14px'>sério.</span><span class="ru">строгий</span></div><div class="ex"><span class="pt"><sup>10</sup> Desgosto</span><span style='font-size:14px'>muita tristeza.</span><span class="ru">огорчение, горе</span></div><div class="ex"><span class="pt"><sup>11</sup> Dotado</span><span style='font-size:14px'>que recebeu da Natureza uma dada qualidade ou virtude. «Não ser muito dotado de inteligência» é uma maneira de dizer que a pessoa não é muito inteligente.</span><span class="ru">одарённый</span></div><div class="ex"><span class="pt"><sup>12</sup> Vício</span><span style='font-size:14px'>mau hábito.</span><span class="ru">порок, дурная привычка</span></div><div class="ex"><span class="pt"><sup>13</sup> Prontamente</span><span style='font-size:14px'>sem demorar tempo.</span><span class="ru">тотчас</span></div><div class="ex"><span class="pt"><sup>14</sup> Comprimido</span><span class="ru">таблетка</span></div><div class="ex"><span class="pt"><sup>15</sup> Almofariz</span><span class="ru">ступка</span></div><div class="ex"><span class="pt"><sup>16</sup> Indignado</span><span style='font-size:14px'>zangado, revoltado.</span><span class="ru">возмущённый</span></div><div class="ex"><span class="pt"><sup>17</sup> Virar-se para (alguém)</span><span style='font-size:14px'>pôr a cara em frente da pessoa com quem vamos falar.</span><span class="ru">повернуться к кому-то</span></div><div class="ex"><span class="pt"><sup>18</sup> Estrume</span><span style='font-size:14px'>substância vegetal e animal, misturada com fezes, para tornar a terra mais rica antes do cultivo.</span><span class="ru">навоз</span></div></div>
+      <h3 style="font-size:16px;margin-top:12px">Ещё полезные слова из текста</h3>
+      <div class="grid2"><div class="ex"><span class="pt">apanhado a</span><span class="ru">пойманный за (apanhado a dizer a verdade = пойман на правде)</span></div><div class="ex"><span class="pt">gabar-se</span><span class="ru">хвастаться</span></div><div class="ex"><span class="pt">dirigir-se a</span><span class="ru">направиться к</span></div><div class="ex"><span class="pt">à espera de</span><span class="ru">в ожидании</span></div><div class="ex"><span class="pt">engolir</span><span class="ru">глотать</span></div><div class="ex"><span class="pt">saber a</span><span class="ru">иметь вкус чего-то</span></div></div>
+    </details>
+  </article>
+
+  <article class="card" id="hw-c1">
+    <span class="label">Exercícios · Compreensão</span>
+    <h3>1. Responde às perguntas referindo apenas um número.</h3>
+    <p class="ru" style="margin:0">Ответь на вопросы одним числом.</p>
+    <ol class="hw-sent" id="c1"></ol>
+  </article>
+
+  <article class="card" id="hw-c2">
+    <span class="label">Exercícios · Gramática</span>
+    <h3>2. Coloca os conectores nos espaços adequados.</h3>
+    <p class="ru" style="margin:0">Вставь союзы. Два союза лишние.</p>
+    <div class="chips"><span class="chip">sempre</span><span class="chip">porque</span><span class="chip">antes</span><span class="chip">quando</span><span class="chip">ou</span><span class="chip">mas</span></div>
+    <ol class="hw-sent" id="c2"></ol>
+  </article>
+
+  <article class="card" id="hw-c3">
+    <span class="label">Exercícios · Gramática</span>
+    <h3>3. Preenche os espaços com a palavra da mesma família da palavra sublinhada.</h3>
+    <p class="ru" style="margin:0">Вставь однокоренное слово к подчёркнутому.</p>
+    <div class="hw-example"><span class="hw-orig">a) <u>Mentir</u> = dizer</span><span class="hw-start">mentiras</span></div>
+    <ol class="hw-sent" id="c3"></ol>
+  </article>
+</div>
 
 <div class="hw-block" id="hw-1711">
   <div class="hw-due"><span class="label">Задано на Aula 10 · 12.11</span><h3>К уроку 17.11.2026</h3><p class="ru" style="margin:0">Выучить диалог «Precisa-se Empregada de Limpeza». Ниже тренажёр: от чтения к пересказу по памяти. <a href="#t-limpeza" style="color:var(--cobalt)">Полный текст с переводом</a></p></div>
@@ -930,7 +988,9 @@ const LESSONS=[
  {n:9,date:"10.11.2026",topics:[["Presente do Conjuntivo com verbos/expressões de desejo, ordem, dúvida, etc.","Сослагательное после глаголов желания, приказа, сомнения","#g-desejo"],["Trabalho com o léxico do diálogo «Precisa-se empregada de limpeza»","Работа с лексикой диалога","#p-quizlet"]],
   tasks:[["TPC para 12.11: Unidade 3, exercícios 3.1-3.3","#hw-1211"],["Completa as frases com as expressões do quizlet","#p-quizlet"],["Тренажёр: verbos de desejo, dúvida…","#p-verbos3"]]},
  {n:10,date:"12.11.2026",topics:[["Presente do Conjuntivo com verbos/expressões de desejo, ordem, dúvida, etc. (prática)","Практика: сослагательное после глаголов желания, приказа, сомнения","#g-desejo"],["O conjuntivo na vida real: frases, felicitações, memes","Conjuntivo в живых фразах и поздравлениях","#g-vida"]],
-  tasks:[["TPC para 17.11: aprender o diálogo","#hw-1711"],["Indicativo ou conjuntivo?","#p-indconj10"],["Faça frases de acordo com as imagens","#p-imagens10"]]}
+  tasks:[["TPC para 17.11: aprender o diálogo","#hw-1711"],["Indicativo ou conjuntivo?","#p-indconj10"],["Faça frases de acordo com as imagens","#p-imagens10"]]},
+ {n:11,date:"17.11.2026",topics:[["Presente do Conjuntivo com verbos/expressões de desejo, ordem, dúvida, etc. (prática)","Практика: сослагательное после глаголов желания, приказа, сомнения","#g-desejo"],["Texto: Conhecer Portugal","Текст о Португалии: слушаем, читаем, ищем conjuntivo","#t-portugal"]],
+  tasks:[["TPC para 19.11: conto «Apanhado a dizer a verdade»","#hw-1911"],["Encontre verbos no conjuntivo","#t-portugal"],["O povo português: as minhas frases","#p-falar"]]}
 ];
 
 const EXPR=["É indispensável que","É importante que","Não é necessário que","É possível que","É essencial que","Não é fácil que","Não é provável que","É preciso que","É bom que","Acho importante que","Parece-me necessário que","Considero útil que"];
@@ -1038,6 +1098,7 @@ const SPEAK=[
  ["Aula 4","A secretária ideal","Какими качествами должна обладать идеальная секретарь или ассистент.","É indispensável que ela… · É importante que ela… · Não é necessário que ela… · Acho importante que ela… · Parece-me necessário que ela… · Considero útil que ela…"],
  ["Aula 5","Requisitos para o meu cargo","Требования к вашей текущей должности или к той, которую ищете. Только безличные фразы с Presente do Conjuntivo.","É indispensável que o candidato tenha… · É importante que saiba…"],
  ["Aula 5","O homem ideal","Опишите идеального мужчину через Presente do Conjuntivo и Infinitivo Pessoal.","É indispensável (que) ele… · Não é necessário (que) ele…"],
+ ["Aula 11","O povo português","Составьте несколько фраз о характере португальцев на основе своего опыта. Начните с мнения (indicativo), продолжите глаголом желания или чувства + Presente do Conjuntivo. Пример: Os portugueses gostam que os estrangeiros aprendam a língua deles. Eles querem que…","Na minha opinião / Eu acho que / Parece-me que os portugueses… · preferem que… · gostam que… · querem que… · desejam que… · receiam que…"],
  ["Aula 7","A minha casa ideal","Опишите свой идеальный дом безличными конструкциями: где нужен conjuntivo, где indicativo (é claro, é evidente), где можно инфинитив.","É indispensável que a casa… · É importante que… · É agradável que… · Não é necessário que ela… · Basta que… · Acho importante ela… · É claro que… · É evidente/óbvio que… · Parece-me necessário ela… · Considero útil que ela…"],
  ["Aula 5","Visita a Portugal","Минимум 6–7 советов тем, кто хочет посетить Португалию. Обе конструкции.","É preciso… · É bom que… · Acho importante que… · Não é preciso que…"]
 ];
@@ -1051,7 +1112,7 @@ const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v)
 
 /* ===== routing ===== */
 const VIEWS=["aulas","gramatica","lexico","textos","pratica","tpc"];
-const ANCHORS={"g-vida":"gramatica","p-indconj10":"pratica","p-imagens10":"pratica","hw-1711":"tpc","hw-decor":"tpc","p-quizlet":"pratica","p-verbos3":"pratica","g-desejo":"gramatica","hw-1211":"tpc","hw31":"tpc","hw32":"tpc","hw33":"tpc","p-frases":"pratica","hw-wtext":"tpc","hw-w1":"tpc","hw-w2":"tpc","hw-w3":"tpc","hw-w4":"tpc","hw-w5":"tpc","hw-aula8":"tpc","g-futuro":"gramatica","p-unir":"pratica","t-limpeza":"textos","p-traducao":"tpc","hw-0311":"tpc","hw-2910":"tpc","hw61":"tpc","hw62":"tpc","g-fatuais":"gramatica","hw-2710":"tpc","hw-2210":"tpc","hw11":"tpc","hw12":"tpc","hw13":"tpc","hw-p7":"tpc","g-conjuncoes":"gramatica","hw21":"tpc","hw22":"tpc","hw23":"tpc","g-impessoal":"gramatica","g-irregulares":"gramatica","g-infinitivo":"gramatica","t-entregas":"textos","p-completa":"pratica","p-conj":"pratica","p-inf":"pratica","p-reage":"pratica","p-perguntas":"pratica","p-falar":"pratica"};
+const ANCHORS={"t-portugal":"textos","hw-1911":"tpc","hw-conto":"tpc","hw-c1":"tpc","hw-c2":"tpc","hw-c3":"tpc","g-vida":"gramatica","p-indconj10":"pratica","p-imagens10":"pratica","hw-1711":"tpc","hw-decor":"tpc","p-quizlet":"pratica","p-verbos3":"pratica","g-desejo":"gramatica","hw-1211":"tpc","hw31":"tpc","hw32":"tpc","hw33":"tpc","p-frases":"pratica","hw-wtext":"tpc","hw-w1":"tpc","hw-w2":"tpc","hw-w3":"tpc","hw-w4":"tpc","hw-w5":"tpc","hw-aula8":"tpc","g-futuro":"gramatica","p-unir":"pratica","t-limpeza":"textos","p-traducao":"tpc","hw-0311":"tpc","hw-2910":"tpc","hw61":"tpc","hw62":"tpc","g-fatuais":"gramatica","hw-2710":"tpc","hw-2210":"tpc","hw11":"tpc","hw12":"tpc","hw13":"tpc","hw-p7":"tpc","g-conjuncoes":"gramatica","hw21":"tpc","hw22":"tpc","hw23":"tpc","g-impessoal":"gramatica","g-irregulares":"gramatica","g-infinitivo":"gramatica","t-entregas":"textos","p-completa":"pratica","p-conj":"pratica","p-inf":"pratica","p-reage":"pratica","p-perguntas":"pratica","p-falar":"pratica"};
 function route(){
   const h=location.hash.slice(1);
   const view=VIEWS.includes(h)?h:(ANCHORS[h]||"aulas");
@@ -1950,6 +2011,73 @@ document.querySelectorAll(".aplayer").forEach((box,n)=>{
   seek.addEventListener("change",()=>{seeking=false});
   box.querySelectorAll("[data-s]").forEach(b=>b.addEventListener("click",()=>{setSpeed(+b.dataset.s);document.querySelectorAll(".aplayer").forEach(o=>{if(o!==box){o.querySelector("audio").playbackRate=speed;o.querySelectorAll("[data-s]").forEach(x=>x.setAttribute("aria-pressed",+x.dataset.s===speed))}})}));
 });
+})();
+
+/* Aula 11: Conhecer Portugal */
+(function(){
+const P=[["Portugal, país com uma história feita de heróis, deu ao mundo novos mundos e, apesar de hoje em dia ser geograficamente menor do que era no passado, continua a ser o responsável pela grande influência que teve noutras terras, culturas e gentes.","Португалия, страна, история которой создана героями, подарила миру новые миры. И хотя сегодня она географически меньше, чем в прошлом, она по-прежнему остаётся источником большого влияния на другие земли, культуры и народы."],
+["Durante a nossa viagem pela História, deixámos importantes raízes na Índia (Goa, Damão e Diu), em Timor, em África e no Brasil.","За время нашего путешествия по истории мы оставили глубокие корни в Индии (Гоа, Даман и Диу), в Тиморе, в Африке и в Бразилии."],
+["Para conhecer Portugal, é preciso que você conheça o seu presente, mas também o seu passado.","Чтобы узнать Португалию, нужно знать её настоящее, но также и прошлое."],
+["Conhecer Portugal é conhecer a alma do seu povo, as suas tradições, as suas festas, os seus usos e costumes.","Узнать Португалию значит узнать душу её народа, её традиции, праздники, обычаи и нравы."],
+["Conhecer Portugal é conhecer as pessoas que tornaram o país conhecido pelo mundo fora.","Узнать Португалию значит узнать людей, которые прославили страну на весь мир."],
+["Devido ao seu espírito aberto, os portugueses gostam que os estrangeiros visitem o seu país, conheçam a sua cultura, provem a sua comida.","Благодаря своей открытости португальцы любят, когда иностранцы приезжают в их страну, знакомятся с их культурой, пробуют их еду."],
+["Se você conhece Portugal, ou se já o visitou, então sabe que os portugueses estão sempre prontos para ajudar um visitante em dificuldades.","Если вы знаете Португалию или уже бывали здесь, то знаете, что португальцы всегда готовы помочь гостю, попавшему в трудное положение."],
+["Os portugueses são amigos do seu amigo e esperam que os demais tenham o mesmo sentimento para com eles.","Португальцы верны своим друзьям и надеются, что другие будут относиться к ним так же."],
+["Não é à toa que se diz «quem meu filho beija, minha boca adoça».","Не зря говорят: «кто целует моего сына, тот подслащивает мне рот» (кто добр к моим близким, тот мил и мне)."],
+["Se você gostar do nosso «Portugalinho», então cairá nas boas graças dos portugueses.","Если вам понравится наша «маленькая Португалия», вы завоюете расположение португальцев."],
+["E, como «amigo verdadeiro vale mais do que o dinheiro», terá para sempre amigos fiéis e dedicados que lhe pregarão dois beijinhos e muitos abraços como qualquer bom português.","И раз уж «настоящий друг дороже денег», у вас навсегда будут верные и преданные друзья, которые расцелуют вас в обе щёки и будут крепко обнимать, как любой хороший португалец."]];
+const KEY=new Set(["conheça","visitem","conheçam","provem","tenham"]),BONUS=new Set(["gostar"]);
+const box=document.getElementById("tpText");let k=0;
+box.innerHTML=P.map(([pt,ru],pi)=>{const html=pt.split(/(\s+)/).map(t=>{const m=t.match(/^([«(]*)([A-Za-zÀ-ÿ-]+)(.*)$/);if(!m)return esc(t);const w=m[2].toLowerCase();
+  const key=KEY.has(w)&&!(w==="conheça"&&false);return `${esc(m[1])}<span class="tok" data-w="${esc(w)}" data-k="${KEY.has(w)?1:0}" data-b="${BONUS.has(w)?1:0}" tabindex="0">${esc(m[2])}</span>${esc(m[3])}`}).join("");
+  return `<div class="line" style="grid-template-columns:1fr"><div class="tx"><span>${html}</span><span class="ru" hidden>${esc(ru)}</span></div></div>`}).join("");
+box.querySelectorAll('.tok[data-w="conhecer"],.tok[data-w="conhece"]').forEach(t=>t.dataset.k="0");
+const togg=t=>{if(t.classList.contains("good")||t.classList.contains("wrong"))return;t.classList.toggle("sel")};
+box.addEventListener("click",e=>{const t=e.target.closest(".tok");if(t)togg(t)});
+box.addEventListener("keydown",e=>{const t=e.target.closest(".tok");if(t&&(e.key==="Enter"||e.key===" ")){e.preventDefault();togg(t)}});
+document.getElementById("tpCheck").addEventListener("click",()=>{let ok=0,bad=0,tot=0;box.querySelectorAll(".tok").forEach(t=>{const key=t.dataset.k==="1"||t.dataset.b==="1";if(t.dataset.k==="1")tot++;
+  t.classList.remove("good","wrong","miss");
+  if(t.classList.contains("sel")){t.classList.remove("sel");if(key){t.classList.add("good");if(t.dataset.k==="1")ok++}else{t.classList.add("wrong");bad++}}
+  else if(t.dataset.k==="1")t.classList.add("miss")});
+  document.getElementById("tpScore").textContent=`Найдено ${ok} из ${tot}`+(bad?`, лишних ${bad}`:"");document.getElementById("tpNote").hidden=false;});
+document.getElementById("tpReset").addEventListener("click",()=>{box.querySelectorAll(".tok").forEach(t=>t.classList.remove("sel","good","wrong","miss"));document.getElementById("tpScore").textContent="";document.getElementById("tpNote").hidden=true});
+document.getElementById("tpTr").addEventListener("click",e=>{const on=e.currentTarget.getAttribute("aria-pressed")!=="true";e.currentTarget.setAttribute("aria-pressed",on);e.currentTarget.textContent=on?"Скрыть перевод":"Показать перевод";box.querySelectorAll(".ru").forEach(r=>r.hidden=!on)});
+})();
+
+/* TPC 19.11: conto */
+(function(){
+const tr=document.getElementById("ctTr");if(tr)tr.addEventListener("click",e=>{const on=e.currentTarget.getAttribute("aria-pressed")!=="true";e.currentTarget.setAttribute("aria-pressed",on);e.currentTarget.textContent=on?"Скрыть перевод":"Показать перевод";document.getElementById("ctText").classList.toggle("no-tr",!on)});
+const C1=[["a) Segundo o texto, quantos tipos de mentiras há?",["4"],"4: mentiras de cortesia, de sobrevivência, infantis e piedosas."],
+ ["b) Quantos exemplos de histórias mirabolantes são dados?",["3"],"3: a Virgem Maria a fazer filhoses; o safari no Chade e os chineses carecas na gruta; uma semana fechado na biblioteca a comer a Enciclopédia."],
+ ["c) Quantos adjetivos são usados no texto para caracterizar o capitão?",["4","5"],"4: famoso, severo, rigoroso, honesto. Если считать и «não era muito dotado de inteligência», то 5. Уточни на уроке, какой ответ ждёт учитель."],
+ ["d) Quantos comprimidos tomou o rapaz?",["1"],"1: «O rapaz engoliu o comprimido.»"],
+ ["e) Quantos dias pai e filho tiveram de esperar pelo comprimido?",["1"],"1: «Passe cá amanhã com o rapaz… No dia seguinte…»"]];
+const C2=[["a) Todos se riam do rapaz ","porque"," ele só dizia mentiras disparatadas.","porque = потому что: причина смеха."],
+ ["b) O capitão passou pela farmácia ","antes"," de levar lá o filho.","antes de = перед тем как: сначала отец, потом сын."],
+ ["c) O rapaz acabou por dizer a verdade, ","mas"," não foi por causa dos elementos químicos do comprimido.","mas = но: противопоставление."],
+ ["d) Esta história mostra o que devemos fazer ","quando"," encontramos um mentiroso: mentir-lhe também!","quando = когда."]];
+const C3=[["b) Ser <u>cortês</u> = agir com ","","cortesia"],["c) <u>Sobreviver</u> = lutar pela ","","sobrevivência"],["d) Ter muito <u>talento</u> = ser muito ","","talentoso"],["e) Desempenhar bem uma <u>profissão</u> = ser muito ","","profissional"],["f) Ele é muito <u>sabedor</u>. = Ele tem muita ","",". ","sabedoria"],["g) Ele segue uma vida de muito <u>rigor</u>. = Ele é um homem muito ","",". ","rigoroso"],["h) O rapaz <u>desgostava</u> muito o pai. = O pai tinha um grande ",""," no filho.","desgosto"],["i) O comprimido não fazia <u>milagres</u>. = O comprimido não era ","",". ","milagroso"]];
+const n2=s=>s.toLowerCase().replace(/[.,!?;:«»"]/g," ").replace(/\s+/g," ").trim();
+const st=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"");
+const saved=store.get("conto11",{})||{};const all=[];
+function mk(id,ans,why,ex){const i=document.createElement("input");i.type="text";i.id=id;i.className="blank";i.autocomplete="off";i.autocapitalize="off";i.spellcheck=false;i.lang="pt-PT";i.value=saved[id]||"";
+  Object.assign(i.dataset,{ans:JSON.stringify(ans),why:why,ex:ex});
+  i.addEventListener("input",()=>{saved[id]=i.value;store.set("conto11",saved);i.classList.remove("ok","near","bad");const f=document.getElementById(id+"-fb");f.className="hfb";f.innerHTML="";sc()});
+  i.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();chk(i);const k=all.indexOf(i);if(all[k+1])all[k+1].focus()}});
+  i.addEventListener("blur",()=>{if(i.value.trim())chk(i)});all.push(i);return i;}
+const fbEl=id=>{const f=document.createElement("span");f.className="hfb";f.id=id+"-fb";return f};
+function chk(i){const v=n2(i.value),A=JSON.parse(i.dataset.ans).map(n2),f=document.getElementById(i.id+"-fb");i.classList.remove("ok","near","bad");if(!v){f.className="hfb";f.innerHTML="";sc();return}
+  if(A.includes(v)){i.classList.add("ok");f.className="hfb ok";f.innerHTML=i.dataset.ex==="c1"?`<span class="ru">${esc(i.dataset.why)}</span>`:""}
+  else if(A.map(st).includes(st(v))){i.classList.add("near");f.className="hfb near";f.innerHTML=`Почти, проверь ударение: <span class="ans">${esc(A[0])}</span>`}
+  else{i.classList.add("bad");f.className="hfb bad";f.innerHTML=`Ответ: <span class="ans">${esc(JSON.parse(i.dataset.ans)[0])}</span>${i.dataset.why?`<span class="why">${esc(i.dataset.why)}</span>`:""}`}sc();}
+const c1=document.getElementById("c1");C1.forEach(([q,a,w],k)=>{const li=document.createElement("li");li.innerHTML='<span class="n"></span>';const d=document.createElement("div");d.className="hw-line";d.innerHTML=esc(q)+" ";const i=mk("c1-"+k,a,w,"c1");i.style.width="3.5em";i.inputMode="numeric";i.setAttribute("aria-label",q);d.appendChild(i);d.appendChild(fbEl("c1-"+k));li.appendChild(d);c1.appendChild(li)});
+const c2=document.getElementById("c2");C2.forEach(([b,a,e,w],k)=>{const li=document.createElement("li");li.innerHTML='<span class="n"></span>';const d=document.createElement("div");d.className="hw-line";d.appendChild(document.createTextNode(b));const i=mk("c2-"+k,[a],w,"c2");i.style.width="7em";i.setAttribute("aria-label",b);d.appendChild(i);d.appendChild(document.createTextNode(e));d.appendChild(fbEl("c2-"+k));li.appendChild(d);c2.appendChild(li)});
+const c3=document.getElementById("c3");C3.forEach((row,k)=>{const b=row[0],end=row.length===4?row[2]:"",a=row[row.length-1];const li=document.createElement("li");li.innerHTML='<span class="n"></span>';const d=document.createElement("div");d.className="hw-line";const sp=document.createElement("span");sp.innerHTML=b;d.appendChild(sp);const i=mk("c3-"+k,[a],"","c3");i.style.width="9em";i.setAttribute("aria-label",b.replace(/<[^>]+>/g,""));d.appendChild(i);if(end)d.appendChild(document.createTextNode(end));d.appendChild(fbEl("c3-"+k));li.appendChild(d);c3.appendChild(li)});
+function sc(){[["c1",5],["c2",4],["c3",8]].forEach(([p,t])=>{const n=all.filter(i=>i.dataset.ex===p&&i.classList.contains("ok")).length;const c=document.getElementById("chip-"+p);c.querySelector("b").textContent=n;c.classList.toggle("done",n===t)})}
+document.getElementById("cCheckAll").addEventListener("click",()=>all.forEach(chk));
+let armed=false;const rb=document.getElementById("cReset");
+rb.addEventListener("click",()=>{if(!armed){armed=true;rb.textContent="Точно очистить?";setTimeout(()=>{armed=false;rb.textContent="Очистить"},3000);return}armed=false;rb.textContent="Очистить";all.forEach(i=>{i.value="";saved[i.id]="";chk(i)});store.set("conto11",{})});
+all.filter(i=>i.value.trim()).forEach(chk);sc();
 })();
 
 route();
